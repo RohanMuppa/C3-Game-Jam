@@ -70,8 +70,6 @@ houses = [NodePath("../Houses/House"), NodePath("../Houses/House3"), NodePath(".
 imports = [NodePath("../Imports/Import"), NodePath("../Imports/Import2"), NodePath("../Imports/Import3")]
 gs_parent = NodePath("../GSs")
 
-[node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
-
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
 [node name="Import" parent="Imports" unique_id=1309879654 instance=ExtResource("7_lgr22")]
@@ -85,3 +83,6 @@ script = ExtResource("8_trn2v")
 [node name="Import3" parent="Imports" unique_id=1362542448 instance=ExtResource("7_lgr22")]
 position = Vector2(705, 38)
 script = ExtResource("8_trn2v")
+
+[node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
+top_level = true
