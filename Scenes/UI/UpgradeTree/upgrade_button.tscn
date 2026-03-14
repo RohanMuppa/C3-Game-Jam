@@ -1,11 +1,25 @@
 [gd_scene format=3 uid="uid://mbdvembwa2mw"]
 
 [ext_resource type="Script" uid="uid://bleennvirtqb4" path="res://Scenes/UI/UpgradeTree/upgrade_button.gd" id="1_p17mr"]
+[ext_resource type="Script" uid="uid://cp3ysps4ijpql" path="res://Scenes/UI/line.gd" id="2_arfpt"]
 
 [node name="Button" type="Button" unique_id=959125639]
+z_index = 1
 offset_right = 96.0
 offset_bottom = 96.0
 text = "upgrade template"
 text_overrun_behavior = 3
 autowrap_mode = 2
 script = ExtResource("1_p17mr")
+
+[node name="Line" type="Control" parent="." unique_id=1158379800]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_arfpt")

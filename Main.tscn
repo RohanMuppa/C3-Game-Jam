@@ -16,8 +16,8 @@ script = ExtResource("1_fos0i")
 gameUI = NodePath("Ui")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=82704146]
-position = Vector2(576, 323.5)
-scale = Vector2(72, 40.5625)
+position = Vector2(640, 359.50003)
+scale = Vector2(80, 45.062504)
 texture = ExtResource("2_3dxm6")
 
 [node name="Farms" type="Node" parent="." unique_id=928189290]
