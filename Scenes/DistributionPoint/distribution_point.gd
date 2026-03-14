@@ -1,4 +1,4 @@
-class_name DistributionPoint extends Node2D
+class_name DistributionPoint extends Upgradeable
 
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
@@ -6,6 +6,7 @@ class_name DistributionPoint extends Node2D
 var ticker: float = 0.0
 var cash_interval: float = 3
 var stored_food: int = 0
+var ui: GameUI
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 
@@ -40,3 +41,7 @@ func _draw() -> void:
 			farm.global_position - global_position,
 			Color.DARK_ORANGE
 		)
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		ui.show_dp_upgrades(self)

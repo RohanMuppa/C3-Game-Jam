@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cmjslvkvvsson"]
+
+[ext_resource type="PackedScene" uid="uid://mbdvembwa2mw" path="res://Scenes/UI/UpgradeTree/upgrade_button.tscn" id="1_c40ul"]
+[ext_resource type="Script" uid="uid://d05tif6kwrap2" path="res://Scenes/UI/UpgradeTree/inherited_upgrade_tree.gd" id="1_up68g"]
+[ext_resource type="Script" uid="uid://cyhexxfg6qsvr" path="res://Scenes/UI/UpgradeTree/close_button.gd" id="2_lxk10"]
+[ext_resource type="Resource" uid="uid://djs4x14bewdju" path="res://Resources/Upgrades/TestUpgrade.tres" id="2_up68g"]
+
+[node name="DPUpgradeTree" type="Control" unique_id=361996826 node_paths=PackedStringArray("upgrades")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_up68g")
+upgrades = NodePath("Upgrades")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1149722571]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.74138474, 0.7413847, 0.74138457, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1410346287]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=845223982]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "Distribution Upgrades"
+horizontal_alignment = 2
+
+[node name="CloseButton" type="Button" parent="MarginContainer" unique_id=1561091728 node_paths=PackedStringArray("parent")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 32
+text = "Close"
+script = ExtResource("2_lxk10")
+parent = NodePath("../..")
+
+[node name="Upgrades" type="Control" parent="." unique_id=280828963]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" parent="Upgrades" unique_id=959125639 instance=ExtResource("1_c40ul")]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 191.0
+offset_right = 272.0
+offset_bottom = 287.0
+cost = 50
+on_purchase = ExtResource("2_up68g")
+
+[node name="Button3" parent="Upgrades" unique_id=1967810872 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 148.0
+offset_right = 491.0
+offset_bottom = 244.0
+text = "upgrade template 2"
+cost = 75
+on_purchase = ExtResource("2_up68g")
+parent = NodePath("../Button2")
+
+[node name="Button4" parent="Upgrades" unique_id=619222681 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 296.0
+offset_right = 481.0
+offset_bottom = 392.0
+text = "upgrade template 3"
+cost = 125
+on_purchase = ExtResource("2_up68g")
+parent = NodePath("../Button2")

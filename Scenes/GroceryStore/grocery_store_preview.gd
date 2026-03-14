@@ -85,3 +85,4 @@ func place_gs():
 	gs.imports.append_array(imports)
 	gs.houses.append_array(houses.filter(in_radius))
 	gs_parent.add_child(gs)
+	gs.ui = $"../Ui"
