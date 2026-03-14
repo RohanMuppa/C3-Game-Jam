@@ -42,7 +42,8 @@ func _process(delta: float) -> void:
 	global_position = get_global_mouse_position()
 	
 	if Input.is_action_just_pressed("confirm_placement") && game_main.money >= cost:
-		place_gs()
+		if imports.size() > 0 && houses.filter(in_radius).size() > 0:
+			place_gs()
 	
 	queue_redraw()
 
