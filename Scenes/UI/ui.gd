@@ -11,6 +11,9 @@ func _ready() -> void:
 func set_money(money: float) -> void:
 	moneyCtr.text = "$%.2f" % (money)
 
+func set_phase(phase_name: String) -> void:
+	$PhaseLabel.text = phase_name
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

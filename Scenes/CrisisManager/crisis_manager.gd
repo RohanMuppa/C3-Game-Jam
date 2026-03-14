@@ -20,6 +20,7 @@ var covid_theme = load("res://Audio/covid-theme.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	phase_duration = game_main.game_time_mins * 60.0 / 3.0
+	phase_changed.connect(game_main.gameUI.set_phase)
 	enter_phase(Phase.PRE_COVID)
 
 

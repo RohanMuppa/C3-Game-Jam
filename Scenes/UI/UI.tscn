@@ -32,6 +32,15 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="PhaseLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 24
+text = "Pre-COVID"
+
 [node name="MoneyCtr" type="RichTextLabel" parent="." unique_id=1680810425]
 layout_mode = 0
 offset_left = 8.0
