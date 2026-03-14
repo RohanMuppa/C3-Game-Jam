@@ -53,15 +53,20 @@ func step() -> void:
 
 	var sold_food = min(get_demand(), stored_food)
 	stored_food -= sold_food
-
+	
 	game_main.money += sold_food * get_price()
-
 
 func get_price() -> float:
 	var inc_multi = crisis.dp_income_mult
 	if inc_multi < 1:
 		inc_multi = min(1, inc_multi + 0.1 * resilience_score)
 	return 20 * inc_multi * income_bonus
+
+func get_demand() -> int:
+	return houses.size() * house_consumption
+
+func get_supply() -> int:
+	return farms.size() * food_intake
 	
 func _draw() -> void:
 	for house in houses:
