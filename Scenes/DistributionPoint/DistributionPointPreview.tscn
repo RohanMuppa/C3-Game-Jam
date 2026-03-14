@@ -1,21 +1,19 @@
 [gd_scene format=3 uid="uid://sgy7uhwnkgnq"]
 
-[ext_resource type="Texture2D" uid="uid://djpxm45w24npn" path="res://Sprites/debug/red.png" id="1_1mq4n"]
 [ext_resource type="Script" uid="uid://xlsf0rt6c88y" path="res://Scenes/DistributionPoint/distribution_point_preview.gd" id="1_vtk0x"]
+[ext_resource type="Texture2D" uid="uid://djgwo8gq7wmr6" path="res://Sprites/Distribution Point/dp.png" id="2_vtk0x"]
 
 [node name="DistributionPointPreview" type="Node2D" unique_id=943721428]
 top_level = true
 script = ExtResource("1_vtk0x")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2147272938]
-modulate = Color(1, 1, 1, 0.25490198)
-show_behind_parent = true
-position = Vector2(3.695488e-06, -1.66893e-06)
-scale = Vector2(3.75, 2.5)
-texture = ExtResource("1_1mq4n")
+[node name="Dp" type="Sprite2D" parent="." unique_id=1611249526]
+modulate = Color(1, 1, 1, 0.39215687)
+texture = ExtResource("2_vtk0x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=71766798]
-offset_left = -18.0
-offset_top = -23.0
-offset_right = 19.0
+offset_left = -19.0
+offset_top = -29.0
+offset_right = 18.0
+offset_bottom = -6.0
 text = "$500"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnh0tay4hsbnv"
-path="res://.godot/imported/grocery.png-a12514b909f0bc2b7ca07957c7b0b7af.ctex"
+uid="uid://dt0gdv4q6sj3w"
+path="res://.godot/imported/farmCow.png-d8cf8f4f34e7d5eb66af6eabc58e2379.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/grocery.png"
-dest_files=["res://.godot/imported/grocery.png-a12514b909f0bc2b7ca07957c7b0b7af.ctex"]
+source_file="res://Sprites/Farm/farmCow.png"
+dest_files=["res://.godot/imported/farmCow.png-d8cf8f4f34e7d5eb66af6eabc58e2379.ctex"]
 
 [params]
 

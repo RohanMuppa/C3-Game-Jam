@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcve0mwes8sta"]
 
 [ext_resource type="Script" uid="uid://delvee3msvx18" path="res://Scenes/GroceryStore/grocery_store.gd" id="1_pw1c3"]
-[ext_resource type="Texture2D" uid="uid://cnh0tay4hsbnv" path="res://Sprites/grocery.png" id="2_pw1c3"]
+[ext_resource type="Texture2D" uid="uid://cnh0tay4hsbnv" path="res://Sprites/Grocery Store/grocery.png" id="2_pw1c3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1c3"]
 size = Vector2(80, 60)

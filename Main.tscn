@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dc0666cmfv6lg"]
 
 [ext_resource type="Script" uid="uid://c5e4f48rog5m0" path="res://main.gd" id="1_fos0i"]
-[ext_resource type="Texture2D" uid="uid://bgf3t0otkgmm1" path="res://Sprites/debug/blue.png" id="2_3dxm6"]
-[ext_resource type="PackedScene" uid="uid://c2xqb4dsp0ena" path="res://Scenes/Farm/Farm.tscn" id="3_lgr22"]
+[ext_resource type="PackedScene" uid="uid://c2xqb4dsp0ena" path="res://Scenes/Farm/GrainFarm.tscn" id="3_lgr22"]
 [ext_resource type="PackedScene" uid="uid://cpyo8vdyskmpe" path="res://Scenes/House/House.tscn" id="4_trn2v"]
 [ext_resource type="PackedScene" uid="uid://sgy7uhwnkgnq" path="res://Scenes/DistributionPoint/DistributionPointPreview.tscn" id="5_03owx"]
 [ext_resource type="PackedScene" uid="uid://yv8i6jgtymvr" path="res://Scenes/UI/UI.tscn" id="6_3dxm6"]
@@ -10,17 +9,18 @@
 [ext_resource type="Script" uid="uid://cvqwnjkoodo4x" path="res://Scenes/GroceryStore/grocery_store_preview.gd" id="7_20pc6"]
 [ext_resource type="PackedScene" uid="uid://1ic67nr8rff6" path="res://Scenes/Import/Import.tscn" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="8_trn2v"]
-[ext_resource type="PackedScene" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://cxhvp6s1xh8ci" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
+[ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]
 
 [node name="Main" type="Node2D" unique_id=125363785 node_paths=PackedStringArray("gameUI")]
 script = ExtResource("1_fos0i")
 gameUI = NodePath("Ui")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=82704146]
-position = Vector2(640, 359.50003)
-scale = Vector2(80, 45.062504)
-texture = ExtResource("2_3dxm6")
+[node name="Bkgd" type="Sprite2D" parent="." unique_id=758147456]
+position = Vector2(639.99994, 360)
+scale = Vector2(0.49999994, 0.5)
+texture = ExtResource("12_5vvyt")
 
 [node name="Farms" type="Node" parent="." unique_id=928189290]
 
@@ -80,6 +80,7 @@ position = Vector2(553, 288)
 [node name="DPs" type="Node" parent="." unique_id=867580717]
 
 [node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
+visible = false
 position = Vector2(-122, 196)
 houses = [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")]
 farms = [NodePath("../Farms/Farm"), NodePath("../Farms/Farm2"), NodePath("../Farms/Farm3"), NodePath("../Farms/Farm4")]
@@ -88,6 +89,7 @@ dp_parent = NodePath("../DPs")
 [node name="GSs" type="Node" parent="." unique_id=1748055003]
 
 [node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
+visible = false
 position = Vector2(-158, 74)
 script = ExtResource("7_20pc6")
 houses = [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")]
@@ -108,5 +110,6 @@ script = ExtResource("8_trn2v")
 top_level = true
 
 [node name="CrisisManager" parent="." unique_id=1612307419 instance=ExtResource("11_5vvyt")]
+visible = false
 position = Vector2(71, -59)
 script = ExtResource("12_c6i3y")

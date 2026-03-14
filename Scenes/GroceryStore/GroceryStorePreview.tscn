@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c001xtlyv63e8"]
 
-[ext_resource type="Texture2D" uid="uid://cnh0tay4hsbnv" path="res://Sprites/grocery.png" id="2_ixqtn"]
+[ext_resource type="Texture2D" uid="uid://cnh0tay4hsbnv" path="res://Sprites/Grocery Store/grocery.png" id="2_ixqtn"]
 
 [node name="GroceryStorePreview" type="Node2D" unique_id=1987339727]
 
