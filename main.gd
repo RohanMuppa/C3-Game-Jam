@@ -6,8 +6,6 @@ class_name GameMain extends Node2D
 @export_category("Starting Stats")
 @export var _money: float = 1000
 
-@onready var progress_bar: ProgressBar = %ProgressBar
-
 var ticker = 0
 var money_cooldown = 3
 
@@ -26,7 +24,7 @@ var money = _money:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	progress_bar.fill_mode = ProgressBar.FillMode.FILL_BOTTOM_TO_TOP
+	gameUI.progress_bar.fill_mode = ProgressBar.FillMode.FILL_BOTTOM_TO_TOP
 	gameUI.set_money(money)
 
 
@@ -37,4 +35,4 @@ func _process(delta: float) -> void:
 	while (ticker >= money_cooldown):
 		process_money.emit()
 		ticker -= money_cooldown
-	progress_bar.set_as_ratio(event_ticks / (60 * game_time_mins))
+	gameUI.progress_bar.set_as_ratio(event_ticks / (60 * game_time_mins))
