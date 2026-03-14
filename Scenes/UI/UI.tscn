@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://yv8i6jgtymvr"]
+
+[ext_resource type="Script" uid="uid://bxyesvqfdt1ow" path="res://Scenes/UI/ui.gd" id="1_s86y4"]
+
+[node name="Ui" type="Control" unique_id=1297064599 node_paths=PackedStringArray("moneyCtr")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s86y4")
+moneyCtr = NodePath("MoneyCtr")
+
+[node name="MoneyCtr" type="RichTextLabel" parent="." unique_id=1680810425]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 813.0
+offset_bottom = 139.0
+theme_override_font_sizes/normal_font_size = 30
+text = "$XXX"

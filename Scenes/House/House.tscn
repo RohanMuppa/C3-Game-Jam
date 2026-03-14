@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cpyo8vdyskmpe"]
+
+[ext_resource type="Script" uid="uid://7fma2e6yvahy" path="res://Scenes/House/house.gd" id="1_jv2v4"]
+[ext_resource type="Texture2D" uid="uid://dr2u6om03rgph" path="res://Sprites/debug/green.png" id="1_xvb4y"]
+
+[node name="House" type="Node2D" unique_id=1011429723]
+script = ExtResource("1_jv2v4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=678921371]
+scale = Vector2(3.875, 3.875)
+texture = ExtResource("1_xvb4y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=966101383]
+offset_left = -23.0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 12.0
+text = "House"
