@@ -51,7 +51,7 @@ func step() -> void:
 	var sold_food = min(houses.size() * house_consumption, stored_food)
 	stored_food -= sold_food
 
-	game_main.money += 50 * income_bonus * sold_food * inc_multi
+	game_main.money += 25 * income_bonus * sold_food * inc_multi
 
 func _draw() -> void:
 	for house in houses:

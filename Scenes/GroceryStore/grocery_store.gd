@@ -18,6 +18,9 @@ var food_intake: int = 5
 # Resilience has a range of [-10, 10]
 var resilience_score: float = 1
 
+# cost of paying workers during crisis
+var wages: float = 350
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_main.process_money.connect(step)
@@ -40,7 +43,7 @@ func step() -> void:
 	var sold_food = min(houses.size() * house_consumption, stored_food)
 	stored_food -= sold_food
 
-	game_main.money += 75 * income_bonus * sold_food * inc_multi
+	game_main.money += 35 * income_bonus * sold_food * inc_multi
 
 func _draw() -> void:
 	for house in houses:

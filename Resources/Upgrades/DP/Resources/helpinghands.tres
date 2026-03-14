@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://bhm1xkrm4v1jg"]
+
+[ext_resource type="Script" uid="uid://bwqqwdxetp1t7" path="res://Resources/Upgrades/DP/helpinghands.gd" id="1_kvd7i"]
+
+[resource]
+script = ExtResource("1_kvd7i")

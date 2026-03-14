@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://cl1ifyy7w0pf4"]
+
+[ext_resource type="Script" uid="uid://uj7v0eo4xyad" path="res://Resources/Upgrades/DP/trucks2.gd" id="1_alwtx"]
+
+[resource]
+script = ExtResource("1_alwtx")

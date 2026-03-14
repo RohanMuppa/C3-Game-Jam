@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://cqbstn0fgbd7c"]
+
+[ext_resource type="Script" uid="uid://cmgtlywo8md58" path="res://Resources/Upgrades/DP/hungryhands.gd" id="1_qag24"]
+
+[resource]
+script = ExtResource("1_qag24")

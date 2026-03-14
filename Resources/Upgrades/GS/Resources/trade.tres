@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://7o53q3x7qoty"]
+
+[ext_resource type="Script" uid="uid://cyhj7rbmca35l" path="res://Resources/Upgrades/GS/trade.gd" id="1_ncm34"]
+
+[resource]
+script = ExtResource("1_ncm34")

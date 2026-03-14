@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://coyvp6qp554jb"]
+
+[ext_resource type="Script" uid="uid://cwfgri3ypfwfw" path="res://Resources/Upgrades/DP/bigtrucks.gd" id="1_yfqlk"]
+
+[resource]
+script = ExtResource("1_yfqlk")

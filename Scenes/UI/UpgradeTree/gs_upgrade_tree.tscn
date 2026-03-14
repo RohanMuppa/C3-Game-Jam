@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://mbdvembwa2mw" path="res://Scenes/UI/UpgradeTree/upgrade_button.tscn" id="1_5rsv6"]
 [ext_resource type="Script" uid="uid://d05tif6kwrap2" path="res://Scenes/UI/UpgradeTree/inherited_upgrade_tree.gd" id="1_mcsce"]
-[ext_resource type="Resource" uid="uid://djs4x14bewdju" path="res://Resources/Upgrades/TestUpgrade.tres" id="2_mcsce"]
 [ext_resource type="Script" uid="uid://cyhexxfg6qsvr" path="res://Scenes/UI/UpgradeTree/close_button.gd" id="2_sep70"]
+[ext_resource type="Resource" uid="uid://byj31jwqlmjy" path="res://Resources/Upgrades/GS/Resources/demand.tres" id="4_gt170"]
+[ext_resource type="Resource" uid="uid://doit8whk6ddm4" path="res://Resources/Upgrades/GS/Resources/imports1.tres" id="5_uak7q"]
+[ext_resource type="Resource" uid="uid://3kgla7uil4l3" path="res://Resources/Upgrades/GS/Resources/imports2.tres" id="6_k7n62"]
+[ext_resource type="Resource" uid="uid://7o53q3x7qoty" path="res://Resources/Upgrades/GS/Resources/trade.tres" id="7_bdngv"]
+[ext_resource type="Resource" uid="uid://dfhgbn2y586m8" path="res://Resources/Upgrades/GS/Resources/wages.tres" id="8_s3f1t"]
 
 [node name="GSUpgradeTree" type="Control" unique_id=361996826 node_paths=PackedStringArray("upgrades")]
 layout_mode = 3
@@ -57,8 +61,8 @@ offset_top = 223.0
 offset_right = 257.0
 offset_bottom = 319.0
 text = "Demand++"
-cost = 50
-on_purchase = ExtResource("2_mcsce")
+cost = 750
+on_purchase = ExtResource("4_gt170")
 
 [node name="premiumimp" parent="Upgrades" unique_id=1216853976 instance=ExtResource("1_5rsv6")]
 layout_mode = 0
@@ -67,8 +71,8 @@ offset_top = 142.0
 offset_right = 427.0
 offset_bottom = 238.0
 text = "Premium Imports"
-cost = 50
-on_purchase = ExtResource("2_mcsce")
+cost = 650
+on_purchase = ExtResource("5_uak7q")
 
 [node name="deluximp" parent="Upgrades" unique_id=1140991719 node_paths=PackedStringArray("parent") instance=ExtResource("1_5rsv6")]
 layout_mode = 0
@@ -77,8 +81,8 @@ offset_top = 280.0
 offset_right = 427.0
 offset_bottom = 376.0
 text = "Deluxe Imports"
-cost = 50
-on_purchase = ExtResource("2_mcsce")
+cost = 1150
+on_purchase = ExtResource("6_k7n62")
 parent = NodePath("../premiumimp")
 
 [node name="trade" parent="Upgrades" unique_id=1177884641 instance=ExtResource("1_5rsv6")]
@@ -88,8 +92,8 @@ offset_top = 223.0
 offset_right = 613.0
 offset_bottom = 319.0
 text = "Trade Deals"
-cost = 50
-on_purchase = ExtResource("2_mcsce")
+cost = 550
+on_purchase = ExtResource("7_bdngv")
 
 [node name="wages" parent="Upgrades" unique_id=380489811 instance=ExtResource("1_5rsv6")]
 layout_mode = 0
@@ -98,5 +102,5 @@ offset_top = 223.0
 offset_right = 776.0
 offset_bottom = 319.0
 text = "Higher Wages"
-cost = 50
-on_purchase = ExtResource("2_mcsce")
+cost = 450
+on_purchase = ExtResource("8_s3f1t")

@@ -7,7 +7,7 @@ class_name GameMain extends Node2D
 @export var _money: float = 1000
 
 var ticker = 0
-var money_cooldown = 3
+var money_cooldown = 4
 
 var game_time_mins = 6
 var event_ticks = 0

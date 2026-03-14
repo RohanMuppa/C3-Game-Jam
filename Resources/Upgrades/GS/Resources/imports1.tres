@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://doit8whk6ddm4"]
+
+[ext_resource type="Script" uid="uid://dolv6wyxvtvew" path="res://Resources/Upgrades/GS/imports1.gd" id="1_abch8"]
+
+[resource]
+script = ExtResource("1_abch8")
