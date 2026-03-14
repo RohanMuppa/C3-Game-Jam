@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c51wx1tucvgo8"]
+
+[ext_resource type="Script" uid="uid://c5oopkm31po1u" path="res://Scenes/Person/walking_person.gd" id="1_fu5ec"]
+[ext_resource type="Texture2D" uid="uid://djmjnbmakel18" path="res://Sprites/Farmer/farmer2.png" id="2_dik6x"]
+[ext_resource type="Texture2D" uid="uid://3iabk6r2qk2h" path="res://Sprites/Farmer/farmer1.png" id="3_yo7wi"]
+[ext_resource type="Texture2D" uid="uid://dgmhpx0mrq7r0" path="res://Sprites/Farmer/farmer3.png" id="4_deafk"]
+[ext_resource type="Texture2D" uid="uid://d347kqyos5yq3" path="res://Sprites/Kid/kid2.png" id="5_yek17"]
+[ext_resource type="Texture2D" uid="uid://c53nb2v8lb004" path="res://Sprites/Kid/kid1.png" id="6_jcdg5"]
+[ext_resource type="Texture2D" uid="uid://dnrfpslgpdy5r" path="res://Sprites/Kid/kid3.png" id="7_lh5id"]
+[ext_resource type="Texture2D" uid="uid://ct6d3d74fbwx7" path="res://Sprites/Volunteer/volunteer2.png" id="8_7slpf"]
+[ext_resource type="Texture2D" uid="uid://bf3l71pltdgi7" path="res://Sprites/Volunteer/volunteer1.png" id="9_3tiom"]
+[ext_resource type="Texture2D" uid="uid://gxpbwxw0ookq" path="res://Sprites/Volunteer/volunteer3.png" id="10_fasv6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_671r1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dik6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yo7wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_deafk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yo7wi")
+}],
+"loop": true,
+"name": &"Farmer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yek17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jcdg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lh5id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jcdg5")
+}],
+"loop": true,
+"name": &"Kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7slpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3tiom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fasv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3tiom")
+}],
+"loop": true,
+"name": &"Volunteer",
+"speed": 5.0
+}]
+
+[node name="WalkingPerson" type="Node2D" unique_id=99965420]
+script = ExtResource("1_fu5ec")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=381548727]
+position = Vector2(0, -8)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_671r1")
+animation = &"Kid"
+frame_progress = 0.7719384
