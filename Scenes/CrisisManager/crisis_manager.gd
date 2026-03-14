@@ -14,6 +14,8 @@ var grocery_income_mult: float = 1.0
 var import_supply_mult: float = 1.0
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
+var main_theme = load("res://Audio/main-theme-generic.mp3")
+var covid_theme = load("res://Audio/covid-theme.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,16 +39,23 @@ func enter_phase(phase: Phase):
 	phase_timer = 0.0
 	reset_modifiers()
 
+	var player = game_main.music_player
+
 	match phase:
 		Phase.PRE_COVID:
+			player.stream = main_theme
 			phase_changed.emit("Pre-COVID")
 		Phase.DURING_COVID:
 			grocery_income_mult = 0.4
 			import_supply_mult = 0.3
 			dp_income_mult = 0.6
+			player.stream = covid_theme
 			phase_changed.emit("COVID-19")
 		Phase.POST_COVID:
+			player.stream = main_theme
 			phase_changed.emit("Post-COVID")
+
+	player.play()
 
 func reset_modifiers():
 	dp_income_mult = 1.0
