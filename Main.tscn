@@ -57,7 +57,7 @@ position = Vector2(144, 432)
 [node name="DPs" type="Node" parent="." unique_id=867580717]
 
 [node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
-position = Vector2(-181, 45)
+position = Vector2(-122, 196)
 houses = [NodePath("../Houses/House"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House2")]
 farms = [NodePath("../Farms/Farm"), NodePath("../Farms/Farm3")]
 dp_parent = NodePath("../DPs")
@@ -65,6 +65,7 @@ dp_parent = NodePath("../DPs")
 [node name="GSs" type="Node" parent="." unique_id=1748055003]
 
 [node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
+position = Vector2(-158, 74)
 script = ExtResource("7_20pc6")
 houses = [NodePath("../Houses/House"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House2")]
 imports = [NodePath("../Imports/Import"), NodePath("../Imports/Import2"), NodePath("../Imports/Import3")]
@@ -86,3 +87,11 @@ script = ExtResource("8_trn2v")
 
 [node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
 top_level = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=646427851]
+unique_name_in_owner = true
+offset_left = 1221.0
+offset_top = -1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+fill_mode = 3
