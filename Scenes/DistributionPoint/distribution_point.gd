@@ -3,6 +3,12 @@ class_name DistributionPoint extends Node2D
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
 
+var ticker: float = 0.0
+var cash_interval: float = 3
+var stored_food: int = 0
+
+@onready var game_main: GameMain = get_tree().root.get_node("Main")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,6 +17,20 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	queue_redraw()
+
+func _physics_process(delta: float) -> void:
+	ticker += delta
+	while ticker > cash_interval:
+		step()
+		ticker -= cash_interval
+
+func step() -> void:
+	stored_food += 3 * farms.size()
+	
+	var sold_food = min(houses.size(), stored_food)
+	stored_food -= sold_food
+	
+	game_main.money += 50 * sold_food
 
 func _draw() -> void:
 	for house in houses:
