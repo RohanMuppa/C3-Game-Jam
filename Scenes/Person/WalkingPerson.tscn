@@ -4,12 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://djmjnbmakel18" path="res://Sprites/Farmer/farmer2.png" id="2_dik6x"]
 [ext_resource type="Texture2D" uid="uid://3iabk6r2qk2h" path="res://Sprites/Farmer/farmer1.png" id="3_yo7wi"]
 [ext_resource type="Texture2D" uid="uid://dgmhpx0mrq7r0" path="res://Sprites/Farmer/farmer3.png" id="4_deafk"]
+[ext_resource type="Texture2D" uid="uid://cy4hnj88mm7yl" path="res://Sprites/Trucks/truckGrain.png" id="5_jcdg5"]
 [ext_resource type="Texture2D" uid="uid://d347kqyos5yq3" path="res://Sprites/Kid/kid2.png" id="5_yek17"]
 [ext_resource type="Texture2D" uid="uid://c53nb2v8lb004" path="res://Sprites/Kid/kid1.png" id="6_jcdg5"]
+[ext_resource type="Texture2D" uid="uid://cca0fkofw7kuc" path="res://Sprites/Trucks/truckGrainB.png" id="6_lh5id"]
 [ext_resource type="Texture2D" uid="uid://dnrfpslgpdy5r" path="res://Sprites/Kid/kid3.png" id="7_lh5id"]
 [ext_resource type="Texture2D" uid="uid://ct6d3d74fbwx7" path="res://Sprites/Volunteer/volunteer2.png" id="8_7slpf"]
 [ext_resource type="Texture2D" uid="uid://bf3l71pltdgi7" path="res://Sprites/Volunteer/volunteer1.png" id="9_3tiom"]
+[ext_resource type="Texture2D" uid="uid://b6n7f3i2rd6ty" path="res://Sprites/Trucks/truckMeat.png" id="9_lh5id"]
+[ext_resource type="Texture2D" uid="uid://dkk0878odtir3" path="res://Sprites/Trucks/truckMeatB.png" id="10_7slpf"]
 [ext_resource type="Texture2D" uid="uid://gxpbwxw0ookq" path="res://Sprites/Volunteer/volunteer3.png" id="10_fasv6"]
+[ext_resource type="Texture2D" uid="uid://fg27kjo7kfal" path="res://Sprites/Trucks/truckTomato.png" id="11_3tiom"]
+[ext_resource type="Texture2D" uid="uid://b26jc2q4von2w" path="res://Sprites/Trucks/truckTomatoB.png" id="12_fasv6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_671r1"]
 animations = [{
@@ -32,6 +38,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_jcdg5")
+}],
+"loop": true,
+"name": &"GrainTruck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lh5id")
+}],
+"loop": true,
+"name": &"GrainTruckB",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_yek17")
 }, {
 "duration": 1.0,
@@ -45,6 +67,38 @@ animations = [{
 }],
 "loop": true,
 "name": &"Kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lh5id")
+}],
+"loop": true,
+"name": &"MeatTruck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_7slpf")
+}],
+"loop": true,
+"name": &"MeatTruckB",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3tiom")
+}],
+"loop": true,
+"name": &"TomatoTruck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_fasv6")
+}],
+"loop": true,
+"name": &"TomatoTruckB",
 "speed": 5.0
 }, {
 "frames": [{
@@ -66,11 +120,11 @@ animations = [{
 }]
 
 [node name="WalkingPerson" type="Node2D" unique_id=99965420]
+visible = false
 script = ExtResource("1_fu5ec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=381548727]
 position = Vector2(0, -8)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_671r1")
-animation = &"Kid"
-frame_progress = 0.39083064
+animation = &"GrainTruckB"

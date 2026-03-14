@@ -44,7 +44,7 @@ func step() -> void:
 		var person: WalkingPerson = walking_person.instantiate()
 		person.ready.connect(func():
 			person.start(
-				person.PersonType.FARMER, game_main.money_cooldown * 2, 
+				person.PersonType.TRUCK, game_main.money_cooldown * 2, 
 				farm.global_position, global_position
 			))
 		game_main.add_child(person)

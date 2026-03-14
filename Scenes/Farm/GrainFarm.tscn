@@ -7,5 +7,6 @@
 script = ExtResource("1_0o000")
 
 [node name="FarmGrain" type="Sprite2D" parent="." unique_id=1735973343]
+scale = Vector2(1.43, 1.43)
 texture = ExtResource("2_0o000")
 script = ExtResource("1_0o000")
