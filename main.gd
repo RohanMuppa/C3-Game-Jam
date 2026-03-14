@@ -11,6 +11,8 @@ class_name GameMain extends Node2D
 var ticker = 0
 var money_cooldown = 3
 
+var game_time_mins = 6
+
 
 signal process_money
 
@@ -34,4 +36,4 @@ func _process(delta: float) -> void:
 	if (ticker >= money_cooldown):
 		process_money.emit()
 		ticker = 0
-	progress_bar.set_as_ratio(Time.get_ticks_msec() / 1000.0 / (60 * 1))
+	progress_bar.set_as_ratio(Time.get_ticks_msec() / 1000.0 / (60 * game_time_mins))
