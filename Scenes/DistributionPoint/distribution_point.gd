@@ -18,6 +18,8 @@ var ui: GameUI
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 @onready var crisis: CrisisManager = get_tree().root.get_node("Main/CrisisManager")
 
+@onready var walking_person: PackedScene = preload("res://Scenes/Person/WalkingPerson.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_main.process_money.connect(step)
@@ -38,6 +40,15 @@ func step() -> void:
 	# 0.7 + 5 * 0.1 > 1.0
 	# capped at 1.0
 	
+	for farm in farms:
+		var person: WalkingPerson = walking_person.instantiate()
+		person.ready.connect(func():
+			person.start(
+				person.PersonType.FARMER, game_main.money_cooldown * 2, 
+				farm.global_position, global_position
+			))
+		game_main.add_child(person)
+	
 	stored_food += get_supply()
 
 	var sold_food = min(get_demand(), stored_food)
@@ -45,12 +56,7 @@ func step() -> void:
 
 	game_main.money += sold_food * get_price()
 
-func get_demand() -> int:
-	return houses.size() * house_consumption
 
-func get_supply() -> int:
-	return int(food_intake * farms.size())
-	
 func get_price() -> float:
 	var inc_multi = crisis.dp_income_mult
 	if inc_multi < 1:
