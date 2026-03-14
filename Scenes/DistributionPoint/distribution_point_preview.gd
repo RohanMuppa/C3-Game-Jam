@@ -42,16 +42,18 @@ func _process(delta: float) -> void:
 	visible = true;
 	global_position = get_global_mouse_position()
 	
-	if Input.is_action_just_pressed("confirm_placement") && game_main.money >= cost:
-		if farms.filter(in_radius).size() > 0 && houses.filter(in_radius).size() > 0:
-			place_dp()
+	if Input.is_action_just_pressed("confirm_placement") && can_place():
+		place_dp()
 	
 	queue_redraw()
+	
+func can_place() -> bool:
+	return farms.filter(in_radius).size() > 0 && houses.filter(in_radius).size() > 0 && game_main.money >= cost
 
 func _draw() -> void:
 	if !is_active:
 		return
-	if farms.filter(in_radius).size() > 0 && houses.filter(in_radius).size() > 0:
+	if can_place():
 		draw_circle(
 			Vector2.ZERO, connection_radius,
 			Color(1.0, 1.0, 1.0, 0.35), true

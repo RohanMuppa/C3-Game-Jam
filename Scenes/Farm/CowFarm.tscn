@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dhhctjmf5hgpq"]
+
+[ext_resource type="Script" uid="uid://dokxj320hso03" path="res://Scenes/Farm/farm.gd" id="1_sa37x"]
+[ext_resource type="Texture2D" uid="uid://dt0gdv4q6sj3w" path="res://Sprites/Farm/farmCow.png" id="2_8emjn"]
+
+[node name="CowFarm" type="Node2D" unique_id=971427913]
+script = ExtResource("1_sa37x")
+
+[node name="FarmCow" type="Sprite2D" parent="." unique_id=1653501096]
+texture = ExtResource("2_8emjn")

@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://c001xtlyv63e8"]
 
-[ext_resource type="Texture2D" uid="uid://cwdevhyyaji20" path="res://Sprites/debug/purple.png" id="1_o40wm"]
+[ext_resource type="Texture2D" uid="uid://cnh0tay4hsbnv" path="res://Sprites/Grocery Store/grocery.png" id="2_ixqtn"]
 
 [node name="GroceryStorePreview" type="Node2D" unique_id=1987339727]
 
-[node name="Purple" type="Sprite2D" parent="." unique_id=469497489]
-modulate = Color(1, 1, 1, 0.38039216)
-position = Vector2(2.2649765e-06, 4.7683716e-07)
-scale = Vector2(5, 3.75)
-texture = ExtResource("1_o40wm")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1863977434]
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-text = "$250"
+offset_left = -24.0
+offset_top = -51.0
+offset_right = 22.0
+offset_bottom = -28.0
+text = "$1000"
+
+[node name="Grocery" type="Sprite2D" parent="." unique_id=1392420083]
+modulate = Color(1, 1, 1, 0.39215687)
+texture = ExtResource("2_ixqtn")
