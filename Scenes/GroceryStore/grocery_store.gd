@@ -3,8 +3,6 @@ class_name GroceryStore extends Upgradeable
 @export var houses: Array[House] = []
 @export var imports: Array[Import] = []
 
-var ticker: float = 0.0
-var cash_interval: float = 3
 var stored_food: int = 0
 var ui: GameUI
 

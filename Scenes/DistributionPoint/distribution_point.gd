@@ -3,8 +3,6 @@ class_name DistributionPoint extends Upgradeable
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
 
-var ticker: float = 0.0
-var cash_interval: float = 3
 var stored_food: int = 0
 var ui: GameUI
 
