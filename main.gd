@@ -28,7 +28,7 @@ func _ready() -> void:
 	gameUI.progress_bar.fill_mode = ProgressBar.FillMode.FILL_BOTTOM_TO_TOP
 	gameUI.set_money(money)
 	music_player = AudioStreamPlayer.new()
-	music_player.stream = load("res://Audio/main-theme-generic.m4a")
+	music_player.stream = load("res://Audio/main-theme-generic.mp3")
 	add_child(music_player)
 	music_player.play()
 

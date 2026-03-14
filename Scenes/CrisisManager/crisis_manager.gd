@@ -16,8 +16,8 @@ var import_supply_mult: float = 1.0
 var dp_cost_mult: float = 1.0
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
-var main_theme = preload("res://Audio/main-theme-generic.m4a")
-var covid_theme = preload("res://Audio/covid-theme.m4a")
+var main_theme = load("res://Audio/main-theme-generic.mp3")
+var covid_theme = load("res://Audio/covid-theme.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
