@@ -12,7 +12,7 @@ var ticker = 0
 var money_cooldown = 3
 
 var game_time_mins = 6
-
+var event_ticks = 0
 
 signal process_money
 
@@ -33,7 +33,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	ticker += delta
-	if (ticker >= money_cooldown):
+	event_ticks += delta
+	while (ticker >= money_cooldown):
 		process_money.emit()
-		ticker = 0
-	progress_bar.set_as_ratio(Time.get_ticks_msec() / 1000.0 / (60 * game_time_mins))
+		ticker -= money_cooldown
+	progress_bar.set_as_ratio(event_ticks / (60 * game_time_mins))
