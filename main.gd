@@ -10,7 +10,7 @@ var ticker = 0
 var money_cooldown = 4
 
 var game_time_mins = 6
-var music_player: AudioStreamPlayer
+@onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 var event_ticks = 0
 
 signal process_money
@@ -22,12 +22,16 @@ var money = _money:
 		gameUI.set_money(new_money)
 		_money = new_money
 
+func get_music_player() -> AudioStreamPlayer:
+	if (music_player == null):
+		music_player = AudioStreamPlayer.new();
+	return music_player
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	gameUI.progress_bar.fill_mode = ProgressBar.FillMode.FILL_BOTTOM_TO_TOP
 	gameUI.set_money(money)
-	music_player = AudioStreamPlayer.new()
+	get_music_player()
 	music_player.stream = load("res://Audio/main-theme-generic.mp3")
 	add_child(music_player)
 	music_player.play()

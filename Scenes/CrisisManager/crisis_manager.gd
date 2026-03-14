@@ -39,7 +39,7 @@ func enter_phase(phase: Phase):
 	phase_timer = 0.0
 	reset_modifiers()
 
-	var player = game_main.music_player
+	var player = game_main.get_music_player()
 
 	match phase:
 		Phase.PRE_COVID:
