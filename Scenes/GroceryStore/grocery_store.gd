@@ -9,6 +9,8 @@ var ui: GameUI
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 @onready var crisis: CrisisManager = get_tree().root.get_node("Main/CrisisManager")
 
+@onready var walking_person: PackedScene = preload("res://Scenes/Person/WalkingPerson.tscn")
+
 var house_consumption: int = 1
 var income_bonus: float = 1.0
 var food_intake: int = 5
@@ -30,6 +32,28 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func step() -> void:
+	for import in imports:
+		var person: WalkingPerson = walking_person.instantiate()
+		person.ready.connect(func():
+			person.start(
+				person.PersonType.TRUCK, game_main.money_cooldown * 2, 
+				import.global_position, global_position
+			))
+		game_main.add_child(person)
+	
+	for house in houses:
+		var person: WalkingPerson = walking_person.instantiate()
+		person.ready.connect(func():
+			person.start(
+				[
+					person.PersonType.KID,
+					person.PersonType.VOLUNTEER,
+					person.PersonType.CUSTOMER,
+				].pick_random(), game_main.money_cooldown * 2, 
+				house.global_position, global_position
+			))
+		game_main.add_child(person)
+	
 	stored_food += get_supply()
 
 	var sold_food = min(get_demand(), stored_food)

@@ -8,13 +8,19 @@ enum PersonType {
 	KID,
 	FARMER,
 	VOLUNTEER,
+	TRUCK,
+	CUSTOMER,
 }
 
 var _start: Vector2 = Vector2.ZERO
 var _end: Vector2 = Vector2.ZERO
 var _loop: bool = false
 
+var animation_name: String
+var animation_type: PersonType
+
 func start(person: PersonType, time: float, start: Vector2, end: Vector2, loop=true):
+	animation_type = person
 	match (person):
 		PersonType.KID:
 			sprite.play("Kid")
@@ -22,6 +28,15 @@ func start(person: PersonType, time: float, start: Vector2, end: Vector2, loop=t
 			sprite.play("Farmer")
 		PersonType.VOLUNTEER:
 			sprite.play("Volunteer")
+		PersonType.CUSTOMER:
+			animation_name = ["CustomerA", "CustomerB"].pick_random()
+			sprite.play(animation_name)
+		PersonType.TRUCK:
+			animation_name = [
+				"GrainTruck", "MeatTruck", "TomatoTruck"
+			].pick_random()
+			sprite.play(animation_name)
+			sprite.scale = Vector2(2, 2)
 	
 	speed = time
 	if loop:
@@ -30,6 +45,7 @@ func start(person: PersonType, time: float, start: Vector2, end: Vector2, loop=t
 	_end = end
 	_loop = loop
 	t = 0
+	global_position = _start
 	visible = true
 	
 	# 133 is just a magic number that looks good
@@ -49,4 +65,9 @@ func _physics_process(delta: float) -> void:
 		global_position = _start.lerp(_end, t)
 	
 	sprite.flip_h = global_position.x > target.x
+	if animation_type == PersonType.TRUCK:
+		if global_position.y >= target.y:
+			sprite.play(animation_name + "B")
+		else:
+			sprite.play(animation_name)
 	
