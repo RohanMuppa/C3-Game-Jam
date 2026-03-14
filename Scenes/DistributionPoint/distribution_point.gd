@@ -9,6 +9,7 @@ var stored_food: int = 0
 var ui: GameUI
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
+@onready var crisis: CrisisManager = get_tree().root.get_node("Main/CrisisManager")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,12 +21,12 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func step() -> void:
-	stored_food += 3 * farms.size()
-	
+	stored_food += int(3 * farms.size() * crisis.farm_production_mult)
+
 	var sold_food = min(houses.size(), stored_food)
 	stored_food -= sold_food
-	
-	game_main.money += 50 * sold_food
+
+	game_main.money += 50 * sold_food * crisis.dp_income_mult
 
 func _draw() -> void:
 	for house in houses:
