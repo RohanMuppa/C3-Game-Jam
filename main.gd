@@ -10,6 +10,7 @@ var ticker = 0
 var money_cooldown = 4
 
 var game_time_mins = 6
+var music_player: AudioStreamPlayer
 var event_ticks = 0
 
 signal process_money
@@ -26,6 +27,10 @@ func _ready() -> void:
 	
 	gameUI.progress_bar.fill_mode = ProgressBar.FillMode.FILL_BOTTOM_TO_TOP
 	gameUI.set_money(money)
+	music_player = AudioStreamPlayer.new()
+	music_player.stream = load("res://Audio/main-theme-generic.m4a")
+	add_child(music_player)
+	music_player.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
