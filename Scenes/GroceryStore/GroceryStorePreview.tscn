@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c001xtlyv63e8"]
+
+[ext_resource type="Texture2D" uid="uid://cwdevhyyaji20" path="res://Sprites/debug/purple.png" id="1_o40wm"]
+
+[node name="GroceryStorePreview" type="Node2D" unique_id=1987339727]
+
+[node name="Purple" type="Sprite2D" parent="." unique_id=469497489]
+modulate = Color(1, 1, 1, 0.38039216)
+position = Vector2(9.536743e-07, 0)
+scale = Vector2(2.125, 1.5625)
+texture = ExtResource("1_o40wm")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dcve0mwes8sta"]
+
+[ext_resource type="Script" uid="uid://delvee3msvx18" path="res://Scenes/GroceryStore/grocery_store.gd" id="1_pw1c3"]
+[ext_resource type="Texture2D" uid="uid://djpxm45w24npn" path="res://Sprites/debug/red.png" id="2_pw1c3"]
+
+[node name="GroceryStore" type="Node2D" unique_id=17958912]
+script = ExtResource("1_pw1c3")
+
+[node name="Red" type="Sprite2D" parent="." unique_id=1846522383]
+scale = Vector2(2.0625, 1.5)
+texture = ExtResource("2_pw1c3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=656552120]
+offset_left = -11.0
+offset_top = -13.0
+offset_right = 29.0
+offset_bottom = 27.0
+text = "GS"
