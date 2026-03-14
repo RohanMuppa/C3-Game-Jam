@@ -18,6 +18,10 @@ func set_phase(phase_name: String) -> void:
 func _process(delta: float) -> void:
 	pass
 	
+func show_end_screen(final_money: float) -> void:
+	$EndScreen.visible = true
+	$EndScreen/FinalScore.text = "Final: $%.2f" % final_money
+
 func show_dp_upgrades(dp: DistributionPoint):
 	$DPUpgradeTree.inherit_upgrades(dp)
 	$DPUpgradeTree.visible = true
