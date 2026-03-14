@@ -44,8 +44,21 @@ func step() -> void:
 		var person: WalkingPerson = walking_person.instantiate()
 		person.ready.connect(func():
 			person.start(
-				person.PersonType.TRUCK, game_main.money_cooldown * 2, 
+				person.PersonType.FARMER, game_main.money_cooldown * 2, 
 				farm.global_position, global_position
+			))
+		game_main.add_child(person)
+	
+	for house in houses:
+		var person: WalkingPerson = walking_person.instantiate()
+		person.ready.connect(func():
+			person.start(
+				[
+					person.PersonType.KID,
+					person.PersonType.VOLUNTEER,
+					person.PersonType.CUSTOMER,
+				].pick_random(), game_main.money_cooldown * 2, 
+				house.global_position, global_position
 			))
 		game_main.add_child(person)
 	

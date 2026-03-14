@@ -9,6 +9,7 @@ enum PersonType {
 	FARMER,
 	VOLUNTEER,
 	TRUCK,
+	CUSTOMER,
 }
 
 var _start: Vector2 = Vector2.ZERO
@@ -27,11 +28,15 @@ func start(person: PersonType, time: float, start: Vector2, end: Vector2, loop=t
 			sprite.play("Farmer")
 		PersonType.VOLUNTEER:
 			sprite.play("Volunteer")
+		PersonType.CUSTOMER:
+			animation_name = ["CustomerA", "CustomerB"].pick_random()
+			sprite.play(animation_name)
 		PersonType.TRUCK:
 			animation_name = [
 				"GrainTruck", "MeatTruck", "TomatoTruck"
 			].pick_random()
 			sprite.play(animation_name)
+			sprite.scale = Vector2(2, 2)
 	
 	speed = time
 	if loop:
