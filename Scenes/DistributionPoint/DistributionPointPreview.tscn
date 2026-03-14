@@ -10,5 +10,12 @@ script = ExtResource("1_vtk0x")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2147272938]
 modulate = Color(1, 1, 1, 0.25490198)
 show_behind_parent = true
-scale = Vector2(5.8750005, 5.8750005)
+position = Vector2(3.695488e-06, -1.66893e-06)
+scale = Vector2(3.75, 2.5)
 texture = ExtResource("1_1mq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=71766798]
+offset_left = -18.0
+offset_top = -23.0
+offset_right = 19.0
+text = "$200"

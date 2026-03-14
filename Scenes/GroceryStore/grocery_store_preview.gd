@@ -2,7 +2,7 @@ extends Node2D
 
 @export var is_active: bool = false
 @export var connection_radius: float = 200.0
-@export var cost: float = 250.0
+@export var cost: float = 1000
 @export var houses: Array[House] = []
 @export var imports: Array[Import] = []
 @export var gs_parent: Node
@@ -50,11 +50,16 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	if !is_active:
 		return
-	
-	draw_circle(
-		Vector2.ZERO, connection_radius,
-		Color(1.0, 1.0, 1.0, 0.35), true
-	)
+	if Input.is_action_just_pressed("confirm_placement") && game_main.money >= cost:
+		draw_circle(
+				Vector2.ZERO, connection_radius,
+				Color(1.0, 1.0, 1.0, 0.35), true
+			)
+	else:
+		draw_circle(
+			Vector2.ZERO, connection_radius,
+			Color(.6, .6, .6, 0.35), true
+		)
 	
 	for house in houses:
 		if !in_radius(house):

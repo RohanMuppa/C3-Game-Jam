@@ -9,11 +9,9 @@ var current_phase: Phase = Phase.PRE_COVID
 var phase_timer: float = 0.0
 var phase_duration: float = 120.0
 
-var farm_production_mult: float = 1.0
 var dp_income_mult: float = 1.0
 var grocery_income_mult: float = 1.0
 var import_supply_mult: float = 1.0
-var dp_cost_mult: float = 1.0
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 
@@ -45,16 +43,12 @@ func enter_phase(phase: Phase):
 		Phase.DURING_COVID:
 			grocery_income_mult = 0.4
 			import_supply_mult = 0.3
-			farm_production_mult = 0.8
-			dp_cost_mult = 1.3
+			dp_income_mult = 0.6
 			phase_changed.emit("COVID-19")
 		Phase.POST_COVID:
-			dp_income_mult = 1.3
 			phase_changed.emit("Post-COVID")
 
 func reset_modifiers():
-	farm_production_mult = 1.0
 	dp_income_mult = 1.0
 	grocery_income_mult = 1.0
 	import_supply_mult = 1.0
-	dp_cost_mult = 1.0

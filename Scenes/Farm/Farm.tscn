@@ -7,7 +7,8 @@
 script = ExtResource("1_0o000")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2147272938]
-scale = Vector2(5.8750005, 5.8750005)
+position = Vector2(-8.702278e-06, 5.9604645e-06)
+scale = Vector2(6.2499995, 6.2500005)
 texture = ExtResource("1_j65b4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=10873577]

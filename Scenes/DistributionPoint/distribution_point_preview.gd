@@ -2,7 +2,7 @@ extends Node2D
 
 @export var is_active: bool = false
 @export var connection_radius: float = 200.0
-@export var cost: float = 250.0
+@export var cost: float = 500
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
 @export var dp_parent: Node
@@ -51,12 +51,16 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	if !is_active:
 		return
-	
-	draw_circle(
-		Vector2.ZERO, connection_radius,
-		Color(1.0, 1.0, 1.0, 0.35), true
-	)
-	
+	if farms.filter(in_radius).size() > 0 && houses.filter(in_radius).size() > 0:
+		draw_circle(
+			Vector2.ZERO, connection_radius,
+			Color(1.0, 1.0, 1.0, 0.35), true
+		)
+	else:
+		draw_circle(
+			Vector2.ZERO, connection_radius,
+			Color(.6, .6, .6, 0.35), true
+		)
 	for house in houses:
 		if !in_radius(house):
 			continue

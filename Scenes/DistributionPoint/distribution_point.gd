@@ -38,15 +38,11 @@ func step() -> void:
 	# 0.7 + 5 * 0.1 > 1.0
 	# capped at 1.0
 	
-	var prod_multi = crisis.farm_production_mult
-	if prod_multi < 1:
-		prod_multi = min(1, prod_multi + 0.1 * resilience_score)
-	
 	var inc_multi = crisis.dp_income_mult
 	if inc_multi < 1:
 		inc_multi = min(1, inc_multi + 0.1 * resilience_score)
 	
-	stored_food += int(food_intake * farms.size() * prod_multi)
+	stored_food += int(food_intake * farms.size())
 
 	var sold_food = min(houses.size() * house_consumption, stored_food)
 	stored_food -= sold_food

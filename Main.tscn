@@ -25,15 +25,24 @@ texture = ExtResource("2_3dxm6")
 [node name="Farms" type="Node" parent="." unique_id=928189290]
 
 [node name="Farm" parent="Farms" unique_id=943721428 instance=ExtResource("3_lgr22")]
-position = Vector2(545, 112)
+position = Vector2(200, 100)
+
+[node name="Farm2" parent="Farms" unique_id=1864280917 instance=ExtResource("3_lgr22")]
+position = Vector2(1020, 100)
 
 [node name="Farm3" parent="Farms" unique_id=229168466 instance=ExtResource("3_lgr22")]
-position = Vector2(612, 462)
+position = Vector2(200, 620)
+
+[node name="Farm4" parent="Farms" unique_id=692211515 instance=ExtResource("3_lgr22")]
+position = Vector2(1020, 620)
 
 [node name="Houses" type="Node" parent="." unique_id=1903224962]
 
 [node name="House" parent="Houses" unique_id=1011429723 instance=ExtResource("4_trn2v")]
-position = Vector2(93, 161)
+position = Vector2(370, 397)
+
+[node name="House2" parent="Houses" unique_id=29358117 instance=ExtResource("4_trn2v")]
+position = Vector2(197, 461)
 
 [node name="House3" parent="Houses" unique_id=1444412839 instance=ExtResource("4_trn2v")]
 position = Vector2(313, 234)
@@ -48,21 +57,32 @@ position = Vector2(770, 258)
 position = Vector2(998, 444)
 
 [node name="House7" parent="Houses" unique_id=759568615 instance=ExtResource("4_trn2v")]
-position = Vector2(341, 552)
+position = Vector2(436, 543)
 
 [node name="House8" parent="Houses" unique_id=485154574 instance=ExtResource("4_trn2v")]
-position = Vector2(240, 101)
+position = Vector2(422, 149)
 
-[node name="House2" parent="Houses" unique_id=29358117 instance=ExtResource("4_trn2v")]
-position = Vector2(144, 432)
+[node name="House9" parent="Houses" unique_id=807279216 instance=ExtResource("4_trn2v")]
+position = Vector2(603, 116)
+
+[node name="House10" parent="Houses" unique_id=460053994 instance=ExtResource("4_trn2v")]
+position = Vector2(795, 550)
+
+[node name="House11" parent="Houses" unique_id=1677520023 instance=ExtResource("4_trn2v")]
+position = Vector2(1110, 242)
+
+[node name="House12" parent="Houses" unique_id=1743786452 instance=ExtResource("4_trn2v")]
+position = Vector2(716, 414)
+
+[node name="House13" parent="Houses" unique_id=1927803103 instance=ExtResource("4_trn2v")]
+position = Vector2(553, 288)
 
 [node name="DPs" type="Node" parent="." unique_id=867580717]
 
 [node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
 position = Vector2(-122, 196)
-cost = 500.0
-houses = [NodePath("../Houses/House"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House2"), NodePath("../Houses/House8")]
-farms = [NodePath("../Farms/Farm"), NodePath("../Farms/Farm3")]
+houses = [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")]
+farms = [NodePath("../Farms/Farm"), NodePath("../Farms/Farm2"), NodePath("../Farms/Farm3"), NodePath("../Farms/Farm4")]
 dp_parent = NodePath("../DPs")
 
 [node name="GSs" type="Node" parent="." unique_id=1748055003]
@@ -70,15 +90,18 @@ dp_parent = NodePath("../DPs")
 [node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
 position = Vector2(-158, 74)
 script = ExtResource("7_20pc6")
-cost = 1000.0
-houses = [NodePath("../Houses/House"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House2")]
-imports = [NodePath("../Imports/Import")]
+houses = [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")]
+imports = [NodePath("../Imports/Import"), NodePath("../Imports/Import2")]
 gs_parent = NodePath("../GSs")
 
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
 [node name="Import" parent="Imports" unique_id=1309879654 instance=ExtResource("7_lgr22")]
-position = Vector2(52, 337)
+position = Vector2(50, 360)
+script = ExtResource("8_trn2v")
+
+[node name="Import2" parent="Imports" unique_id=1280505601 instance=ExtResource("7_lgr22")]
+position = Vector2(1170, 360)
 script = ExtResource("8_trn2v")
 
 [node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]

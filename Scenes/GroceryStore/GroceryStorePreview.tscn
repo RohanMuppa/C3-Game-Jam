@@ -6,6 +6,12 @@
 
 [node name="Purple" type="Sprite2D" parent="." unique_id=469497489]
 modulate = Color(1, 1, 1, 0.38039216)
-position = Vector2(9.536743e-07, 0)
-scale = Vector2(2.125, 1.5625)
+position = Vector2(2.2649765e-06, 4.7683716e-07)
+scale = Vector2(5, 3.75)
 texture = ExtResource("1_o40wm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1863977434]
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+text = "$250"

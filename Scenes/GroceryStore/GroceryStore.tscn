@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://djpxm45w24npn" path="res://Sprites/debug/red.png" id="2_pw1c3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1c3"]
-size = Vector2(34, 24)
+size = Vector2(80, 60)
 
 [node name="GroceryStore" type="Node2D" unique_id=17958912]
 script = ExtResource("1_pw1c3")
 
 [node name="Red" type="Sprite2D" parent="." unique_id=1846522383]
-scale = Vector2(2.0625, 1.5)
+scale = Vector2(5, 3.7499998)
 texture = ExtResource("2_pw1c3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=656552120]
