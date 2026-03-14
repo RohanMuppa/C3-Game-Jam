@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://yv8i6jgtymvr"]
 
 [ext_resource type="Script" uid="uid://bxyesvqfdt1ow" path="res://Scenes/UI/ui.gd" id="1_s86y4"]
-[ext_resource type="PackedScene" uid="uid://cmjslvkvvsson" path="res://Scenes/UI/UpgradeTree/upgrade_tree.tscn" id="2_636u5"]
-[ext_resource type="Script" uid="uid://c3vtwrlvt6s1v" path="res://Scenes/UI/upgrade_menu.gd" id="3_akgwn"]
+[ext_resource type="PackedScene" uid="uid://cmjslvkvvsson" path="res://Scenes/UI/UpgradeTree/dp_upgrade_tree.tscn" id="2_636u5"]
+[ext_resource type="PackedScene" uid="uid://cy2snx34y83de" path="res://Scenes/UI/UpgradeTree/gs_upgrade_tree.tscn" id="3_akgwn"]
 
 [node name="Ui" type="Control" unique_id=1297064599 node_paths=PackedStringArray("moneyCtr")]
 layout_mode = 3
@@ -14,7 +14,11 @@ grow_vertical = 2
 script = ExtResource("1_s86y4")
 moneyCtr = NodePath("MoneyCtr")
 
-[node name="UpgradeTree" parent="." unique_id=361996826 instance=ExtResource("2_636u5")]
+[node name="DPUpgradeTree" parent="." unique_id=361996826 instance=ExtResource("2_636u5")]
+visible = false
+layout_mode = 1
+
+[node name="GSUpgradeTree" parent="." unique_id=1425203009 instance=ExtResource("3_akgwn")]
 visible = false
 layout_mode = 1
 
@@ -26,14 +30,3 @@ offset_right = 813.0
 offset_bottom = 139.0
 theme_override_font_sizes/normal_font_size = 30
 text = "$XXX"
-
-[node name="Button" type="Button" parent="." unique_id=1508956193 node_paths=PackedStringArray("upgrade_tree")]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 658.0
-offset_right = 167.0
-offset_bottom = 711.0
-theme_override_font_sizes/font_size = 32
-text = "Upgrades"
-script = ExtResource("3_akgwn")
-upgrade_tree = NodePath("../UpgradeTree")

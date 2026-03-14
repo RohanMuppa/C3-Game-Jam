@@ -88,3 +88,4 @@ func place_dp():
 	dp.farms.append_array(farms.filter(in_radius))
 	dp.houses.append_array(houses.filter(in_radius))
 	dp_parent.add_child(dp)
+	dp.ui = $"../Ui"

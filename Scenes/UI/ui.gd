@@ -12,3 +12,11 @@ func set_money(money: float) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func show_dp_upgrades(dp: DistributionPoint):
+	$DPUpgradeTree.inherit_upgrades(dp)
+	$DPUpgradeTree.visible = true
+
+func show_gs_upgrades(gs: GroceryStore):
+	$GSUpgradeTree.inherit_upgrades(gs)
+	$GSUpgradeTree.visible = true

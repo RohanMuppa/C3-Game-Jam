@@ -1,4 +1,4 @@
-class_name GroceryStore extends Node2D
+class_name GroceryStore extends Upgradeable
 
 @export var houses: Array[House] = []
 @export var imports: Array[Import] = []
@@ -6,6 +6,7 @@ class_name GroceryStore extends Node2D
 var ticker: float = 0.0
 var cash_interval: float = 3
 var stored_food: int = 0
+var ui: GameUI
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 
@@ -39,3 +40,8 @@ func _draw() -> void:
 			import.global_position - global_position,
 			Color.DARK_ORANGE
 		)
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		ui.show_gs_upgrades(self)
