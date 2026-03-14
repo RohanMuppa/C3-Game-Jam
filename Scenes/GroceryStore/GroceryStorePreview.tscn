@@ -11,7 +11,7 @@ scale = Vector2(5, 3.75)
 texture = ExtResource("1_o40wm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1863977434]
-offset_left = -20.0
+offset_left = -23.0
 offset_top = -23.0
-offset_right = 20.0
-text = "$250"
+offset_right = 23.0
+text = "$1000"
