@@ -13,22 +13,14 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1149722571]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
 color = Color(0.74138474, 0.7413847, 0.74138457, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1410346287]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -1152.0
-offset_top = -324.0
-offset_bottom = 324.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_right = 1280.0
+offset_bottom = 720.0
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
