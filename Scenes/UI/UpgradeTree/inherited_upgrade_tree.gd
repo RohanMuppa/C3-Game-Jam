@@ -18,3 +18,4 @@ func inherit_upgrades(ug: Upgradeable) -> void:
 	for upgrade: UpgradeButton in upgrades.get_children():
 		upgrade.purchased = upgrade.name in ug.upgrades
 		upgrade.ug = ug
+	$MarginContainer/Stats.ug = ug

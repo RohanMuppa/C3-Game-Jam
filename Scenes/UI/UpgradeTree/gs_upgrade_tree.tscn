@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mbdvembwa2mw" path="res://Scenes/UI/UpgradeTree/upgrade_button.tscn" id="1_5rsv6"]
 [ext_resource type="Script" uid="uid://d05tif6kwrap2" path="res://Scenes/UI/UpgradeTree/inherited_upgrade_tree.gd" id="1_mcsce"]
 [ext_resource type="Script" uid="uid://cyhexxfg6qsvr" path="res://Scenes/UI/UpgradeTree/close_button.gd" id="2_sep70"]
+[ext_resource type="Script" uid="uid://c63rdklm78wpt" path="res://Scenes/UI/UpgradeTree/stats.gd" id="2_uak7q"]
 [ext_resource type="Resource" uid="uid://byj31jwqlmjy" path="res://Resources/Upgrades/GS/Resources/demand.tres" id="4_gt170"]
 [ext_resource type="Resource" uid="uid://doit8whk6ddm4" path="res://Resources/Upgrades/GS/Resources/imports1.tres" id="5_uak7q"]
 [ext_resource type="Resource" uid="uid://3kgla7uil4l3" path="res://Resources/Upgrades/GS/Resources/imports2.tres" id="6_k7n62"]
@@ -39,6 +40,18 @@ layout_mode = 2
 theme_override_font_sizes/normal_font_size = 48
 text = "Grocery Upgrades"
 horizontal_alignment = 2
+
+[node name="Stats" type="RichTextLabel" parent="MarginContainer" unique_id=1390891753]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 48
+text = "Price: 
+Supply: 
+Demand: "
+fit_content = true
+script = ExtResource("2_uak7q")
 
 [node name="CloseButton" type="Button" parent="MarginContainer" unique_id=787669752 node_paths=PackedStringArray("parent")]
 layout_mode = 2
