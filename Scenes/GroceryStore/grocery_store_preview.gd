@@ -31,6 +31,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("place_gs"):
 		is_active = !is_active
+	if (Input.is_action_just_pressed("place_dp")):
+		is_active = false
 	
 	if !is_active:
 		visible = false;
@@ -39,7 +41,7 @@ func _process(delta: float) -> void:
 	visible = true;
 	global_position = get_global_mouse_position()
 	
-	if Input.is_action_just_pressed("confirm_dp") && game_main.money >= cost:
+	if Input.is_action_just_pressed("confirm_placement") && game_main.money >= cost:
 		place_gs()
 	
 	queue_redraw()
