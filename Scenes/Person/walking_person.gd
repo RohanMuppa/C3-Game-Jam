@@ -31,16 +31,22 @@ func start(person: PersonType, time: float, start: Vector2, end: Vector2, loop=t
 	_loop = loop
 	t = 0
 	visible = true
+	
+	# 133 is just a magic number that looks good
+	sprite.speed_scale = _start.distance_to(_end) / 133
 
 func _physics_process(delta: float) -> void:
-	print(t)
 	t += delta / speed
 	if t > 1 + (1 if _loop else 0):
 		queue_free()
 		return
 	
+	var target = _end
 	if t > 1:
+		target = _start
 		global_position = _end.lerp(_start, t - 1)
 	else:
 		global_position = _start.lerp(_end, t)
+	
+	sprite.flip_h = global_position.x > target.x
 	
