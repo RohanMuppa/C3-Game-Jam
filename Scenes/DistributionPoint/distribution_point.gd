@@ -3,7 +3,7 @@ class_name DistributionPoint extends Upgradeable
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
 
-var stored_food: int = 0
+var stored_food: float = 0
 var ui: GameUI
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func step() -> void:
-	stored_food += int(3 * farms.size() * crisis.farm_production_mult)
+	stored_food += 3 * farms.size() * crisis.farm_production_mult
 
 	var sold_food = min(houses.size(), stored_food)
 	stored_food -= sold_food
