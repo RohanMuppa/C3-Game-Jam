@@ -30,20 +30,28 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func step() -> void:
+	stored_food += get_supply()
+
+	var sold_food = min(get_demand(), stored_food)
+	stored_food -= sold_food
+
+	game_main.money += sold_food * get_price()
+
+func get_demand() -> int:
+	return houses.size() * house_consumption
+
+func get_supply() -> int:
 	var supply_multi = crisis.import_supply_mult
 	if supply_multi < 1:
 		supply_multi = min(1, supply_multi + 0.1 * resilience_score)
-	
+		
+	return int(food_intake * imports.size() * supply_multi)
+
+func get_price() -> float:
 	var inc_multi = crisis.grocery_income_mult
 	if inc_multi < 1:
 		inc_multi = min(1, inc_multi + 0.1 * resilience_score)
-		
-	stored_food += int(food_intake * imports.size() * supply_multi)
-
-	var sold_food = min(houses.size() * house_consumption, stored_food)
-	stored_food -= sold_food
-
-	game_main.money += 35 * income_bonus * sold_food * inc_multi
+	return 35 * income_bonus * inc_multi
 
 func _draw() -> void:
 	for house in houses:

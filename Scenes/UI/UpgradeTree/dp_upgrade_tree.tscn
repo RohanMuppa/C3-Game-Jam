@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mbdvembwa2mw" path="res://Scenes/UI/UpgradeTree/upgrade_button.tscn" id="1_c40ul"]
 [ext_resource type="Script" uid="uid://d05tif6kwrap2" path="res://Scenes/UI/UpgradeTree/inherited_upgrade_tree.gd" id="1_up68g"]
+[ext_resource type="Script" uid="uid://c63rdklm78wpt" path="res://Scenes/UI/UpgradeTree/stats.gd" id="2_8h5fy"]
 [ext_resource type="Script" uid="uid://cyhexxfg6qsvr" path="res://Scenes/UI/UpgradeTree/close_button.gd" id="2_lxk10"]
 [ext_resource type="Resource" uid="uid://dp4ltktbhraf1" path="res://Resources/Upgrades/DP/Resources/trucks1.tres" id="4_l0b81"]
 [ext_resource type="Resource" uid="uid://cl1ifyy7w0pf4" path="res://Resources/Upgrades/DP/Resources/trucks2.tres" id="5_8h5fy"]
@@ -41,6 +42,18 @@ layout_mode = 2
 theme_override_font_sizes/normal_font_size = 48
 text = "Distribution Upgrades"
 horizontal_alignment = 2
+
+[node name="Stats" type="RichTextLabel" parent="MarginContainer" unique_id=1306248276]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 48
+text = "Price: 
+Supply: 
+Demand: "
+fit_content = true
+script = ExtResource("2_8h5fy")
 
 [node name="CloseButton" type="Button" parent="MarginContainer" unique_id=1561091728 node_paths=PackedStringArray("parent")]
 layout_mode = 2
