@@ -11,18 +11,12 @@ var stored_food: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	game_main.process_money.connect(step)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	queue_redraw()
-
-func _physics_process(delta: float) -> void:
-	ticker += delta
-	while ticker > cash_interval:
-		step()
-		ticker -= cash_interval
 
 func step() -> void:
 	stored_food += 3 * farms.size()

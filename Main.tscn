@@ -67,13 +67,21 @@ dp_parent = NodePath("../DPs")
 [node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
 script = ExtResource("7_20pc6")
 houses = [NodePath("../Houses/House"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House2")]
-imports = [NodePath("../Imports/Import")]
+imports = [NodePath("../Imports/Import"), NodePath("../Imports/Import2"), NodePath("../Imports/Import3")]
 gs_parent = NodePath("../GSs")
 
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
 [node name="Import" parent="Imports" unique_id=1309879654 instance=ExtResource("7_lgr22")]
 position = Vector2(52, 337)
+script = ExtResource("8_trn2v")
+
+[node name="Import2" parent="Imports" unique_id=1247546300 instance=ExtResource("7_lgr22")]
+position = Vector2(959, 611)
+script = ExtResource("8_trn2v")
+
+[node name="Import3" parent="Imports" unique_id=1362542448 instance=ExtResource("7_lgr22")]
+position = Vector2(705, 38)
 script = ExtResource("8_trn2v")
 
 [node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
