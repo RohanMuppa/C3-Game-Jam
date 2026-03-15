@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c001xtlyv63e8" path="res://Scenes/GroceryStore/GroceryStorePreview.tscn" id="6_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://1ic67nr8rff6" path="res://Scenes/Import/Import.tscn" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="8_trn2v"]
-[ext_resource type="PackedScene" uid="uid://cxhvp6s1xh8ci" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
+[ext_resource type="PackedScene" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
 [ext_resource type="Script" uid="uid://du647wvcf3ftf" path="res://Scenes/Dialog/dialog.gd" id="12_c2ibq"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]
@@ -39,10 +39,10 @@ position = Vector2(204, 84)
 position = Vector2(1044, 84)
 
 [node name="Farm3" parent="Farms" unique_id=229168466 instance=ExtResource("3_lgr22")]
-position = Vector2(175, 602)
+position = Vector2(100, 400)
 
 [node name="Farm4" parent="Farms" unique_id=692211515 instance=ExtResource("3_lgr22")]
-position = Vector2(1015, 602)
+position = Vector2(1100, 400)
 
 [node name="Houses" type="Node" parent="." unique_id=1903224962]
 
@@ -85,16 +85,12 @@ position = Vector2(716, 414)
 [node name="House13" parent="Houses" unique_id=1927803103 instance=ExtResource("4_trn2v")]
 position = Vector2(553, 288)
 
-[node name="DPs" type="Node" parent="." unique_id=867580717]
-
 [node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
 visible = false
 position = Vector2(-122, 196)
 houses = [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")]
 farms = [NodePath("../Farms/Farm"), NodePath("../Farms/Farm2"), NodePath("../Farms/Farm3"), NodePath("../Farms/Farm4")]
 dp_parent = NodePath("../DPs")
-
-[node name="GSs" type="Node" parent="." unique_id=1748055003]
 
 [node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
 visible = false
@@ -107,12 +103,16 @@ gs_parent = NodePath("../GSs")
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
 [node name="Import" parent="Imports" unique_id=1309879654 instance=ExtResource("7_lgr22")]
-position = Vector2(50, 360)
+position = Vector2(300, 688)
 script = ExtResource("8_trn2v")
 
 [node name="Import2" parent="Imports" unique_id=1280505601 instance=ExtResource("7_lgr22")]
-position = Vector2(1170, 360)
+position = Vector2(900, 688)
 script = ExtResource("8_trn2v")
+
+[node name="DPs" type="Node" parent="." unique_id=867580717]
+
+[node name="GSs" type="Node" parent="." unique_id=1748055003]
 
 [node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
 top_level = true

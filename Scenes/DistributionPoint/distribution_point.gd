@@ -43,36 +43,22 @@ func step() -> void:
 			))
 		game_main.add_child(person)
 	
-	var sold_food = min(get_demand(), get_supply())
-	game_main.money += sold_food * get_price()
+	game_main.money += get_profit()
 
 func get_profit() -> float:
 	var sold_food = min(get_demand(), get_supply())
 	return sold_food * get_price()
 
 func get_price() -> float:
+	if (crisis.dp_income_mult >= 1):
+		return price * income_bonus * crisis.dp_income_mult
 	return price * income_bonus * (1 - (1 - crisis.dp_income_mult) * (1 - resilience_score))
 
 func get_demand() -> int:
 	return houses.size() * house_consumption
 
 func get_supply() -> int:
-	return farms.size() * food_intake * resilience_score
-	
-func _draw() -> void:
-	for house in houses:
-		draw_line(
-			Vector2.ZERO,
-			house.global_position - global_position,
-			Color.CRIMSON
-		)
-	
-	for farm in farms:
-		draw_line(
-			Vector2.ZERO,
-			farm.global_position - global_position,
-			Color.DARK_ORANGE
-		)
+	return farms.size() * food_intake
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():

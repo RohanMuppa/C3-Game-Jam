@@ -52,7 +52,7 @@ func step() -> void:
 
 func get_profit() -> float:
 	var sold_food = min(get_demand(), get_supply())
-	return sold_food * get_price() - wages * houses.size()
+	return sold_food * get_price() - wages * houses.size() * crisis.wage_mult
 
 func get_demand() -> int:
 	return houses.size() * house_consumption
