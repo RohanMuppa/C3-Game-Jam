@@ -58,7 +58,7 @@ func _ready() -> void:
 	music_player.play()
 	if dpPreview.first_dp == true:
 		var arr: Array[CustomText] = [
-			CustomText.create("NameA: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10),
+			CustomText.create("Emilija: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10),
 			]
 		dialog_box.set_text(arr)
 
