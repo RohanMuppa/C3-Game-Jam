@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 			Phase.DURING_COVID:
 				enter_phase(Phase.POST_COVID)
 			Phase.POST_COVID:
-				game_main.gameUI.show_end_screen(game_main.money)
+				game_main.gameUI.show_end_screen(game_main)
 				set_process(false)
 
 func enter_phase(phase: Phase):

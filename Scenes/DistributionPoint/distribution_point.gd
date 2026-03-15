@@ -67,7 +67,19 @@ func step() -> void:
 	var sold_food = min(get_demand(), stored_food)
 	stored_food -= sold_food
 	
-	game_main.money += sold_food * get_price()
+	var earnings = sold_food * get_price()
+	game_main.money += earnings
+
+	match crisis.current_phase:
+		CrisisManager.Phase.PRE_COVID:
+			game_main.earned_pre_covid += earnings
+			game_main.food_sold_pre_covid += sold_food
+		CrisisManager.Phase.DURING_COVID:
+			game_main.earned_during_covid += earnings
+			game_main.food_sold_during_covid += sold_food
+		CrisisManager.Phase.POST_COVID:
+			game_main.earned_post_covid += earnings
+			game_main.food_sold_post_covid += sold_food
 
 func get_price() -> float:
 	var inc_multi = crisis.dp_income_mult

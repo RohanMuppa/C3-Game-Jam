@@ -86,7 +86,9 @@ func place_gs():
 	is_active = false
 	
 	game_main.money -= cost
-	
+	game_main.total_spent += cost
+	game_main.gs_placed += 1
+
 	var gs: GroceryStore = GroceryStoreScene.instantiate()
 	gs.global_position = global_position
 	gs.imports.append_array(imports)
