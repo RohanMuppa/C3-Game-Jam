@@ -24,6 +24,11 @@ func advance():
 	var to_show: CustomText = text.pop_front()
 	$DialogLabel.text = to_show.text
 	time_to_close = to_show.timeout
+	if to_show.icon:
+		$TextureRect.texture = to_show.icon
+		$TextureRect.visible = true
+	else:
+		$TextureRect.visible = false
 	visible = true
 	
 	

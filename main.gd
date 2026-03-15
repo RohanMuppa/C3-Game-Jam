@@ -6,6 +6,10 @@ class_name GameMain extends Node2D
 @export_category("Starting Stats")
 @export var _money: float = 25
 
+@onready var emilija_icon: CompressedTexture2D = preload("res://Sprites/mom.png")
+@onready var farmer_icon: CompressedTexture2D = preload("res://Sprites/farmer.png")
+@onready var hugo_icon: CompressedTexture2D = preload("res://Sprites/hugo.png")
+
 @onready var ysort: Node2D = $YSort
 
 var ticker = 0
@@ -60,7 +64,7 @@ func _ready() -> void:
 	music_player.play()
 	if dpPreview.first_dp == true:
 		var arr: Array[CustomText] = [
-			CustomText.create("Emilija: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10),
+			CustomText.create("Emilija: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10, emilija_icon),
 			]
 		dialog_box.set_text(arr)
 
@@ -79,9 +83,9 @@ func _process(delta: float) -> void:
 	
 		if ratio > 0.2 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
 			var arr: Array[CustomText] = [
-				CustomText.create("Emilija: Farmer Zemnieks, good to see you again! Can I just say your tomatoes have never been better! Hugo loves them, don’t you?", 10),
-				CustomText.create("Hugo: Tomatoes, tomatoes! ", 10),
-				CustomText.create("Farmer Zemnieks: That’s great to hear from such a long-time customer. Hugo, next week, I’ll save my best tomato just for you; how’s that sound?", 10)
+				CustomText.create("Emilija: Farmer Zemnieks, good to see you again! Can I just say your tomatoes have never been better! Hugo loves them, don’t you?", 10, emilija_icon),
+				CustomText.create("Hugo: Tomatoes, tomatoes! ", 10, hugo_icon),
+				CustomText.create("Farmer Zemnieks: That’s great to hear from such a long-time customer. Hugo, next week, I’ll save my best tomato just for you; how’s that sound?", 10, farmer_icon)
 			]
 			dialog_box.set_text(arr)
 			sent_first_msg = true
@@ -94,17 +98,17 @@ func _process(delta: float) -> void:
 		
 		if (ratio > 0.34 && ratio < 0.65 && dialog_box.visible == false && sent_stage2_dialog == false):
 			var arr: Array[CustomText] = [
-				CustomText.create("Emilija: Oh dear! I better stock up on groceries since we’ll be at home for a while.", 10),
-				CustomText.create("Farmer Zemnieks: Orders have been coming in like crazy! My truck might not make it!", 10)
+				CustomText.create("Emilija: Oh dear! I better stock up on groceries since we’ll be at home for a while.", 10, emilija_icon),
+				CustomText.create("Farmer Zemnieks: Orders have been coming in like crazy! My truck might not make it!", 10, farmer_icon)
 			]
 			dialog_box.set_text(arr)
 			sent_stage2_dialog = true
 		
 		if (ratio > 0.67 && ratio < 0.99 && dialog_box.visible == false && sent_stage3_dialog == false):
 			var arr: Array[CustomText] = [
-				CustomText.create("Emilija: Farmer Zemnieks, it’s been a while! I’ve brought Andris this week to help carry such large orders. How is everything?", 10),
-				CustomText.create("Farmer Zemnieks: Business has gotten slower, but thanks to ya regulars, I’ve been able to get by.", 10),
-				CustomText.create("Emilija: We’ll always be here to support. Besides how could we give up such good tomatoes?", 10)
+				CustomText.create("Emilija: Farmer Zemnieks, it’s been a while! I’ve brought Andris this week to help carry such large orders. How is everything?", 10, emilija_icon),
+				CustomText.create("Farmer Zemnieks: Business has gotten slower, but thanks to ya regulars, I’ve been able to get by.", 10, farmer_icon),
+				CustomText.create("Emilija: We’ll always be here to support. Besides how could we give up such good tomatoes?", 10, emilija_icon)
 			]
 			dialog_box.set_text(arr)
 			sent_stage3_dialog = true

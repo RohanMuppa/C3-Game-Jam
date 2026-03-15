@@ -13,6 +13,8 @@ var first_store = true
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 @onready var dialog_box: = $"../Dialog/CanvasLayer/DialogBox"
 
+@onready var emilija_icon: CompressedTexture2D = preload("res://Sprites/mom.png")
+
 # general idea:
 # when active:
 #	display at mouse cursor
@@ -91,7 +93,7 @@ func place_gs():
 	
 	if (first_store):
 		var arr: Array[CustomText] =  [
-			CustomText.create("Emilija: A new grocery store, how wonderful!", 10)
+			CustomText.create("Emilija: A new grocery store, how wonderful!", 10, emilija_icon)
 		]
 		dialog_box.set_text(arr)
 		first_store = false
