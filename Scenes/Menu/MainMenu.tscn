@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://q2oij04heut"]
 
+[ext_resource type="FontFile" uid="uid://b1yqgr4tnsyqs" path="res://Fonts/Thin Sans.ttf" id="0_font"]
 [ext_resource type="Script" uid="uid://bgc60pwjtbv3m" path="res://Scenes/Menu/menu_button.gd" id="1_35riq"]
 [ext_resource type="PackedScene" uid="uid://dc0666cmfv6lg" path="res://Main.tscn" id="2_p4pvn"]
 [ext_resource type="PackedScene" uid="uid://cvidociua6mry" path="res://Scenes/Menu/Credits.tscn" id="3_s3ie0"]
@@ -47,10 +48,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=969586019]
-modulate = Color(0.7, 0.7, 0.7, 1)
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+color = Color(0.184, 0.302, 0.184, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1188013074]
 layout_mode = 1
@@ -71,14 +72,18 @@ size_flags_vertical = 8
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=823474241]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("0_font")
 theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 text = "Play"
 script = ExtResource("1_35riq")
 scene = ExtResource("2_p4pvn")
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1319577361]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("0_font")
 theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 text = "Credits"
 script = ExtResource("1_35riq")
 scene = SubResource("PackedScene_ahhg2")
@@ -93,7 +98,10 @@ custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_font_sizes/normal_font_size = 96
+scroll_active = false
+theme_override_fonts/normal_font = ExtResource("0_font")
+theme_override_font_sizes/normal_font_size = 72
+theme_override_colors/default_color = Color(0.992, 0.82, 0.475, 1)
 text = "Supply Shock"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer2" unique_id=998991943]
@@ -101,5 +109,8 @@ custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+scroll_active = false
+theme_override_fonts/normal_font = ExtResource("0_font")
 theme_override_font_sizes/normal_font_size = 24
+theme_override_colors/default_color = Color(0.949, 0.722, 0.533, 1)
 text = "C3 Game Jam 2026"
