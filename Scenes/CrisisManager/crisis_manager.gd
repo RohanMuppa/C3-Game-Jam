@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 		match current_phase:
 			Phase.PRE_COVID:
 				enter_phase(Phase.DURING_COVID)
+				phase_duration *= 2
 			Phase.DURING_COVID:
 				var gs = get_node("/root/GlobalStats")
 				gs.money = game_main.money
