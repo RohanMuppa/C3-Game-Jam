@@ -77,9 +77,9 @@ func _process(delta: float) -> void:
 	
 		if ratio > 0.2 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
 			var arr: Array[CustomText] = [
-				CustomText.create("NameA: [Farmer], good to see you again! Can I just say your tomatoes have never been better! [NameB] loves them, don’t you?", 4),
-				CustomText.create("NameB: Tomatoes, tomatoes! ", 4),
-				CustomText.create("Farmer: That’s great to hear from such a long-time customer. [NameB], next week, I’ll save my best tomato just for you; how’s that sound?", 4)
+				CustomText.create("Emilija: Farmer Zemnieks, good to see you again! Can I just say your tomatoes have never been better! Hugo loves them, don’t you?", 10),
+				CustomText.create("Hugo: Tomatoes, tomatoes! ", 10),
+				CustomText.create("Farmer Zemnieks: That’s great to hear from such a long-time customer. Hugo, next week, I’ll save my best tomato just for you; how’s that sound?", 10)
 			]
 			dialog_box.set_text(arr)
 			sent_first_msg = true
