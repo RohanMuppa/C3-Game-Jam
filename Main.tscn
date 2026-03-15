@@ -49,63 +49,14 @@ visible = false
 position = Vector2(-158, 74)
 script = SubResource("GDScript_20pc6")
 houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
-imports = [NodePath("../Imports/Import"), NodePath("../Imports/Import2")]
+imports = [NodePath("../YSort/Import"), NodePath("../YSort/Import2")]
 gs_parent = NodePath("../YSort")
 
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
-[node name="Import" parent="Imports" unique_id=1309879654 instance=ExtResource("7_lgr22")]
-position = Vector2(300, 688)
-script = ExtResource("8_trn2v")
-
-[node name="Import2" parent="Imports" unique_id=1280505601 instance=ExtResource("7_lgr22")]
-position = Vector2(900, 688)
-script = ExtResource("8_trn2v")
-
 [node name="DPs" type="Node" parent="." unique_id=867580717]
 
 [node name="GSs" type="Node" parent="." unique_id=1748055003]
-
-[node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
-top_level = true
-mouse_filter = 2
-
-[node name="CrisisManager" parent="." unique_id=1612307419 instance=ExtResource("11_5vvyt")]
-visible = false
-position = Vector2(71, -59)
-script = ExtResource("12_c6i3y")
-
-[node name="Dialog" type="Control" parent="." unique_id=321140126]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1219.0
-offset_bottom = 152.0
-mouse_filter = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Dialog" unique_id=541951954]
-
-[node name="DialogBox" type="Panel" parent="Dialog/CanvasLayer" unique_id=813612758]
-offset_left = 198.0
-offset_top = 20.0
-offset_right = 1198.0
-offset_bottom = 166.0
-script = ExtResource("12_c2ibq")
-
-[node name="DialogLabel" type="Label" parent="Dialog/CanvasLayer/DialogBox" unique_id=935640134]
-layout_mode = 0
-offset_left = 19.0
-offset_right = 823.0
-offset_bottom = 149.0
-label_settings = SubResource("LabelSettings_c6i3y")
-autowrap_mode = 2
-
-[node name="DialogButton" type="Button" parent="Dialog/CanvasLayer/DialogBox" unique_id=1180663826]
-layout_mode = 0
-offset_left = 848.0
-offset_top = 37.0
-offset_right = 962.0
-offset_bottom = 117.0
-text = ">"
 
 [node name="YSort" type="Node2D" parent="." unique_id=123144932]
 y_sort_enabled = true
@@ -160,3 +111,52 @@ position = Vector2(100, 400)
 
 [node name="Farm4" parent="YSort" unique_id=692211515 instance=ExtResource("3_lgr22")]
 position = Vector2(1100, 400)
+
+[node name="Import" parent="YSort" unique_id=1309879654 instance=ExtResource("7_lgr22")]
+position = Vector2(300, 688)
+script = ExtResource("8_trn2v")
+
+[node name="Import2" parent="YSort" unique_id=1280505601 instance=ExtResource("7_lgr22")]
+position = Vector2(900, 688)
+script = ExtResource("8_trn2v")
+
+[node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
+top_level = true
+mouse_filter = 2
+
+[node name="CrisisManager" parent="." unique_id=1612307419 instance=ExtResource("11_5vvyt")]
+visible = false
+position = Vector2(71, -59)
+script = ExtResource("12_c6i3y")
+
+[node name="Dialog" type="Control" parent="." unique_id=321140126]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1219.0
+offset_bottom = 152.0
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Dialog" unique_id=541951954]
+
+[node name="DialogBox" type="Panel" parent="Dialog/CanvasLayer" unique_id=813612758]
+offset_left = 198.0
+offset_top = 20.0
+offset_right = 1198.0
+offset_bottom = 166.0
+script = ExtResource("12_c2ibq")
+
+[node name="DialogLabel" type="Label" parent="Dialog/CanvasLayer/DialogBox" unique_id=935640134]
+layout_mode = 0
+offset_left = 19.0
+offset_right = 823.0
+offset_bottom = 149.0
+label_settings = SubResource("LabelSettings_c6i3y")
+autowrap_mode = 2
+
+[node name="DialogButton" type="Button" parent="Dialog/CanvasLayer/DialogBox" unique_id=1180663826]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 37.0
+offset_right = 962.0
+offset_bottom = 117.0
+text = ">"
