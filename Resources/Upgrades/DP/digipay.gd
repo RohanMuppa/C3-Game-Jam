@@ -10,9 +10,7 @@ func upgrade_dp(game_main: GameMain, dp: DistributionPoint) -> void:
 	dp.resilience_score *= 1.25
 	if (!sent_msg):
 		var arr: Array[CustomText] = [
-			CustomText.create("Emilija: Farmer Zemnieks, it’s been a while! I’ve brought Andris this week to help carry such large orders. How is everything?", 10),
-			CustomText.create("Farmer Zemnieks: Business has gotten slower, but thanks to ya regulars, I’ve been able to get by.", 10),
-			CustomText.create("Emilija: We’ll always be here to support. Besides how could we give up such good tomatoes?", 10)
+			CustomText.create("Emilija: As much as I like cash, this has truly made things easier—and quicker too! ", 10)
 		]
 		game_main.dialog_box.set_text(arr)
 		sent_msg = true
