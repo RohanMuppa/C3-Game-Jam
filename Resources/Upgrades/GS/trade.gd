@@ -5,4 +5,4 @@ func purchase_upgrade(game_main: GameMain, node: Node) -> void:
 
 func upgrade_gs(game_main: GameMain, gs: GroceryStore) -> void:
 	gs.food_intake += 2
-	gs.resilience_score -= 1
+	gs.resilience_score /= 1.15

@@ -74,7 +74,7 @@ offset_top = 223.0
 offset_right = 257.0
 offset_bottom = 319.0
 text = "Demand++"
-cost = 750
+cost = 100
 on_purchase = ExtResource("4_gt170")
 
 [node name="premiumimp" parent="Upgrades" unique_id=1216853976 instance=ExtResource("1_5rsv6")]
@@ -84,7 +84,7 @@ offset_top = 142.0
 offset_right = 427.0
 offset_bottom = 238.0
 text = "Premium Imports"
-cost = 650
+cost = 100
 on_purchase = ExtResource("5_uak7q")
 
 [node name="deluximp" parent="Upgrades" unique_id=1140991719 node_paths=PackedStringArray("parent") instance=ExtResource("1_5rsv6")]
@@ -94,7 +94,7 @@ offset_top = 280.0
 offset_right = 427.0
 offset_bottom = 376.0
 text = "Deluxe Imports"
-cost = 1150
+cost = 150
 on_purchase = ExtResource("6_k7n62")
 parent = NodePath("../premiumimp")
 
@@ -105,7 +105,7 @@ offset_top = 223.0
 offset_right = 613.0
 offset_bottom = 319.0
 text = "Trade Deals"
-cost = 550
+cost = 80
 on_purchase = ExtResource("7_bdngv")
 
 [node name="wages" parent="Upgrades" unique_id=380489811 instance=ExtResource("1_5rsv6")]
@@ -115,5 +115,5 @@ offset_top = 223.0
 offset_right = 776.0
 offset_bottom = 319.0
 text = "Higher Wages"
-cost = 450
+cost = 100
 on_purchase = ExtResource("8_s3f1t")

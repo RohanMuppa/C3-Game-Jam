@@ -2,7 +2,7 @@ extends Node2D
 
 @export var is_active: bool = false
 @export var connection_radius: float = 200.0
-@export var cost: float = 500
+@export var cost: float = 15
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
 @export var dp_parent: Node
@@ -24,6 +24,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("DP_Preview")
 	pass # Replace with function body.
 
 
@@ -88,6 +89,7 @@ func place_dp():
 	is_active = false
 	
 	game_main.money -= cost
+	cost *= 1.5
 	
 	var dp: DistributionPoint = DistributionPointScene.instantiate()
 	dp.global_position = global_position

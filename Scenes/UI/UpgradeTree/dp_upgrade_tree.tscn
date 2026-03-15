@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mbdvembwa2mw" path="res://Scenes/UI/UpgradeTree/upgrade_button.tscn" id="1_c40ul"]
 [ext_resource type="Script" uid="uid://d05tif6kwrap2" path="res://Scenes/UI/UpgradeTree/inherited_upgrade_tree.gd" id="1_up68g"]
-[ext_resource type="Script" uid="uid://c63rdklm78wpt" path="res://Scenes/UI/UpgradeTree/stats.gd" id="2_8h5fy"]
+[ext_resource type="Script" path="res://Scenes/UI/UpgradeTree/stats.gd" id="2_8h5fy"]
 [ext_resource type="Script" uid="uid://cyhexxfg6qsvr" path="res://Scenes/UI/UpgradeTree/close_button.gd" id="2_lxk10"]
 [ext_resource type="Resource" uid="uid://dp4ltktbhraf1" path="res://Resources/Upgrades/DP/Resources/trucks1.tres" id="4_l0b81"]
 [ext_resource type="Resource" uid="uid://cl1ifyy7w0pf4" path="res://Resources/Upgrades/DP/Resources/trucks2.tres" id="5_8h5fy"]
@@ -76,7 +76,7 @@ offset_top = 142.0
 offset_right = 321.0
 offset_bottom = 238.0
 text = "Fast Trucks"
-cost = 350
+cost = 50
 on_purchase = ExtResource("4_l0b81")
 
 [node name="FasterTrucks" parent="Upgrades" unique_id=1967810872 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
@@ -88,7 +88,7 @@ offset_bottom = 367.0
 theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 disabled = true
 text = "Faster Trucks"
-cost = 500
+cost = 100
 on_purchase = ExtResource("5_8h5fy")
 parent = NodePath("../FastTrucks")
 
@@ -99,7 +99,7 @@ offset_top = 271.0
 offset_right = 417.0
 offset_bottom = 367.0
 text = "Bigger Trucks"
-cost = 550
+cost = 75
 on_purchase = ExtResource("6_njw2u")
 parent = NodePath("../FastTrucks")
 
@@ -111,7 +111,7 @@ offset_right = 981.0
 offset_bottom = 238.0
 text = "Helping Hands
 "
-cost = 250
+cost = 75
 on_purchase = ExtResource("7_ab1yv")
 
 [node name="LocalAds" parent="Upgrades" unique_id=1814597382 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
@@ -121,7 +121,7 @@ offset_top = 280.0
 offset_right = 981.0
 offset_bottom = 376.0
 text = "Local Ads"
-cost = 350
+cost = 50
 on_purchase = ExtResource("8_gg77j")
 parent = NodePath("../HelpingHands")
 
@@ -133,7 +133,7 @@ offset_right = 614.0
 offset_bottom = 319.0
 text = "Hungry Hands
 "
-cost = 650
+cost = 100
 on_purchase = ExtResource("9_a2mdh")
 
 [node name="DigiPayments" parent="Upgrades" unique_id=868194948 instance=ExtResource("1_c40ul")]
@@ -143,5 +143,5 @@ offset_top = 223.0
 offset_right = 777.0
 offset_bottom = 319.0
 text = "Digital Payments"
-cost = 450
+cost = 100
 on_purchase = ExtResource("10_i71tc")

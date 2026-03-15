@@ -46,9 +46,9 @@ func enter_phase(phase: Phase):
 			player.stream = main_theme
 			phase_changed.emit("Pre-COVID")
 		Phase.DURING_COVID:
-			grocery_income_mult = 0.4
-			import_supply_mult = 0.3
-			dp_income_mult = 0.6
+			grocery_income_mult = 0.7
+			import_supply_mult = 0.7
+			dp_income_mult = 0.7
 			player.stream = covid_theme
 			phase_changed.emit("COVID-19")
 		Phase.POST_COVID:
