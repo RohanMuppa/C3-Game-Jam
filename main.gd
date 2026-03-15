@@ -51,6 +51,11 @@ func _ready() -> void:
 	music_player.stream = load("res://Audio/main-theme-generic.mp3")
 	add_child(music_player)
 	music_player.play()
+	if dpPreview.first_dp == true:
+		var arr: Array[CustomText] = [
+			CustomText.create("NameA: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10),
+			]
+		dialog_box.set_text(arr)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

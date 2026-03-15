@@ -9,10 +9,16 @@ var current_phase: Phase = Phase.PRE_COVID
 var phase_timer: float = 0.0
 var phase_duration: float = 120.0
 
+var dp_price_adjust: float = 0.0
+var gs_income_adjust: float = 0.0
+var gs_supply_adjust: float = 0.0
+
 var dp_income_mult: float = 1.0
 var grocery_income_mult: float = 1.0
 var import_supply_mult: float = 1.0
 var wage_mult: float = 1.0
+
+var multiplier: float = 1.0
 
 var time_since_COVID = 0
 
@@ -35,6 +41,7 @@ func _process(delta: float) -> void:
 		match current_phase:
 			Phase.PRE_COVID:
 				enter_phase(Phase.DURING_COVID)
+				phase_duration *= 2
 			Phase.DURING_COVID:
 				var gs = get_node("/root/GlobalStats")
 				gs.money = game_main.money
@@ -63,9 +70,13 @@ func enter_phase(phase: Phase):
 			player.stream = main_theme
 			phase_changed.emit("Pre-COVID")
 		Phase.DURING_COVID:
+			dp_price_adjust = 0.5
+			gs_income_adjust = -0.8
+			gs_supply_adjust -0.3
 			grocery_income_mult = 0.7
 			import_supply_mult = 0.7
-			wage_mult = 1.2
+			wage_mult = 1
+			multiplier = 0.5
 			player.stream = covid_theme
 			phase_changed.emit("COVID-19")
 
@@ -76,3 +87,7 @@ func reset_modifiers():
 	grocery_income_mult = 1.0
 	import_supply_mult = 1.0
 	wage_mult = 1.0
+	dp_price_adjust = 0.0
+	gs_income_adjust = 0.0
+	gs_supply_adjust = 0.0
+	multiplier = 1.0

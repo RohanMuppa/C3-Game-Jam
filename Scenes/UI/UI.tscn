@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bxyesvqfdt1ow" path="res://Scenes/UI/ui.gd" id="1_s86y4"]
 [ext_resource type="PackedScene" uid="uid://cmjslvkvvsson" path="res://Scenes/UI/UpgradeTree/dp_upgrade_tree.tscn" id="2_636u5"]
 [ext_resource type="PackedScene" uid="uid://cy2snx34y83de" path="res://Scenes/UI/UpgradeTree/gs_upgrade_tree.tscn" id="3_akgwn"]
+[ext_resource type="FontFile" uid="uid://bc2wbjpm30vqx" path="res://Fonts/Thin Sans.ttf" id="4_b83rk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oqha6"]
+font = ExtResource("4_b83rk")
 
 [node name="Ui" type="Control" unique_id=1297064599 node_paths=PackedStringArray("moneyCtr")]
 layout_mode = 3
@@ -35,17 +39,19 @@ layout_mode = 1
 [node name="PhaseLabel" type="Label" parent="." unique_id=641978505]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 50.0
+offset_top = 64.0
 offset_right = 300.0
-offset_bottom = 90.0
+offset_bottom = 104.0
 theme_override_font_sizes/font_size = 24
 text = "Pre-COVID"
+label_settings = SubResource("LabelSettings_oqha6")
 
 [node name="MoneyCtr" type="RichTextLabel" parent="." unique_id=1680810425]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 1.0
-offset_right = 158.0
-offset_bottom = 139.0
+offset_right = 214.0
+offset_bottom = 79.0
+theme_override_fonts/normal_font = ExtResource("4_b83rk")
 theme_override_font_sizes/normal_font_size = 30
 text = "$XXX"
