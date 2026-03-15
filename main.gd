@@ -24,6 +24,11 @@ var upgrades_purchased: int = 0
 var resilience_upgrades: int = 0
 var income_upgrades: int = 0
 var sent_first_msg = false
+var scene_playing = false
+var cutscene2_played = false
+
+
+
 @onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var dialog_box: = $Dialog/CanvasLayer/DialogBox
 @onready var dpPreview = get_tree().get_nodes_in_group("DP_Preview")[0]
@@ -60,20 +65,30 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	ticker += delta
-	event_ticks += delta
-	while (ticker >= money_cooldown):
-		process_money.emit()
-		ticker -= money_cooldown
-	var ratio = event_ticks / (60 * game_time_mins)
-	gameUI.progress_bar.set_as_ratio(ratio)
 	
-	if ratio > 0.2 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
-		var arr: Array[CustomText] = [
-			CustomText.create("NameA: [Farmer], good to see you again! Can I just say your tomatoes have never been better! [NameB] loves them, don’t you?", 4),
-			CustomText.create("NameB: Tomatoes, tomatoes! ", 4),
-			CustomText.create("Farmer: That’s great to hear from such a long-time customer. [NameB], next week, I’ll save my best tomato just for you; how’s that sound?", 4)
-		]
-		dialog_box.set_text(arr)
-		sent_first_msg = true
+	if scene_playing == false:
+		ticker += delta
+		event_ticks += delta
+		while (ticker >= money_cooldown):
+			process_money.emit()
+			ticker -= money_cooldown
+		var ratio = event_ticks / (60 * game_time_mins)
+		gameUI.progress_bar.set_as_ratio(ratio)
+	
+		if ratio > 0.2 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
+			var arr: Array[CustomText] = [
+				CustomText.create("NameA: [Farmer], good to see you again! Can I just say your tomatoes have never been better! [NameB] loves them, don’t you?", 4),
+				CustomText.create("NameB: Tomatoes, tomatoes! ", 4),
+				CustomText.create("Farmer: That’s great to hear from such a long-time customer. [NameB], next week, I’ll save my best tomato just for you; how’s that sound?", 4)
+			]
+			dialog_box.set_text(arr)
+			sent_first_msg = true
+			
+		if ratio > 0.33 && cutscene2_played == false:
+			scene_playing = true
+			cutscene2_played = true  # Set it immediately to prevent multiple triggers
+			$Cutscenes/stage2scene.play_scene()
+			$Cutscenes/stage2scene.cutscene_finished.connect(_on_s2_finish)
 		
+func _on_s2_finish():
+	scene_playing = false

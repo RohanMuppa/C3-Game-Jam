@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
 [ext_resource type="Script" uid="uid://du647wvcf3ftf" path="res://Scenes/Dialog/dialog.gd" id="12_c2ibq"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]
+[ext_resource type="PackedScene" uid="uid://7fiwjvmjkxbr" path="res://Scenes/CutScenes/stage2scene.tscn" id="14_c2ibq"]
 [ext_resource type="FontFile" uid="uid://bc2wbjpm30vqx" path="res://Fonts/Thin Sans.ttf" id="14_j4qnp"]
 
 [sub_resource type="GDScript" id="GDScript_20pc6"]
@@ -164,3 +165,7 @@ offset_right = 980.0
 offset_bottom = 113.0
 theme_override_fonts/font = ExtResource("14_j4qnp")
 text = ">"
+
+[node name="Cutscenes" type="CanvasLayer" parent="." unique_id=227772538]
+
+[node name="stage2scene" parent="Cutscenes" unique_id=1952346346 instance=ExtResource("14_c2ibq")]
