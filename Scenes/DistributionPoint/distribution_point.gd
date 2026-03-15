@@ -3,9 +3,9 @@ class_name DistributionPoint extends Upgradeable
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
 
-var house_consumption: int = 1
+var house_consumption: float = 1
 var income_bonus: float = 1
-var food_intake: int = 3
+var food_intake: float = 3
 var resilience_score: float = 0.5
 var price = 1.5
 
@@ -58,14 +58,15 @@ func get_profit() -> float:
 	return sold_food * get_price()
 
 func get_price() -> float:
-	if (crisis.dp_income_mult >= 1):
-		return price * income_bonus * crisis.dp_income_mult
-	return price * income_bonus * (1 - (1 - crisis.dp_income_mult) * (1 - resilience_score))
+	return income_bonus * (price + crisis.dp_price_adjust * (0.5 + resilience_score))
+	#if (crisis.dp_income_mult >= 1):
+		#return price * income_bonus * crisis.dp_income_mult
+	#return price * income_bonus * (1 - (1 - crisis.dp_income_mult) * (1 - resilience_score))
 
-func get_demand() -> int:
+func get_demand() -> float:
 	return houses.size() * house_consumption
 
-func get_supply() -> int:
+func get_supply() -> float:
 	return farms.size() * food_intake
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

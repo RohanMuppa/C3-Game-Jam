@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bgc60pwjtbv3m" path="res://Scenes/Menu/menu_button.gd" id="1_35riq"]
 [ext_resource type="PackedScene" uid="uid://dc0666cmfv6lg" path="res://Main.tscn" id="2_p4pvn"]
 [ext_resource type="PackedScene" uid="uid://cvidociua6mry" path="res://Scenes/Menu/Credits.tscn" id="3_s3ie0"]
+[ext_resource type="AudioStreamMP3" uid="uid://bauu7fvuaq7fl" path="res://Audio/main-theme-generic.mp3" id="4_music"]
 
 [node name="MainMenu" type="Control" unique_id=115567150]
 layout_mode = 3
@@ -66,7 +67,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 scroll_active = false
 theme_override_fonts/normal_font = ExtResource("0_font")
-theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/normal_font_size = 56
 theme_override_colors/default_color = Color(0.992, 0.82, 0.475, 1)
 text = "Supply Shock"
 
@@ -80,3 +81,7 @@ theme_override_fonts/normal_font = ExtResource("0_font")
 theme_override_font_sizes/normal_font_size = 24
 theme_override_colors/default_color = Color(0.949, 0.722, 0.533, 1)
 text = "C3 Game Jam 2026"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_music")
+autoplay = true

@@ -85,7 +85,7 @@ offset_top = 142.0
 offset_right = 321.0
 offset_bottom = 238.0
 text = "Fast Trucks"
-cost = 50
+cost = 25
 on_purchase = ExtResource("4_l0b81")
 desc = "+10% Income for this distribution point."
 
@@ -98,7 +98,7 @@ offset_bottom = 367.0
 theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 disabled = true
 text = "Faster Trucks"
-cost = 100
+cost = 50
 on_purchase = ExtResource("5_8h5fy")
 parent = NodePath("../FastTrucks")
 desc = "+15% Income for this distribution point."
@@ -110,10 +110,10 @@ offset_top = 271.0
 offset_right = 417.0
 offset_bottom = 367.0
 text = "Bigger Trucks"
-cost = 75
+cost = 40
 on_purchase = ExtResource("6_njw2u")
 parent = NodePath("../FastTrucks")
-desc = "+2 Supply per connected farm."
+desc = "+0.25 Supply per connected farm."
 
 [node name="HelpingHands" parent="Upgrades" unique_id=1418393161 instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -123,9 +123,9 @@ offset_right = 981.0
 offset_bottom = 238.0
 text = "Helping Hands
 "
-cost = 75
+cost = 40
 on_purchase = ExtResource("7_ab1yv")
-desc = "+1 Supply per connected farm."
+desc = "+0.25 Supply per connected farm."
 
 [node name="LocalAds" parent="Upgrades" unique_id=1814597382 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -134,7 +134,7 @@ offset_top = 280.0
 offset_right = 981.0
 offset_bottom = 376.0
 text = "Local Ads"
-cost = 50
+cost = 25
 on_purchase = ExtResource("8_gg77j")
 parent = NodePath("../HelpingHands")
 desc = "Root yourself further in community as a known name!"
@@ -147,9 +147,9 @@ offset_right = 614.0
 offset_bottom = 319.0
 text = "Hungry Hands
 "
-cost = 100
+cost = 50
 on_purchase = ExtResource("9_a2mdh")
-desc = "+1 Demand per connected house."
+desc = "+0.25 Demand per connected house."
 
 [node name="DigiPayments" parent="Upgrades" unique_id=868194948 instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -158,6 +158,6 @@ offset_top = 223.0
 offset_right = 777.0
 offset_bottom = 319.0
 text = "Digital Payments"
-cost = 100
+cost = 50
 on_purchase = ExtResource("10_i71tc")
 desc = "Adds no additional income, but it does connects you further with customers."
