@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c001xtlyv63e8" path="res://Scenes/GroceryStore/GroceryStorePreview.tscn" id="6_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://1ic67nr8rff6" path="res://Scenes/Import/Import.tscn" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="8_trn2v"]
-[ext_resource type="PackedScene" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://cxhvp6s1xh8ci" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
 [ext_resource type="Script" uid="uid://du647wvcf3ftf" path="res://Scenes/Dialog/dialog.gd" id="12_c2ibq"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]

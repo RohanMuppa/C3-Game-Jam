@@ -1,8 +1,11 @@
 extends Panel
 
+var text: Array[String] = []
+
 func _ready():
 	visible = false
 	$DialogButton.pressed.connect(close_box)
+
 
 func show_box(text):
 	$DialogLabel.text = text
