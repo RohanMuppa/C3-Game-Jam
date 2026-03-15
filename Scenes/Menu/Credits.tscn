@@ -1,22 +1,7 @@
 [gd_scene format=3 uid="uid://cvidociua6mry"]
 
-[ext_resource type="Script" uid="uid://bgc60pwjtbv3m" path="res://Scenes/Menu/menu_button.gd" id="1_6wcx4"]
-[ext_resource type="PackedScene" uid="uid://dc0666cmfv6lg" path="res://Main.tscn" id="2_6p01r"]
-
-[sub_resource type="PackedScene" id="PackedScene_rc2un"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [],
-"names": PackedStringArray("MainMenu", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "Control", "ColorRect", "modulate", "offset_right", "offset_bottom", "MarginContainer", "theme_override_constants/margin_left", "theme_override_constants/margin_top", "theme_override_constants/margin_right", "theme_override_constants/margin_bottom", "VBoxContainer", "size_flags_horizontal", "size_flags_vertical", "Button", "theme_override_font_sizes/font_size", "text", "script", "scene", "Button2", "VBoxContainer2", "RichTextLabel", "custom_minimum_size", "theme_override_font_sizes/normal_font_size", "RichTextLabel2"),
-"node_count": 9,
-"node_ids": PackedInt32Array(115567150, 969586019, 1188013074, 176887281, 823474241, 1319577361, 1750962948, 1954717591, 998991943),
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 0, 0, 0, 8, 8, -1, 4, 9, 4, 1, 5, 10, 6, 11, 7, 0, 0, 0, 12, 12, -1, 10, 1, 8, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 13, 9, 14, 9, 15, 9, 16, 9, 0, 2, 0, 17, 17, -1, 3, 1, 3, 18, 5, 19, 10, 0, 3, 0, 20, 20, -1, 5, 1, 3, 21, 11, 22, 12, 23, 13, 24, 14, 0, 3, 0, 20, 25, -1, 5, 1, 3, 21, 11, 22, 15, 23, 13, 24, 16, 0, 2, 0, 17, 26, -1, 3, 1, 3, 18, 5, 19, 5, 0, 6, 0, 27, 27, -1, 6, 28, 17, 1, 3, 18, 5, 19, 5, 29, 18, 22, 19, 0, 6, 0, 27, 30, -1, 6, 28, 17, 1, 3, 18, 5, 19, 5, 29, 20, 22, 21, 0),
-"variants": [3, 15, 1.0, 2, Color(0.7, 0.7, 0.7, 1), 0, 1280.0, 720.0, 1, 16, 8, 64, "Play", ExtResource("1_6wcx4"), ExtResource("2_6p01r"), "Credits", null, Vector2(1000, 150), 96, "Supply Shock", 24, "C3 Game Jam 2026"],
-"version": 3
-}
+[ext_resource type="FontFile" uid="uid://b1yqgr4tnsyqs" path="res://Fonts/Thin Sans.ttf" id="0_font"]
+[ext_resource type="Script" path="res://Scenes/Menu/back_button.gd" id="1_back"]
 
 [node name="MainMenu" type="Control" unique_id=115567150]
 layout_mode = 3
@@ -27,10 +12,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=969586019]
-modulate = Color(0.7, 0.7, 0.7, 1)
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+color = Color(0.184, 0.302, 0.184, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1188013074]
 layout_mode = 1
@@ -52,9 +37,10 @@ size_flags_vertical = 8
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=823474241]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("0_font")
+theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 text = "Back"
-script = ExtResource("1_6wcx4")
-scene = SubResource("PackedScene_rc2un")
+script = ExtResource("1_back")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1750962948]
 layout_mode = 2
@@ -66,7 +52,10 @@ custom_minimum_size = Vector2(1100, 500)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_font_sizes/normal_font_size = 48
+scroll_active = false
+theme_override_fonts/normal_font = ExtResource("0_font")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_colors/default_color = Color(0.949, 0.722, 0.533, 1)
 text = "Vimal Buckley - Design, Writing, Programming 
 Rohan Muppa – Writing, Programming, Design 
 Jennifer Mezo – Design, Sound, Art 
