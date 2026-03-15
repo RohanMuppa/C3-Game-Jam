@@ -47,11 +47,12 @@ text = "Game Over"
 scroll_active = false
 
 [node name="StatsLabel" type="RichTextLabel" parent="MarginContainer/TitleBox" unique_id=542748383]
-custom_minimum_size = Vector2(1000, 400)
+custom_minimum_size = Vector2(1000, 450)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.949, 0.722, 0.533, 1)
 theme_override_fonts/normal_font = ExtResource("0_font")
 theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "Stats will appear here"
 scroll_active = false
 
@@ -59,7 +60,7 @@ scroll_active = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 theme_override_fonts/font = ExtResource("0_font")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 24
 text = "Main Menu"
 script = ExtResource("2_menu")
 scene = ExtResource("3_main")
