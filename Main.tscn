@@ -175,6 +175,5 @@ texture = ExtResource("14_fpfj3")
 expand_mode = 3
 
 [node name="Cutscenes" type="CanvasLayer" parent="." unique_id=227772538]
-visible = false
 
 [node name="stage2scene" parent="Cutscenes" unique_id=1952346346 instance=ExtResource("14_c2ibq")]
