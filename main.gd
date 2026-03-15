@@ -64,6 +64,10 @@ func _ready() -> void:
 	music_player.play()
 	if dpPreview.first_dp == true:
 		var arr: Array[CustomText] = [
+			CustomText.create("Emilija: Welcome to Latvia, friend! I’m Emilija-", 10, emilija_icon),
+			CustomText.create("Hugo: Mamma, who are you talking to?", 10, hugo_icon),
+			CustomText.create("Emilija: Oh Hugo, just showing our newcomer around! They’re going to help us organize groceries access for the community. Now, run along.", 10, emilija_icon),
+			CustomText.create("Emilija: That's my son, Hugo! He needs to start eating healthy, but organic food is hard to come by these days. Could you help us out?", 10, emilija_icon),
 			CustomText.create("Emilija: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10, emilija_icon),
 			]
 		dialog_box.set_text(arr)
