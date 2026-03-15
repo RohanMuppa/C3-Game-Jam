@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://c001xtlyv63e8" path="res://Scenes/GroceryStore/GroceryStorePreview.tscn" id="6_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://1ic67nr8rff6" path="res://Scenes/Import/Import.tscn" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="8_trn2v"]
-[ext_resource type="PackedScene" uid="uid://cxhvp6s1xh8ci" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
+[ext_resource type="PackedScene" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
 [ext_resource type="Script" uid="uid://du647wvcf3ftf" path="res://Scenes/Dialog/dialog.gd" id="12_c2ibq"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://7fiwjvmjkxbr" path="res://Scenes/CutScenes/stage2scene.tscn" id="14_c2ibq"]
+[ext_resource type="Texture2D" uid="uid://begeegbi6v2sb" path="res://Sprites/mom.png" id="14_fpfj3"]
 [ext_resource type="FontFile" uid="uid://bc2wbjpm30vqx" path="res://Fonts/Thin Sans.ttf" id="14_j4qnp"]
 
 [sub_resource type="GDScript" id="GDScript_20pc6"]
@@ -106,9 +107,6 @@ script = ExtResource("8_trn2v")
 [node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
 visible = false
 position = Vector2(-122, 196)
-is_active = null
-connection_radius = null
-cost = null
 houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
 farms = [NodePath("../YSort/Farm"), NodePath("../YSort/Farm2"), NodePath("../YSort/Farm3"), NodePath("../YSort/Farm4")]
 dp_parent = NodePath("../YSort")
@@ -154,6 +152,7 @@ offset_left = 133.0
 offset_top = 3.0
 offset_right = 927.0
 offset_bottom = 146.0
+text = "text text!"
 label_settings = SubResource("LabelSettings_c6i3y")
 autowrap_mode = 2
 
@@ -166,6 +165,16 @@ offset_bottom = 113.0
 theme_override_fonts/font = ExtResource("14_j4qnp")
 text = ">"
 
+[node name="TextureRect" type="TextureRect" parent="Dialog/CanvasLayer/DialogBox" unique_id=3139548]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 18.0
+offset_right = 115.0
+offset_bottom = 121.0
+texture = ExtResource("14_fpfj3")
+expand_mode = 3
+
 [node name="Cutscenes" type="CanvasLayer" parent="." unique_id=227772538]
+visible = false
 
 [node name="stage2scene" parent="Cutscenes" unique_id=1952346346 instance=ExtResource("14_c2ibq")]

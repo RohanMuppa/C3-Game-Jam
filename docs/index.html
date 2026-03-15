@@ -5,7 +5,7 @@ h1{color:#fdd179;font-size:2em}h2{color:#fee1b8}.s{font-size:1.2em;margin:8px}</
 <div class="s" id="money"></div><div class="s" id="buildings"></div>
 <div class="s" id="spent"></div>
 <script>
-const B="https://jsonblob.com/api/jsonBlob/019cf2b8-b70d-76f3-97cb-3055616f3fd4";
+const B="https://corsproxy.io/?url=https://jsonblob.com/api/jsonBlob/019cf2b8-b70d-76f3-97cb-3055616f3fd4";
 async function u(){try{let r=await fetch(B);let d=await r.json();
 document.getElementById("phase").textContent=d.phase;
 document.getElementById("money").textContent="Money: $"+d.money.toFixed(2);

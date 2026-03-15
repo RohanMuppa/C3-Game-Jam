@@ -13,6 +13,10 @@ var first_dp = true
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 @onready var dialogBox = $"../Dialog/CanvasLayer/DialogBox"
 
+@onready var emilija_icon: CompressedTexture2D = preload("res://Sprites/mom.png")
+@onready var farmer_icon: CompressedTexture2D = preload("res://Sprites/farmer.png")
+@onready var hugo_icon: CompressedTexture2D = preload("res://Sprites/hugo.png")
+
 # general idea:
 # when active:
 #	display at mouse cursor
@@ -105,9 +109,9 @@ func place_dp():
 	
 	if first_dp:
 		var arr: Array[CustomText] = [
-			CustomText.create("Emilija: A new distribution point, how wonderful! And so close to home too", 10),
-			CustomText.create("I can’t thank you enough; in fact, I’ll be your first volunteer to help organize orders!", 10),
-			CustomText.create("Farmer Zemnieks: Excellent! A new place to bring my fresh tomatoes!", 10)
+			CustomText.create("Emilija: A new distribution point, how wonderful! And so close to home too", 10, emilija_icon),
+			CustomText.create("I can’t thank you enough; in fact, I’ll be your first volunteer to help organize orders!", 10, emilija_icon),
+			CustomText.create("Farmer Zemnieks: Excellent! A new place to bring my fresh tomatoes!", 10, farmer_icon)
 		]
 		dialogBox.set_text(arr)
 		first_dp = false
