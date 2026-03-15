@@ -43,21 +43,22 @@ func step() -> void:
 			))
 		game_main.add_child(person)
 	
-	var sold_food = min(get_demand(), get_supply())
-	game_main.money += sold_food * get_price()
+	game_main.money += get_profit()
 
 func get_profit() -> float:
 	var sold_food = min(get_demand(), get_supply())
 	return sold_food * get_price()
 
 func get_price() -> float:
+	if (crisis.dp_income_mult >= 1):
+		return price * income_bonus * crisis.dp_income_mult
 	return price * income_bonus * (1 - (1 - crisis.dp_income_mult) * (1 - resilience_score))
 
 func get_demand() -> int:
 	return houses.size() * house_consumption
 
 func get_supply() -> int:
-	return farms.size() * food_intake * resilience_score
+	return farms.size() * food_intake
 	
 func _draw() -> void:
 	for house in houses:

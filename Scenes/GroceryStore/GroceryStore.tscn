@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://delvee3msvx18" path="res://Scenes/GroceryStore/grocery_store.gd" id="1_pw1c3"]
 [ext_resource type="Texture2D" uid="uid://cnh0tay4hsbnv" path="res://Sprites/Grocery Store/grocery.png" id="2_pw1c3"]
+[ext_resource type="FontFile" uid="uid://bc2wbjpm30vqx" path="res://Fonts/Thin Sans.ttf" id="3_21jy3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw1c3"]
 size = Vector2(80, 60)
@@ -16,5 +17,13 @@ shape = SubResource("RectangleShape2D_pw1c3")
 
 [node name="Grocery" type="Sprite2D" parent="." unique_id=238251727]
 texture = ExtResource("2_pw1c3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1822739254]
+offset_left = -13.0
+offset_top = -65.0
+offset_right = 20.0
+offset_bottom = -24.0
+theme_override_fonts/normal_font = ExtResource("3_21jy3")
+text = "GS"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
