@@ -111,5 +111,3 @@ func _process(delta: float) -> void:
 			
 func _on_s2_finish():
 	scene_playing = false
-func _on_s2_finish():
-	scene_playing = false
