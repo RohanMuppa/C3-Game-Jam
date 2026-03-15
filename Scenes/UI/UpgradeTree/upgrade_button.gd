@@ -3,11 +3,14 @@ class_name UpgradeButton extends Button
 @export var cost: int
 @export var on_purchase: UpgradeResource
 @export var parent: UpgradeButton
+@export var desc: String
 
 var children: Array[UpgradeButton]
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 @onready var line: LineDrawer = $Line
+@onready var tooltip: PanelContainer = $Tooltip
+@onready var tooltipText: RichTextLabel = $Tooltip/MarginContainer/RichTextLabel
 
 var _purchased: bool = false
 var purchased: bool = _purchased:
@@ -27,6 +30,7 @@ var purchased: bool = _purchased:
 var ug: Upgradeable
 
 func _ready() -> void:
+	tooltipText.text = desc
 	text += " ($%d)" % (cost)
 	if parent:
 		line.to = parent.line
@@ -47,3 +51,9 @@ func _pressed() -> void:
 	
 	for child in children:
 		child.disabled = false
+
+func _on_mouse_entered() -> void:
+	tooltip.visible = true
+
+func _on_mouse_exited() -> void:
+	tooltip.visible = false
