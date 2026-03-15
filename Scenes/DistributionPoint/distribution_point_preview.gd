@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("place_dp"):
 		is_active = !is_active
 	
-	if (Input.is_action_just_pressed("place_gs")):
+	if (Input.is_action_just_pressed("place_gs") || Input.is_action_just_pressed("escape")):
 		is_active = false
 	
 	if !is_active:
