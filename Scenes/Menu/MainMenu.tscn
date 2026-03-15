@@ -1,32 +1,43 @@
 [gd_scene format=3 uid="uid://q2oij04heut"]
 
-[ext_resource type="FontFile" uid="uid://b1yqgr4tnsyqs" path="res://Fonts/Thin Sans.ttf" id="0_font"]
+[ext_resource type="FontFile" uid="uid://bc2wbjpm30vqx" path="res://Fonts/Thin Sans.ttf" id="0_font"]
 [ext_resource type="Script" uid="uid://bgc60pwjtbv3m" path="res://Scenes/Menu/menu_button.gd" id="1_35riq"]
 [ext_resource type="PackedScene" uid="uid://dc0666cmfv6lg" path="res://Main.tscn" id="2_p4pvn"]
 [ext_resource type="PackedScene" uid="uid://cvidociua6mry" path="res://Scenes/Menu/Credits.tscn" id="3_s3ie0"]
-[ext_resource type="AudioStreamMP3" uid="uid://bauu7fvuaq7fl" path="res://Audio/main-theme-generic.mp3" id="4_music"]
-[ext_resource type="Script" path="res://Scenes/Menu/menu_screen.gd" id="5_screen"]
+[ext_resource type="AudioStream" uid="uid://bauu7fvuaq7fl" path="res://Audio/main-theme-generic.mp3" id="4_music"]
+[ext_resource type="Script" uid="uid://gh4dh3ivmg1t" path="res://Scenes/Menu/menu_screen.gd" id="5_screen"]
+[ext_resource type="Texture2D" uid="uid://bmdjx1kjhnxmk" path="res://Sprites/Farm/farmTomato.png" id="7_tjif3"]
+[ext_resource type="Texture2D" uid="uid://6jfec5ugnh6d" path="res://Sprites/Distribution Point/dpOutdoor.png" id="8_0nor7"]
+[ext_resource type="Texture2D" uid="uid://bb70lhgtcmyre" path="res://Sprites/Imports/Imports.png" id="9_828jk"]
 
 [node name="MainMenu" type="Control" unique_id=115567150]
 layout_mode = 3
-script = ExtResource("5_screen")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_screen")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=969586019]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.184, 0.302, 0.184, 1)
+color = Color(0.6509804, 0.6901961, 0.30980393, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1505827351]
+layout_mode = 0
+offset_right = 1283.0
+offset_bottom = 167.0
+color = Color(0.7921569, 0.9019608, 0.8509804, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1188013074]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 11.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
@@ -41,18 +52,18 @@ size_flags_vertical = 8
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=823474241]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 theme_override_fonts/font = ExtResource("0_font")
 theme_override_font_sizes/font_size = 64
-theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 text = "Play"
 script = ExtResource("1_35riq")
 scene = ExtResource("2_p4pvn")
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1319577361]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 theme_override_fonts/font = ExtResource("0_font")
 theme_override_font_sizes/font_size = 64
-theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 text = "Credits"
 script = ExtResource("1_35riq")
 scene = ExtResource("3_s3ie0")
@@ -67,36 +78,37 @@ custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-scroll_active = false
+theme_override_colors/default_color = Color(0.4509804, 0.29803923, 0.26666668, 1)
 theme_override_fonts/normal_font = ExtResource("0_font")
 theme_override_font_sizes/normal_font_size = 56
-theme_override_colors/default_color = Color(0.992, 0.82, 0.475, 1)
 text = "Supply Shock"
+scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer2" unique_id=998991943]
 custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-scroll_active = false
+theme_override_colors/default_color = Color(0.18431373, 0.3019608, 0.18431373, 1)
 theme_override_fonts/normal_font = ExtResource("0_font")
-theme_override_font_sizes/normal_font_size = 24
-theme_override_colors/default_color = Color(0.949, 0.722, 0.533, 1)
-text = "C3 Game Jam 2026"
+theme_override_font_sizes/normal_font_size = 26
+text = "C3 Game Jam 2026
+Team TBD"
+scroll_active = false
 
-[node name="QRLabel" type="Label" parent="."]
+[node name="QRLabel" type="Label" parent="." unique_id=1810969157]
 layout_mode = 0
 offset_left = 1050.0
 offset_top = 470.0
 offset_right = 1250.0
 offset_bottom = 500.0
+theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
 theme_override_fonts/font = ExtResource("0_font")
 theme_override_font_sizes/font_size = 16
-theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
-horizontal_alignment = 1
 text = "Scan for surprise"
+horizontal_alignment = 1
 
-[node name="QRCode" type="TextureRect" parent="."]
+[node name="QRCode" type="TextureRect" parent="." unique_id=151808569]
 layout_mode = 0
 offset_left = 1050.0
 offset_top = 500.0
@@ -104,6 +116,30 @@ offset_right = 1250.0
 offset_bottom = 700.0
 stretch_mode = 5
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1880082197]
 stream = ExtResource("4_music")
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=826229620]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 176.0
+offset_right = 824.0
+offset_bottom = 531.0
+texture = ExtResource("7_tjif3")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1427918391]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 77.0
+offset_right = 1234.2615
+offset_bottom = 351.0
+texture = ExtResource("8_0nor7")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1014504953]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 513.0
+offset_right = 1015.0
+offset_bottom = 722.0
+texture = ExtResource("9_828jk")
