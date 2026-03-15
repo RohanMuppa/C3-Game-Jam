@@ -34,24 +34,6 @@ texture = ExtResource("12_5vvyt")
 
 [node name="Houses" type="Node" parent="." unique_id=1903224962]
 
-[node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
-visible = false
-position = Vector2(-122, 196)
-is_active = null
-connection_radius = null
-cost = null
-houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
-farms = [NodePath("../YSort/Farm"), NodePath("../YSort/Farm2"), NodePath("../YSort/Farm3"), NodePath("../YSort/Farm4")]
-dp_parent = NodePath("../YSort")
-
-[node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
-visible = false
-position = Vector2(-158, 74)
-script = SubResource("GDScript_20pc6")
-houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
-imports = [NodePath("../YSort/Import"), NodePath("../YSort/Import2")]
-gs_parent = NodePath("../YSort")
-
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
 [node name="DPs" type="Node" parent="." unique_id=867580717]
@@ -119,6 +101,24 @@ script = ExtResource("8_trn2v")
 [node name="Import2" parent="YSort" unique_id=1280505601 instance=ExtResource("7_lgr22")]
 position = Vector2(900, 688)
 script = ExtResource("8_trn2v")
+
+[node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
+visible = false
+position = Vector2(-122, 196)
+is_active = null
+connection_radius = null
+cost = null
+houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
+farms = [NodePath("../YSort/Farm"), NodePath("../YSort/Farm2"), NodePath("../YSort/Farm3"), NodePath("../YSort/Farm4")]
+dp_parent = NodePath("../YSort")
+
+[node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
+visible = false
+position = Vector2(-158, 74)
+script = SubResource("GDScript_20pc6")
+houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
+imports = [NodePath("../YSort/Import"), NodePath("../YSort/Import2")]
+gs_parent = NodePath("../YSort")
 
 [node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
 top_level = true

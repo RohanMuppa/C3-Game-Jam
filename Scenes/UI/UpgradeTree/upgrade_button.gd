@@ -12,6 +12,9 @@ var children: Array[UpgradeButton]
 @onready var tooltip: PanelContainer = $Tooltip
 @onready var tooltipText: RichTextLabel = $Tooltip/MarginContainer/RichTextLabel
 
+@onready var purchased_stylebox: StyleBox = preload("res://Themes/ButtonBoxes/purchased.tres")
+@onready var locked_stylebox: StyleBox = preload("res://Themes/ButtonBoxes/locked.tres")
+
 var _purchased: bool = false
 var purchased: bool = _purchased:
 	get:
@@ -20,9 +23,9 @@ var purchased: bool = _purchased:
 		_purchased = new_val
 		if _purchased:
 			disabled = true
-			add_theme_color_override("font_disabled_color", Color(0.387, 0.807, 0.0, 1.0))
+			add_theme_stylebox_override("disabled", purchased_stylebox)
 		else:
-			add_theme_color_override("font_disabled_color", Color(1.0, 1.0, 1.0, 0.4))
+			add_theme_stylebox_override("disabled", locked_stylebox)
 			if parent && !parent._purchased:
 				disabled = true
 			else:
