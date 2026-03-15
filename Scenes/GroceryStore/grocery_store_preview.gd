@@ -7,8 +7,11 @@ extends Node2D
 @export var imports: Array[Import] = []
 @export var gs_parent: Node
 
+var first_store = true
+
 @onready var GroceryStoreScene: PackedScene = preload("res://Scenes/GroceryStore/GroceryStore.tscn")
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
+@onready var dialog_box: = $"../Dialog/CanvasLayer/DialogBox"
 
 # general idea:
 # when active:
@@ -85,6 +88,14 @@ func in_radius(node: Node2D):
 
 func place_gs():
 	is_active = false
+	
+	if (first_store):
+		var arr: Array[CustomText] =  [
+			CustomText.create("Emilija: A new grocery store, how wonderful!", 10)
+		]
+		dialog_box.set_text(arr)
+		first_store = false
+		
 	
 	game_main.money -= cost
 	game_main.total_spent += cost

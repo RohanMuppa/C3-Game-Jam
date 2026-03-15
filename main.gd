@@ -53,7 +53,7 @@ func _ready() -> void:
 	music_player.play()
 	if dpPreview.first_dp == true:
 		var arr: Array[CustomText] = [
-			CustomText.create("NameA: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10),
+			CustomText.create("Emilija: A distribution point (Q) helps bring more local foods from farmers, but a grocery store (E) can stock products consistently from the ports. What do you think?" , 10),
 			]
 		dialog_box.set_text(arr)
 
@@ -68,11 +68,11 @@ func _process(delta: float) -> void:
 	var ratio = event_ticks / (60 * game_time_mins)
 	gameUI.progress_bar.set_as_ratio(ratio)
 	
-	if ratio > 0.2 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
+	if ratio > 0.2 && ratio < 0.5 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
 		var arr: Array[CustomText] = [
-			CustomText.create("NameA: [Farmer], good to see you again! Can I just say your tomatoes have never been better! [NameB] loves them, don’t you?", 4),
-			CustomText.create("NameB: Tomatoes, tomatoes! ", 4),
-			CustomText.create("Farmer: That’s great to hear from such a long-time customer. [NameB], next week, I’ll save my best tomato just for you; how’s that sound?", 4)
+			CustomText.create("Emilija: Farmer Zemnieks, good to see you again! Can I just say your tomatoes have never been better! Hugo loves them, don’t you?", 10),
+			CustomText.create("Hugo: Tomatoes, tomatoes! ", 10),
+			CustomText.create("Farmer Zemnieks: That’s great to hear from such a long-time customer. Hugo, next week, I’ll save my best tomato just for you; how’s that sound?", 10)
 		]
 		dialog_box.set_text(arr)
 		sent_first_msg = true
