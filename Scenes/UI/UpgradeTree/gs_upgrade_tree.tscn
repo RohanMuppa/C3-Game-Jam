@@ -131,4 +131,4 @@ offset_bottom = 319.0
 text = "Higher Wages"
 cost = 50
 on_purchase = ExtResource("8_s3f1t")
-desc = "+25% Income for this grocery store, at the cost of increased wages."
+desc = "+50% Income for this grocery store, at the cost of increased wages."
