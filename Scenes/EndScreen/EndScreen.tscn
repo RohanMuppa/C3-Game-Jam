@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bl4s0alydid8a"]
+
+[ext_resource type="Script" uid="uid://bh8idyv8k4a4y" path="res://Scenes/EndScreen/end_screen.gd" id="1_end"]
+[ext_resource type="Script" uid="uid://bgc60pwjtbv3m" path="res://Scenes/Menu/menu_button.gd" id="2_menu"]
+[ext_resource type="PackedScene" uid="uid://q2oij04heut" path="res://Scenes/Menu/MainMenu.tscn" id="3_main"]
+
+[node name="EndScreen" type="Control" unique_id=481725348]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_end")
+
+[node name="Background" type="ColorRect" parent="."]
+modulate = Color(0.7, 0.7, 0.7, 1)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TitleBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/TitleBox"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 72
+text = "Game Over"
+
+[node name="StatsLabel" type="RichTextLabel" parent="MarginContainer/TitleBox"]
+custom_minimum_size = Vector2(1000, 400)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Stats will appear here"
+
+[node name="MenuButton" type="Button" parent="MarginContainer/TitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Main Menu"
+script = ExtResource("2_menu")
+scene = ExtResource("3_main")
