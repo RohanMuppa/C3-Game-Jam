@@ -12,9 +12,9 @@ var ui: GameUI
 
 var house_consumption: int = 1
 var income_bonus: float = 1
-var food_intake: int = 5
+var food_intake: int = 4
 
-var resilience_score: float = 0.45
+var resilience_score: float = 0.5
 var price = 8
 var wages: float = 5
 

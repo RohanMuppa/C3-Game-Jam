@@ -3,7 +3,7 @@ class_name CrisisManager extends Node
 
 signal phase_changed(phase_name: String)
 
-enum Phase { PRE_COVID, DURING_COVID, POST_COVID }
+enum Phase { PRE_COVID, DURING_COVID }
 
 var current_phase: Phase = Phase.PRE_COVID
 var phase_timer: float = 0.0
@@ -33,8 +33,6 @@ func _process(delta: float) -> void:
 			Phase.PRE_COVID:
 				enter_phase(Phase.DURING_COVID)
 			Phase.DURING_COVID:
-				enter_phase(Phase.POST_COVID)
-			Phase.POST_COVID:
 				game_main.gameUI.show_end_screen(game_main.money)
 				set_process(false)
 
@@ -52,12 +50,9 @@ func enter_phase(phase: Phase):
 		Phase.DURING_COVID:
 			grocery_income_mult = 0.7
 			import_supply_mult = 0.7
-			dp_income_mult = 0.7
+			dp_income_mult = 1.2
 			player.stream = covid_theme
 			phase_changed.emit("COVID-19")
-		Phase.POST_COVID:
-			player.stream = main_theme
-			phase_changed.emit("Post-COVID")
 
 	player.play()
 
