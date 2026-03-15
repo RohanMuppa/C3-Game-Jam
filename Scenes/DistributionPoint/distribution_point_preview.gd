@@ -103,3 +103,4 @@ func place_dp():
 	
 	if first_dp:
 		dialogBox.show_box("NameA: A new distribution point, how wonderful! And so close to home too.")
+		first_dp = false
