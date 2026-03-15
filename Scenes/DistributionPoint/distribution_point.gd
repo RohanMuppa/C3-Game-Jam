@@ -59,21 +59,6 @@ func get_demand() -> int:
 
 func get_supply() -> int:
 	return farms.size() * food_intake
-	
-func _draw() -> void:
-	for house in houses:
-		draw_line(
-			Vector2.ZERO,
-			house.global_position - global_position,
-			Color.CRIMSON
-		)
-	
-	for farm in farms:
-		draw_line(
-			Vector2.ZERO,
-			farm.global_position - global_position,
-			Color.DARK_ORANGE
-		)
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():

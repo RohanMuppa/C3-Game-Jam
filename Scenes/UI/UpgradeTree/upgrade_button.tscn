@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://bleennvirtqb4" path="res://Scenes/UI/UpgradeTree/upgrade_button.gd" id="1_p17mr"]
 [ext_resource type="Script" uid="uid://cp3ysps4ijpql" path="res://Scenes/UI/line.gd" id="2_arfpt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arfpt"]
+bg_color = Color(0.5689727, 0.56897277, 0.56897265, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
 [node name="Button" type="Button" unique_id=959125639]
 z_index = 1
 offset_right = 96.0
@@ -23,3 +31,29 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_arfpt")
+
+[node name="Tooltip" type="PanelContainer" parent="." unique_id=644090607]
+visible = false
+z_index = 6
+layout_mode = 0
+offset_left = 105.0
+offset_right = 293.0
+offset_bottom = 46.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_arfpt")
+
+[node name="MarginContainer" type="MarginContainer" parent="Tooltip" unique_id=1519002775]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tooltip/MarginContainer" unique_id=2002871650]
+clip_contents = false
+layout_mode = 2
+bbcode_enabled = true
+text = "This upgrade gives you a billion dollars!"
+fit_content = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

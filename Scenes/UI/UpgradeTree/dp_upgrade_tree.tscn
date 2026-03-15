@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mbdvembwa2mw" path="res://Scenes/UI/UpgradeTree/upgrade_button.tscn" id="1_c40ul"]
 [ext_resource type="Script" uid="uid://d05tif6kwrap2" path="res://Scenes/UI/UpgradeTree/inherited_upgrade_tree.gd" id="1_up68g"]
-[ext_resource type="Script" path="res://Scenes/UI/UpgradeTree/stats.gd" id="2_8h5fy"]
+[ext_resource type="Script" uid="uid://c63rdklm78wpt" path="res://Scenes/UI/UpgradeTree/stats.gd" id="2_8h5fy"]
 [ext_resource type="Script" uid="uid://cyhexxfg6qsvr" path="res://Scenes/UI/UpgradeTree/close_button.gd" id="2_lxk10"]
 [ext_resource type="Resource" uid="uid://dp4ltktbhraf1" path="res://Resources/Upgrades/DP/Resources/trucks1.tres" id="4_l0b81"]
 [ext_resource type="Resource" uid="uid://cl1ifyy7w0pf4" path="res://Resources/Upgrades/DP/Resources/trucks2.tres" id="5_8h5fy"]
@@ -78,6 +78,7 @@ offset_bottom = 238.0
 text = "Fast Trucks"
 cost = 50
 on_purchase = ExtResource("4_l0b81")
+desc = "+10% Income for this distribution point."
 
 [node name="FasterTrucks" parent="Upgrades" unique_id=1967810872 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -91,6 +92,7 @@ text = "Faster Trucks"
 cost = 100
 on_purchase = ExtResource("5_8h5fy")
 parent = NodePath("../FastTrucks")
+desc = "+15% Income for this distribution point."
 
 [node name="BiggerTrucks" parent="Upgrades" unique_id=619222681 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -102,6 +104,7 @@ text = "Bigger Trucks"
 cost = 75
 on_purchase = ExtResource("6_njw2u")
 parent = NodePath("../FastTrucks")
+desc = "+2 Supply per connected farm."
 
 [node name="HelpingHands" parent="Upgrades" unique_id=1418393161 instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -113,6 +116,7 @@ text = "Helping Hands
 "
 cost = 75
 on_purchase = ExtResource("7_ab1yv")
+desc = "+1 Supply per connected farm."
 
 [node name="LocalAds" parent="Upgrades" unique_id=1814597382 node_paths=PackedStringArray("parent") instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -124,6 +128,7 @@ text = "Local Ads"
 cost = 50
 on_purchase = ExtResource("8_gg77j")
 parent = NodePath("../HelpingHands")
+desc = "Root yourself further in community as a known name!"
 
 [node name="HungryHands" parent="Upgrades" unique_id=1820132106 instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -135,6 +140,7 @@ text = "Hungry Hands
 "
 cost = 100
 on_purchase = ExtResource("9_a2mdh")
+desc = "+1 Demand per connected house."
 
 [node name="DigiPayments" parent="Upgrades" unique_id=868194948 instance=ExtResource("1_c40ul")]
 layout_mode = 0
@@ -145,3 +151,4 @@ offset_bottom = 319.0
 text = "Digital Payments"
 cost = 100
 on_purchase = ExtResource("10_i71tc")
+desc = "Adds no additional income, but it does connects you further with customers."
