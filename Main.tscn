@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c001xtlyv63e8" path="res://Scenes/GroceryStore/GroceryStorePreview.tscn" id="6_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://1ic67nr8rff6" path="res://Scenes/Import/Import.tscn" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="8_trn2v"]
-[ext_resource type="PackedScene" uid="uid://cxhvp6s1xh8ci" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
+[ext_resource type="PackedScene" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
 [ext_resource type="Script" uid="uid://du647wvcf3ftf" path="res://Scenes/Dialog/dialog.gd" id="12_c2ibq"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]
@@ -32,58 +32,7 @@ texture = ExtResource("12_5vvyt")
 
 [node name="Farms" type="Node" parent="." unique_id=928189290]
 
-[node name="Farm" parent="Farms" unique_id=943721428 instance=ExtResource("3_lgr22")]
-position = Vector2(204, 84)
-
-[node name="Farm2" parent="Farms" unique_id=1864280917 instance=ExtResource("3_lgr22")]
-position = Vector2(1044, 84)
-
-[node name="Farm3" parent="Farms" unique_id=229168466 instance=ExtResource("3_lgr22")]
-position = Vector2(100, 400)
-
-[node name="Farm4" parent="Farms" unique_id=692211515 instance=ExtResource("3_lgr22")]
-position = Vector2(1100, 400)
-
 [node name="Houses" type="Node" parent="." unique_id=1903224962]
-
-[node name="House" parent="Houses" unique_id=1011429723 instance=ExtResource("4_trn2v")]
-position = Vector2(370, 397)
-
-[node name="House2" parent="Houses" unique_id=29358117 instance=ExtResource("4_trn2v")]
-position = Vector2(197, 461)
-
-[node name="House3" parent="Houses" unique_id=1444412839 instance=ExtResource("4_trn2v")]
-position = Vector2(313, 234)
-
-[node name="House4" parent="Houses" unique_id=1390313807 instance=ExtResource("4_trn2v")]
-position = Vector2(885, 137)
-
-[node name="House5" parent="Houses" unique_id=1341857926 instance=ExtResource("4_trn2v")]
-position = Vector2(770, 258)
-
-[node name="House6" parent="Houses" unique_id=988079505 instance=ExtResource("4_trn2v")]
-position = Vector2(998, 444)
-
-[node name="House7" parent="Houses" unique_id=759568615 instance=ExtResource("4_trn2v")]
-position = Vector2(436, 543)
-
-[node name="House8" parent="Houses" unique_id=485154574 instance=ExtResource("4_trn2v")]
-position = Vector2(422, 149)
-
-[node name="House9" parent="Houses" unique_id=807279216 instance=ExtResource("4_trn2v")]
-position = Vector2(603, 116)
-
-[node name="House10" parent="Houses" unique_id=460053994 instance=ExtResource("4_trn2v")]
-position = Vector2(795, 550)
-
-[node name="House11" parent="Houses" unique_id=1677520023 instance=ExtResource("4_trn2v")]
-position = Vector2(1110, 242)
-
-[node name="House12" parent="Houses" unique_id=1743786452 instance=ExtResource("4_trn2v")]
-position = Vector2(716, 414)
-
-[node name="House13" parent="Houses" unique_id=1927803103 instance=ExtResource("4_trn2v")]
-position = Vector2(553, 288)
 
 [node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
 visible = false
@@ -91,17 +40,17 @@ position = Vector2(-122, 196)
 is_active = null
 connection_radius = null
 cost = null
-houses = [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")]
-farms = [NodePath("../Farms/Farm"), NodePath("../Farms/Farm2"), NodePath("../Farms/Farm3"), NodePath("../Farms/Farm4")]
-dp_parent = NodePath("../DPs")
+houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
+farms = [NodePath("../YSort/Farm"), NodePath("../YSort/Farm2"), NodePath("../YSort/Farm3"), NodePath("../YSort/Farm4")]
+dp_parent = NodePath("../YSort")
 
 [node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
 visible = false
 position = Vector2(-158, 74)
 script = SubResource("GDScript_20pc6")
-houses = [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")]
+houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
 imports = [NodePath("../Imports/Import"), NodePath("../Imports/Import2")]
-gs_parent = NodePath("../GSs")
+gs_parent = NodePath("../YSort")
 
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
@@ -157,3 +106,57 @@ offset_top = 37.0
 offset_right = 962.0
 offset_bottom = 117.0
 text = ">"
+
+[node name="YSort" type="Node2D" parent="." unique_id=123144932]
+y_sort_enabled = true
+
+[node name="House" parent="YSort" unique_id=1011429723 instance=ExtResource("4_trn2v")]
+position = Vector2(370, 397)
+
+[node name="House2" parent="YSort" unique_id=29358117 instance=ExtResource("4_trn2v")]
+position = Vector2(197, 461)
+
+[node name="House3" parent="YSort" unique_id=1444412839 instance=ExtResource("4_trn2v")]
+position = Vector2(313, 234)
+
+[node name="House4" parent="YSort" unique_id=1390313807 instance=ExtResource("4_trn2v")]
+position = Vector2(885, 137)
+
+[node name="House5" parent="YSort" unique_id=1341857926 instance=ExtResource("4_trn2v")]
+position = Vector2(770, 258)
+
+[node name="House6" parent="YSort" unique_id=988079505 instance=ExtResource("4_trn2v")]
+position = Vector2(998, 444)
+
+[node name="House7" parent="YSort" unique_id=759568615 instance=ExtResource("4_trn2v")]
+position = Vector2(436, 543)
+
+[node name="House8" parent="YSort" unique_id=485154574 instance=ExtResource("4_trn2v")]
+position = Vector2(422, 149)
+
+[node name="House9" parent="YSort" unique_id=807279216 instance=ExtResource("4_trn2v")]
+position = Vector2(603, 116)
+
+[node name="House10" parent="YSort" unique_id=460053994 instance=ExtResource("4_trn2v")]
+position = Vector2(795, 550)
+
+[node name="House11" parent="YSort" unique_id=1677520023 instance=ExtResource("4_trn2v")]
+position = Vector2(1110, 242)
+
+[node name="House12" parent="YSort" unique_id=1743786452 instance=ExtResource("4_trn2v")]
+position = Vector2(716, 414)
+
+[node name="House13" parent="YSort" unique_id=1927803103 instance=ExtResource("4_trn2v")]
+position = Vector2(553, 288)
+
+[node name="Farm" parent="YSort" unique_id=943721428 instance=ExtResource("3_lgr22")]
+position = Vector2(204, 84)
+
+[node name="Farm2" parent="YSort" unique_id=1864280917 instance=ExtResource("3_lgr22")]
+position = Vector2(1044, 84)
+
+[node name="Farm3" parent="YSort" unique_id=229168466 instance=ExtResource("3_lgr22")]
+position = Vector2(100, 400)
+
+[node name="Farm4" parent="YSort" unique_id=692211515 instance=ExtResource("3_lgr22")]
+position = Vector2(1100, 400)

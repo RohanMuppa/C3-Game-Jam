@@ -8,6 +8,7 @@
 size = Vector2(80, 60)
 
 [node name="GroceryStore" type="Node2D" unique_id=17958912]
+y_sort_enabled = true
 script = ExtResource("1_pw1c3")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=606945805]

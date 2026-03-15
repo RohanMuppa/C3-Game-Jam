@@ -30,7 +30,7 @@ func step() -> void:
 				person.PersonType.TRUCK, game_main.money_cooldown * 2, 
 				import.global_position, global_position
 			))
-		game_main.add_child(person)
+		game_main.ysort.add_child(person)
 	
 	for house in houses:
 		var person: WalkingPerson = walking_person.instantiate()
@@ -43,7 +43,7 @@ func step() -> void:
 				].pick_random(), game_main.money_cooldown * 2, 
 				house.global_position, global_position
 			))
-		game_main.add_child(person)
+		game_main.ysort.add_child(person)
 	
 
 	var sold_food = min(get_demand(), get_supply())
