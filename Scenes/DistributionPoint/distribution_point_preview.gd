@@ -92,6 +92,8 @@ func place_dp():
 	is_active = false
 	
 	game_main.money -= cost
+	game_main.total_spent += cost
+	game_main.dps_placed += 1
 	cost *= 1.5
 	
 	var dp: DistributionPoint = DistributionPointScene.instantiate()

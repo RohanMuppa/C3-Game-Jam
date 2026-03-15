@@ -10,6 +10,17 @@ var ticker = 0
 var money_cooldown = 4
 
 var game_time_mins = 6
+
+var earned_pre_covid: float = 0
+var earned_during_covid: float = 0
+var food_sold_pre_covid: int = 0
+var food_sold_during_covid: int = 0
+var dps_placed: int = 0
+var gs_placed: int = 0
+var total_spent: float = 0
+var upgrades_purchased: int = 0
+var resilience_upgrades: int = 0
+var income_upgrades: int = 0
 @onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 var event_ticks = 0
 

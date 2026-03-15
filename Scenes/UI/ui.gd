@@ -18,9 +18,13 @@ func set_phase(phase_name: String) -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func show_end_screen(final_money: float) -> void:
+func show_end_screen(gm: GameMain) -> void:
 	$EndScreen.visible = true
-	$EndScreen/FinalScore.text = "Final: $%.2f" % final_money
+	$EndScreen/FinalScore.text = "Final: $%.2f" % gm.money \
+		+ "\n\nDPs: %d | Grocery Stores: %d" % [gm.dps_placed, gm.gs_placed] \
+		+ "\nSpent: $%.2f" % gm.total_spent \
+		+ "\n\nPre-COVID: $%.0f (%d sold)" % [gm.earned_pre_covid, gm.food_sold_pre_covid] \
+		+ "\nCOVID-19: $%.0f (%d sold)" % [gm.earned_during_covid, gm.food_sold_during_covid]
 
 func show_dp_upgrades(dp: DistributionPoint):
 	$DPUpgradeTree.inherit_upgrades(dp)
