@@ -12,7 +12,8 @@ func _draw():
 		draw_line(
 			Vector2.ZERO,
 			to.global_position - global_position,
-			color
+			color,
+			8
 		)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -23,10 +23,15 @@ GlobalStats="res://global_stats.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+
+[gui]
+
+theme/default_font_subpixel_positioning=0
 
 [input]
 

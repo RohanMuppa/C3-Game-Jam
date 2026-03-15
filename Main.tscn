@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c001xtlyv63e8" path="res://Scenes/GroceryStore/GroceryStorePreview.tscn" id="6_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://1ic67nr8rff6" path="res://Scenes/Import/Import.tscn" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="8_trn2v"]
-[ext_resource type="PackedScene" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://cxhvp6s1xh8ci" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
 [ext_resource type="Script" uid="uid://du647wvcf3ftf" path="res://Scenes/Dialog/dialog.gd" id="12_c2ibq"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]
@@ -33,24 +33,6 @@ texture = ExtResource("12_5vvyt")
 [node name="Farms" type="Node" parent="." unique_id=928189290]
 
 [node name="Houses" type="Node" parent="." unique_id=1903224962]
-
-[node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
-visible = false
-position = Vector2(-122, 196)
-is_active = null
-connection_radius = null
-cost = null
-houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
-farms = [NodePath("../YSort/Farm"), NodePath("../YSort/Farm2"), NodePath("../YSort/Farm3"), NodePath("../YSort/Farm4")]
-dp_parent = NodePath("../YSort")
-
-[node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
-visible = false
-position = Vector2(-158, 74)
-script = SubResource("GDScript_20pc6")
-houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
-imports = [NodePath("../YSort/Import"), NodePath("../YSort/Import2")]
-gs_parent = NodePath("../YSort")
 
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
@@ -120,6 +102,24 @@ script = ExtResource("8_trn2v")
 position = Vector2(900, 688)
 script = ExtResource("8_trn2v")
 
+[node name="DistributionPointPreview" parent="." unique_id=693104665 node_paths=PackedStringArray("houses", "farms", "dp_parent") instance=ExtResource("5_03owx")]
+visible = false
+position = Vector2(-122, 196)
+is_active = null
+connection_radius = null
+cost = null
+houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
+farms = [NodePath("../YSort/Farm"), NodePath("../YSort/Farm2"), NodePath("../YSort/Farm3"), NodePath("../YSort/Farm4")]
+dp_parent = NodePath("../YSort")
+
+[node name="GroceryStorePreview" parent="." unique_id=1987339727 node_paths=PackedStringArray("houses", "imports", "gs_parent") instance=ExtResource("6_wkp8b")]
+visible = false
+position = Vector2(-158, 74)
+script = SubResource("GDScript_20pc6")
+houses = [NodePath("../YSort/House"), NodePath("../YSort/House2"), NodePath("../YSort/House3"), NodePath("../YSort/House4"), NodePath("../YSort/House5"), NodePath("../YSort/House6"), NodePath("../YSort/House7"), NodePath("../YSort/House8"), NodePath("../YSort/House9"), NodePath("../YSort/House10"), NodePath("../YSort/House11"), NodePath("../YSort/House12"), NodePath("../YSort/House13")]
+imports = [NodePath("../YSort/Import"), NodePath("../YSort/Import2")]
+gs_parent = NodePath("../YSort")
+
 [node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]
 top_level = true
 mouse_filter = 2
@@ -132,8 +132,10 @@ script = ExtResource("12_c6i3y")
 [node name="Dialog" type="Control" parent="." unique_id=321140126]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1219.0
-offset_bottom = 152.0
+offset_left = 183.0
+offset_top = 19.0
+offset_right = 1205.0
+offset_bottom = 171.0
 mouse_filter = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Dialog" unique_id=541951954]
@@ -147,16 +149,18 @@ script = ExtResource("12_c2ibq")
 
 [node name="DialogLabel" type="Label" parent="Dialog/CanvasLayer/DialogBox" unique_id=935640134]
 layout_mode = 0
-offset_left = 19.0
-offset_right = 823.0
-offset_bottom = 149.0
+offset_left = 133.0
+offset_top = 3.0
+offset_right = 927.0
+offset_bottom = 146.0
 label_settings = SubResource("LabelSettings_c6i3y")
 autowrap_mode = 2
 
 [node name="DialogButton" type="Button" parent="Dialog/CanvasLayer/DialogBox" unique_id=1180663826]
 layout_mode = 0
-offset_left = 848.0
-offset_top = 37.0
-offset_right = 962.0
-offset_bottom = 117.0
+offset_left = 933.0
+offset_top = 33.0
+offset_right = 980.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("14_j4qnp")
 text = ">"
