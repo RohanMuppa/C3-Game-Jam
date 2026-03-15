@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://e6u6uitcmrmy"]
+
+[ext_resource type="FontFile" uid="uid://bc2wbjpm30vqx" path="res://Fonts/Thin Sans.ttf" id="1_barku"]
+
+[resource]
+default_font = ExtResource("1_barku")
+default_font_size = 0
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.49019608)
+RichTextLabel/constants/shadow_offset_x = 4
+RichTextLabel/constants/shadow_offset_y = 4
+RichTextLabel/constants/shadow_outline_size = 4

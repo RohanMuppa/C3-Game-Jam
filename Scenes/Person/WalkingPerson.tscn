@@ -161,6 +161,7 @@ animations = [{
 }]
 
 [node name="WalkingPerson" type="Node2D" unique_id=99965420]
+y_sort_enabled = true
 script = ExtResource("1_fu5ec")
 shadowHeight = Dictionary[int, float]({
 0: 9.0,
@@ -174,7 +175,7 @@ shadowHeight = Dictionary[int, float]({
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_671r1")
 animation = &"GrainTruckB"
-frame_progress = 0.7656144
+frame_progress = 0.266185
 flip_h = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1602033494]
@@ -185,6 +186,6 @@ scale = Vector2(1, 0.3)
 skew = 0.9738937
 sprite_frames = SubResource("SpriteFrames_671r1")
 animation = &"GrainTruckB"
-frame_progress = 0.70494336
+frame_progress = 0.20551601
 flip_h = true
 script = ExtResource("23_mxpb2")

@@ -9,6 +9,7 @@ size = Vector2(60, 40)
 
 [node name="DistributionPoint" type="Node2D" unique_id=943721428]
 top_level = true
+y_sort_enabled = true
 script = ExtResource("1_dq1lj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1995956925]

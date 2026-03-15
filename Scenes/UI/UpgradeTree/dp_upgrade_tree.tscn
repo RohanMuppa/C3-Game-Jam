@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://mbdvembwa2mw" path="res://Scenes/UI/UpgradeTree/upgrade_button.tscn" id="1_c40ul"]
 [ext_resource type="Script" uid="uid://d05tif6kwrap2" path="res://Scenes/UI/UpgradeTree/inherited_upgrade_tree.gd" id="1_up68g"]
 [ext_resource type="Script" uid="uid://c63rdklm78wpt" path="res://Scenes/UI/UpgradeTree/stats.gd" id="2_8h5fy"]
+[ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="2_ab1yv"]
 [ext_resource type="Script" uid="uid://cyhexxfg6qsvr" path="res://Scenes/UI/UpgradeTree/close_button.gd" id="2_lxk10"]
+[ext_resource type="Theme" uid="uid://e6u6uitcmrmy" path="res://Themes/ThinSans.tres" id="3_gg77j"]
 [ext_resource type="Resource" uid="uid://dp4ltktbhraf1" path="res://Resources/Upgrades/DP/Resources/trucks1.tres" id="4_l0b81"]
 [ext_resource type="Resource" uid="uid://cl1ifyy7w0pf4" path="res://Resources/Upgrades/DP/Resources/trucks2.tres" id="5_8h5fy"]
 [ext_resource type="Resource" uid="uid://coyvp6qp554jb" path="res://Resources/Upgrades/DP/Resources/bigtrucks.tres" id="6_njw2u"]
@@ -13,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://d4iu11rykj324" path="res://Resources/Upgrades/DP/Resources/digipay.tres" id="10_i71tc"]
 
 [node name="DPUpgradeTree" type="Control" unique_id=361996826 node_paths=PackedStringArray("upgrades")]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,11 +25,15 @@ grow_vertical = 2
 script = ExtResource("1_up68g")
 upgrades = NodePath("Upgrades")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1149722571]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1167172747]
+modulate = Color(1, 0.4185068, 0.7713347, 1)
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0.74138474, 0.7413847, 0.74138457, 1)
+offset_left = 1034.9355
+offset_top = -978.695
+offset_right = 3594.9355
+offset_bottom = 921.00006
+rotation = 0.9651671
+texture = ExtResource("2_ab1yv")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1410346287]
 layout_mode = 1
@@ -39,7 +46,8 @@ theme_override_constants/margin_bottom = 15
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=845223982]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 48
+theme = ExtResource("3_gg77j")
+theme_override_font_sizes/normal_font_size = 32
 text = "Distribution Upgrades"
 horizontal_alignment = 2
 
@@ -48,7 +56,8 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_font_sizes/normal_font_size = 48
+theme = ExtResource("3_gg77j")
+theme_override_font_sizes/normal_font_size = 32
 text = "Price: 
 Supply: 
 Demand: "

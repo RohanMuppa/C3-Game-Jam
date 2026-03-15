@@ -6,6 +6,8 @@ class_name GameMain extends Node2D
 @export_category("Starting Stats")
 @export var _money: float = 25
 
+@onready var ysort: Node2D = $YSort
+
 var ticker = 0
 var money_cooldown = 4
 

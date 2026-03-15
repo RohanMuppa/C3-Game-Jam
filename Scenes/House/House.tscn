@@ -24,6 +24,7 @@ animations = [{
 }]
 
 [node name="House" type="Node2D" unique_id=1011429723]
+y_sort_enabled = true
 script = ExtResource("1_jv2v4")
 
 [node name="HouseSprite" type="AnimatedSprite2D" parent="." unique_id=1948032615]
