@@ -5,8 +5,9 @@ h1{color:#fdd179;font-size:2em}h2{color:#fee1b8}.s{font-size:1.2em;margin:8px}</
 <div class="s" id="money"></div><div class="s" id="buildings"></div>
 <div class="s" id="spent"></div>
 <script>
-const B="https://corsproxy.io/?url=https://jsonblob.com/api/jsonBlob/019cf2b8-b70d-76f3-97cb-3055616f3fd4";
-async function u(){try{let r=await fetch(B);let d=await r.json();
+const B="https://ekddyatakcbjigfbcggk.supabase.co/rest/v1/game_stats?select=*&id=eq.1";
+const K="sb_publishable_HCljEapFwGbpxlHd7fVJ0w_aYm9zlW_";
+async function u(){try{let r=await fetch(B,{headers:{"apikey":K}});let d=(await r.json())[0];
 document.getElementById("phase").textContent=d.phase;
 document.getElementById("money").textContent="Money: $"+d.money.toFixed(2);
 document.getElementById("buildings").textContent="DPs: "+d.dps+" | Stores: "+d.gs;

@@ -12,7 +12,8 @@ var food_sold_during_covid: int = 0
 var phase: String = "Menu"
 
 var qr_texture: ImageTexture = null
-var blob_url: String = "https://jsonblob.com/api/jsonBlob/019cf2b8-b70d-76f3-97cb-3055616f3fd4"
+var supa_url: String = "https://ekddyatakcbjigfbcggk.supabase.co/rest/v1/game_stats?id=eq.1"
+var supa_key: String = "sb_publishable_HCljEapFwGbpxlHd7fVJ0w_aYm9zlW_"
 var page_url: String = "https://rohanmuppa.github.io/C3-Game-Jam/"
 var http: HTTPRequest
 var push_timer: float = 0.0
@@ -36,4 +37,5 @@ func generate_qr() -> void:
 
 func push_stats() -> void:
 	var body = JSON.stringify({"money": money, "dps": dps_placed, "gs": gs_placed, "spent": total_spent, "phase": phase})
-	http.request(blob_url, ["Content-Type: application/json"], HTTPClient.METHOD_PUT, body)
+	var headers = ["Content-Type: application/json", "apikey: " + supa_key, "Prefer: return=minimal"]
+	http.request(supa_url, headers, HTTPClient.METHOD_PATCH, body)
