@@ -5,9 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dc0666cmfv6lg" path="res://Main.tscn" id="2_p4pvn"]
 [ext_resource type="PackedScene" uid="uid://cvidociua6mry" path="res://Scenes/Menu/Credits.tscn" id="3_s3ie0"]
 [ext_resource type="AudioStreamMP3" uid="uid://bauu7fvuaq7fl" path="res://Audio/main-theme-generic.mp3" id="4_music"]
+[ext_resource type="Script" path="res://Scenes/Menu/menu_screen.gd" id="5_screen"]
 
 [node name="MainMenu" type="Control" unique_id=115567150]
 layout_mode = 3
+script = ExtResource("5_screen")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -81,6 +83,26 @@ theme_override_fonts/normal_font = ExtResource("0_font")
 theme_override_font_sizes/normal_font_size = 24
 theme_override_colors/default_color = Color(0.949, 0.722, 0.533, 1)
 text = "C3 Game Jam 2026"
+
+[node name="QRLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 470.0
+offset_right = 1250.0
+offset_bottom = 500.0
+theme_override_fonts/font = ExtResource("0_font")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.996, 0.882, 0.722, 1)
+horizontal_alignment = 1
+text = "Scan for surprise"
+
+[node name="QRCode" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 500.0
+offset_right = 1250.0
+offset_bottom = 700.0
+stretch_mode = 5
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_music")

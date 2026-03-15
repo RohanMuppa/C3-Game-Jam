@@ -1,3 +1,4 @@
+# made w Claude Code
 extends Node
 
 var money: float = 0
@@ -13,7 +14,7 @@ var phase: String = "Menu"
 var server: TCPServer = TCPServer.new()
 var port: int = 8080
 var local_ip: String = ""
-var qr_path: String = ""
+var qr_texture: ImageTexture = null
 
 func _ready() -> void:
 	local_ip = get_local_ip()
@@ -38,8 +39,10 @@ func get_url() -> String:
 	return "http://" + local_ip + ":" + str(port)
 
 func generate_qr() -> void:
-	qr_path = OS.get_user_data_dir() + "/qr.png"
-	OS.execute("qrencode", ["-o", qr_path, "-s", "8", "-m", "2", get_url()])
+	var qr = QrCode.new()
+	qr.error_correct_level = QrCode.ErrorCorrectionLevel.LOW
+	qr_texture = qr.get_texture(get_url())
+	qr.queue_free()
 
 func build_page() -> String:
 	return "<html><head><meta charset='utf-8'>" \

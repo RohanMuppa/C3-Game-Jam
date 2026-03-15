@@ -26,6 +26,11 @@ var income_upgrades: int = 0
 var sent_first_msg = false
 var sent_stage2_dialog = false
 var sent_stage3_dialog = false
+var scene_playing = false
+var cutscene2_played = false
+
+
+
 @onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var dialog_box: = $Dialog/CanvasLayer/DialogBox
 @onready var dpPreview = get_tree().get_nodes_in_group("DP_Preview")[0]
@@ -62,36 +67,47 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	ticker += delta
-	event_ticks += delta
-	while (ticker >= money_cooldown):
-		process_money.emit()
-		ticker -= money_cooldown
-	var ratio = event_ticks / (60 * game_time_mins)
-	gameUI.progress_bar.set_as_ratio(ratio)
 	
-	if ratio > 0.2 && ratio < 0.5 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
-		var arr: Array[CustomText] = [
-			CustomText.create("Emilija: Farmer Zemnieks, good to see you again! Can I just say your tomatoes have never been better! Hugo loves them, don’t you?", 10),
-			CustomText.create("Hugo: Tomatoes, tomatoes! ", 10),
-			CustomText.create("Farmer Zemnieks: That’s great to hear from such a long-time customer. Hugo, next week, I’ll save my best tomato just for you; how’s that sound?", 10)
-		]
-		dialog_box.set_text(arr)
-		sent_first_msg = true
+	if scene_playing == false:
+		ticker += delta
+		event_ticks += delta
+		while (ticker >= money_cooldown):
+			process_money.emit()
+			ticker -= money_cooldown
+		var ratio = event_ticks / (60 * game_time_mins)
+		gameUI.progress_bar.set_as_ratio(ratio)
+	
+		if ratio > 0.2 && dialog_box.visible == false && dpPreview.first_dp == false && sent_first_msg == false:
+			var arr: Array[CustomText] = [
+				CustomText.create("Emilija: Farmer Zemnieks, good to see you again! Can I just say your tomatoes have never been better! Hugo loves them, don’t you?", 10),
+				CustomText.create("Hugo: Tomatoes, tomatoes! ", 10),
+				CustomText.create("Farmer Zemnieks: That’s great to hear from such a long-time customer. Hugo, next week, I’ll save my best tomato just for you; how’s that sound?", 10)
+			]
+			dialog_box.set_text(arr)
+			sent_first_msg = true
+			
+		if ratio > 0.33 && cutscene2_played == false:
+			scene_playing = true
+			cutscene2_played = true  # Set it immediately to prevent multiple triggers
+			$Cutscenes/stage2scene.play_scene()
+			$Cutscenes/stage2scene.cutscene_finished.connect(_on_s2_finish)
 		
-	if (ratio > 0.34 && ratio < 0.65 && dialog_box.visible == false && sent_stage2_dialog == false):
-		var arr: Array[CustomText] = [
-			CustomText.create("Emilija: Oh dear! I better stock up on groceries since we’ll be at home for a while.", 10),
-			CustomText.create("Farmer Zemnieks: Orders have been coming in like crazy! My truck might not make it!", 10)
-		]
-		dialog_box.set_text(arr)
-		sent_stage2_dialog = true
+		if (ratio > 0.34 && ratio < 0.65 && dialog_box.visible == false && sent_stage2_dialog == false):
+			var arr: Array[CustomText] = [
+				CustomText.create("Emilija: Oh dear! I better stock up on groceries since we’ll be at home for a while.", 10),
+				CustomText.create("Farmer Zemnieks: Orders have been coming in like crazy! My truck might not make it!", 10)
+			]
+			dialog_box.set_text(arr)
+			sent_stage2_dialog = true
 		
-	if (ratio > 0.67 && ratio < 0.99 && dialog_box.visible == false && sent_stage3_dialog == false):
-		var arr: Array[CustomText] = [
-			CustomText.create("Emilija: Farmer Zemnieks, it’s been a while! I’ve brought Andris this week to help carry such large orders. How is everything?", 10),
-			CustomText.create("Farmer Zemnieks: Business has gotten slower, but thanks to ya regulars, I’ve been able to get by.", 10),
-			CustomText.create("Emilija: We’ll always be here to support. Besides how could we give up such good tomatoes?", 10)
-		]
-		dialog_box.set_text(arr)
-		sent_stage3_dialog = true
+		if (ratio > 0.67 && ratio < 0.99 && dialog_box.visible == false && sent_stage3_dialog == false):
+			var arr: Array[CustomText] = [
+				CustomText.create("Emilija: Farmer Zemnieks, it’s been a while! I’ve brought Andris this week to help carry such large orders. How is everything?", 10),
+				CustomText.create("Farmer Zemnieks: Business has gotten slower, but thanks to ya regulars, I’ve been able to get by.", 10),
+				CustomText.create("Emilija: We’ll always be here to support. Besides how could we give up such good tomatoes?", 10)
+			]
+			dialog_box.set_text(arr)
+			sent_stage3_dialog = true
+			
+func _on_s2_finish():
+	scene_playing = false
