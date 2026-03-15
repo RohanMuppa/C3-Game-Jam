@@ -104,5 +104,8 @@ func place_dp():
 	dp.ui = $"../Ui"
 	
 	if first_dp:
-		dialogBox.show_box("NameA: A new distribution point, how wonderful! And so close to home too.")
+		var text1 = CustomText.create("NameA: A new distribution point, how wonderful! And so close to home too", 5)
+		var text2 = CustomText.create("I can’t thank you enough; in fact, I’ll be your first volunteer to help organize orders!", 5)
+		var arr: Array[CustomText] = [text1, text2]
+		dialogBox.set_text(arr)
 		first_dp = false
