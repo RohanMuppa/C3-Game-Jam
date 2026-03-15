@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 			Phase.PRE_COVID:
 				enter_phase(Phase.DURING_COVID)
 			Phase.DURING_COVID:
-				game_main.gameUI.show_end_screen(game_main.money)
+				game_main.gameUI.show_end_screen(game_main)
 				set_process(false)
 	if (current_phase == Phase.DURING_COVID):
 		time_since_COVID += delta

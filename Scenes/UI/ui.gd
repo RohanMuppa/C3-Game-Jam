@@ -24,8 +24,7 @@ func show_end_screen(gm: GameMain) -> void:
 		+ "\n\nDPs: %d | Grocery Stores: %d" % [gm.dps_placed, gm.gs_placed] \
 		+ "\nSpent: $%.2f" % gm.total_spent \
 		+ "\n\nPre-COVID: $%.0f (%d sold)" % [gm.earned_pre_covid, gm.food_sold_pre_covid] \
-		+ "\nCOVID-19: $%.0f (%d sold)" % [gm.earned_during_covid, gm.food_sold_during_covid] \
-		+ "\nPost-COVID: $%.0f (%d sold)" % [gm.earned_post_covid, gm.food_sold_post_covid]
+		+ "\nCOVID-19: $%.0f (%d sold)" % [gm.earned_during_covid, gm.food_sold_during_covid]
 
 func show_dp_upgrades(dp: DistributionPoint):
 	$DPUpgradeTree.inherit_upgrades(dp)

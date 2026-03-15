@@ -47,8 +47,14 @@ func step() -> void:
 	
 
 	var sold_food = min(get_demand(), get_supply())
-
-	game_main.money += sold_food * get_price() - wages * houses.size()
+	var earnings = sold_food * get_price() - wages * houses.size()
+	game_main.money += earnings
+	if crisis.current_phase == CrisisManager.Phase.PRE_COVID:
+		game_main.earned_pre_covid += earnings
+		game_main.food_sold_pre_covid += sold_food
+	else:
+		game_main.earned_during_covid += earnings
+		game_main.food_sold_during_covid += sold_food
 
 func get_profit() -> float:
 	var sold_food = min(get_demand(), get_supply())
