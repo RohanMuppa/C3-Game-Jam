@@ -27,10 +27,6 @@ var wages: float = 350
 func _ready() -> void:
 	game_main.process_money.connect(step)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	queue_redraw()
-
 func step() -> void:
 	for import in imports:
 		var person: WalkingPerson = walking_person.instantiate()
@@ -76,21 +72,6 @@ func get_price() -> float:
 	if inc_multi < 1:
 		inc_multi = min(1, inc_multi + 0.1 * resilience_score)
 	return 35 * income_bonus * inc_multi
-
-func _draw() -> void:
-	for house in houses:
-		draw_line(
-			Vector2.ZERO,
-			house.global_position - global_position,
-			Color.CRIMSON
-		)
-	
-	for import in imports:
-		draw_line(
-			Vector2.ZERO,
-			import.global_position - global_position,
-			Color.DARK_ORANGE
-		)
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
