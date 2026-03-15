@@ -34,10 +34,10 @@ position = Vector2(204, 84)
 position = Vector2(1044, 84)
 
 [node name="Farm3" parent="Farms" unique_id=229168466 instance=ExtResource("3_lgr22")]
-position = Vector2(175, 602)
+position = Vector2(100, 400)
 
 [node name="Farm4" parent="Farms" unique_id=692211515 instance=ExtResource("3_lgr22")]
-position = Vector2(1015, 602)
+position = Vector2(1100, 400)
 
 [node name="Houses" type="Node" parent="." unique_id=1903224962]
 
@@ -102,11 +102,11 @@ gs_parent = NodePath("../GSs")
 [node name="Imports" type="Node" parent="." unique_id=1416053146]
 
 [node name="Import" parent="Imports" unique_id=1309879654 instance=ExtResource("7_lgr22")]
-position = Vector2(50, 360)
+position = Vector2(300, 688)
 script = ExtResource("8_trn2v")
 
 [node name="Import2" parent="Imports" unique_id=1280505601 instance=ExtResource("7_lgr22")]
-position = Vector2(1170, 360)
+position = Vector2(900, 688)
 script = ExtResource("8_trn2v")
 
 [node name="Ui" parent="." unique_id=1297064599 instance=ExtResource("6_3dxm6")]

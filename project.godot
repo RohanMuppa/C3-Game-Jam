@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="C3 Game Jam"
-run/main_scene="uid://dc0666cmfv6lg"
+run/main_scene="uid://q2oij04heut"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
