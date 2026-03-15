@@ -36,6 +36,11 @@ func generate_qr() -> void:
 	qr.queue_free()
 
 func push_stats() -> void:
-	var body = JSON.stringify({"money": money, "dps": dps_placed, "gs": gs_placed, "spent": total_spent, "phase": phase})
+	var gm = get_tree().root.get_node_or_null("Main")
+	var m = gm.money if gm else money
+	var d = gm.dps_placed if gm else dps_placed
+	var g = gm.gs_placed if gm else gs_placed
+	var s = gm.total_spent if gm else total_spent
+	var body = JSON.stringify({"money": m, "dps": d, "gs": g, "spent": s, "phase": phase})
 	var headers = ["Content-Type: application/json", "apikey: " + supa_key, "Prefer: return=minimal"]
 	http.request(supa_url, headers, HTTPClient.METHOD_PATCH, body)
