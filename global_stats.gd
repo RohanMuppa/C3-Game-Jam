@@ -1,3 +1,4 @@
+# made w Claude Code
 extends Node
 
 var money: float = 0
@@ -13,7 +14,7 @@ var phase: String = "Menu"
 var server: TCPServer = TCPServer.new()
 var port: int = 8080
 var local_ip: String = ""
-var qr_path: String = ""
+var qr_texture: ImageTexture = null
 
 func _ready() -> void:
 	local_ip = get_local_ip()
