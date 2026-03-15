@@ -24,6 +24,8 @@ var upgrades_purchased: int = 0
 var resilience_upgrades: int = 0
 var income_upgrades: int = 0
 var sent_first_msg = false
+var sent_stage2_dialog = false
+var sent_stage3_dialog = false
 var scene_playing = false
 var cutscene2_played = false
 
@@ -90,5 +92,22 @@ func _process(delta: float) -> void:
 			$Cutscenes/stage2scene.play_scene()
 			$Cutscenes/stage2scene.cutscene_finished.connect(_on_s2_finish)
 		
+		if (ratio > 0.34 && ratio < 0.65 && dialog_box.visible == false && sent_stage2_dialog == false):
+			var arr: Array[CustomText] = [
+				CustomText.create("Emilija: Oh dear! I better stock up on groceries since we’ll be at home for a while.", 10),
+				CustomText.create("Farmer Zemnieks: Orders have been coming in like crazy! My truck might not make it!", 10)
+			]
+			dialog_box.set_text(arr)
+			sent_stage2_dialog = true
+		
+		if (ratio > 0.67 && ratio < 0.99 && dialog_box.visible == false && sent_stage3_dialog == false):
+			var arr: Array[CustomText] = [
+				CustomText.create("Emilija: Farmer Zemnieks, it’s been a while! I’ve brought Andris this week to help carry such large orders. How is everything?", 10),
+				CustomText.create("Farmer Zemnieks: Business has gotten slower, but thanks to ya regulars, I’ve been able to get by.", 10),
+				CustomText.create("Emilija: We’ll always be here to support. Besides how could we give up such good tomatoes?", 10)
+			]
+			dialog_box.set_text(arr)
+			sent_stage3_dialog = true
+			
 func _on_s2_finish():
 	scene_playing = false
