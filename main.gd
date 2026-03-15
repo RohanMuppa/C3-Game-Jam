@@ -72,7 +72,6 @@ func _ready() -> void:
 			]
 		dialog_box.set_text(arr)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
