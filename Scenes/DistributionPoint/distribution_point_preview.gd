@@ -7,8 +7,11 @@ extends Node2D
 @export var farms: Array[Farm] = []
 @export var dp_parent: Node
 
+var first_dp = true
+
 @onready var DistributionPointScene: PackedScene = preload("res://Scenes/DistributionPoint/DistributionPoint.tscn")
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
+@onready var dialogBox = $"../Dialog/CanvasLayer/DialogBox"
 
 # general idea:
 # when active:
@@ -97,3 +100,6 @@ func place_dp():
 	dp.houses.append_array(houses.filter(in_radius))
 	dp_parent.add_child(dp)
 	dp.ui = $"../Ui"
+	
+	if first_dp:
+		dialogBox.show_box("NameA: A new distribution point, how wonderful! And so close to home too.")

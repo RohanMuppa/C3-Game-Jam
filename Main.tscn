@@ -10,19 +10,24 @@
 [ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="8_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cxhvp6s1xh8ci" path="res://Scenes/CrisisManager/crisis.tscn" id="11_5vvyt"]
 [ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="12_5vvyt"]
+[ext_resource type="Script" uid="uid://du647wvcf3ftf" path="res://Scenes/Dialog/dialog.gd" id="12_c2ibq"]
 [ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="12_c6i3y"]
+[ext_resource type="FontFile" uid="uid://bc2wbjpm30vqx" path="res://Fonts/Thin Sans.ttf" id="14_j4qnp"]
 
 [sub_resource type="GDScript" id="GDScript_20pc6"]
 script/source = "extends \"res://Scenes/GroceryStore/grocery_store_preview.gd\"
 "
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6i3y"]
+font = ExtResource("14_j4qnp")
 
 [node name="Main" type="Node2D" unique_id=125363785 node_paths=PackedStringArray("gameUI")]
 script = ExtResource("1_fos0i")
 gameUI = NodePath("Ui")
 
 [node name="Bkgd" type="Sprite2D" parent="." unique_id=758147456]
-position = Vector2(639.99994, 360)
-scale = Vector2(0.49999994, 0.5)
+position = Vector2(668, 426)
+scale = Vector2(0.8694443, 0.8694444)
 texture = ExtResource("12_5vvyt")
 
 [node name="Farms" type="Node" parent="." unique_id=928189290]
@@ -116,3 +121,35 @@ top_level = true
 visible = false
 position = Vector2(71, -59)
 script = ExtResource("12_c6i3y")
+
+[node name="Dialog" type="Control" parent="." unique_id=321140126]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1219.0
+offset_bottom = 152.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Dialog" unique_id=541951954]
+
+[node name="DialogBox" type="Panel" parent="Dialog/CanvasLayer" unique_id=813612758]
+offset_left = 198.0
+offset_top = 20.0
+offset_right = 1198.0
+offset_bottom = 139.0
+script = ExtResource("12_c2ibq")
+
+[node name="DialogLabel" type="Label" parent="Dialog/CanvasLayer/DialogBox" unique_id=935640134]
+layout_mode = 0
+offset_left = 19.0
+offset_right = 823.0
+offset_bottom = 116.0
+text = "Hello"
+label_settings = SubResource("LabelSettings_c6i3y")
+autowrap_mode = 2
+
+[node name="DialogButton" type="Button" parent="Dialog/CanvasLayer/DialogBox" unique_id=1180663826]
+layout_mode = 0
+offset_left = 829.0
+offset_top = 20.0
+offset_right = 864.0
+offset_bottom = 100.0
+text = ">"
