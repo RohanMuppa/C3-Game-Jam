@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	var price: float = ug.get_price()
 	var supply: int = ug.get_supply()
 	var demand: int = ug.get_demand()
-	text = "Price: $%.2f\nSupply: %d Food\nDemand: %d Food" % [
-		price, supply, demand
+	var profit : float = ug.get_profit()
+	text = "Profit: $%.2f\nPrice: $%.2f\nSupply: %d Food\nDemand: %d Food" % [
+		profit, price, supply, demand
 	]

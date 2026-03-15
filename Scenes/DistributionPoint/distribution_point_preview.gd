@@ -2,13 +2,16 @@ extends Node2D
 
 @export var is_active: bool = false
 @export var connection_radius: float = 200.0
-@export var cost: float = 500
+@export var cost: float = 15
 @export var houses: Array[House] = []
 @export var farms: Array[Farm] = []
 @export var dp_parent: Node
 
+var first_dp = true
+
 @onready var DistributionPointScene: PackedScene = preload("res://Scenes/DistributionPoint/DistributionPoint.tscn")
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
+@onready var dialogBox = $"../Dialog/CanvasLayer/DialogBox"
 
 # general idea:
 # when active:
@@ -24,6 +27,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("DP_Preview")
 	pass # Replace with function body.
 
 
@@ -32,7 +36,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("place_dp"):
 		is_active = !is_active
 	
-	if (Input.is_action_just_pressed("place_gs")):
+	if (Input.is_action_just_pressed("place_gs") || Input.is_action_just_pressed("escape")):
 		is_active = false
 	
 	if !is_active:
@@ -88,12 +92,15 @@ func place_dp():
 	is_active = false
 	
 	game_main.money -= cost
-	game_main.total_spent += cost
-	game_main.dps_placed += 1
-
+	cost *= 1.5
+	
 	var dp: DistributionPoint = DistributionPointScene.instantiate()
 	dp.global_position = global_position
 	dp.farms.append_array(farms.filter(in_radius))
 	dp.houses.append_array(houses.filter(in_radius))
 	dp_parent.add_child(dp)
 	dp.ui = $"../Ui"
+	
+	if first_dp:
+		dialogBox.show_box("NameA: A new distribution point, how wonderful! And so close to home too.")
+		first_dp = false

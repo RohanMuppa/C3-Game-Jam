@@ -3,7 +3,6 @@ class_name GroceryStore extends Upgradeable
 @export var houses: Array[House] = []
 @export var imports: Array[Import] = []
 
-var stored_food: int = 0
 var ui: GameUI
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
@@ -12,24 +11,16 @@ var ui: GameUI
 @onready var walking_person: PackedScene = preload("res://Scenes/Person/WalkingPerson.tscn")
 
 var house_consumption: int = 1
-var income_bonus: float = 1.0
-var food_intake: int = 5
+var income_bonus: float = 1
+var food_intake: int = 4
 
-# Resilience score is hidden
-# DP base = 3, GS base = 1
-# Resilience has a range of [-10, 10]
-var resilience_score: float = 1
-
-# cost of paying workers during crisis
-var wages: float = 350
+var resilience_score: float = 0.5
+var price = 8
+var wages: float = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_main.process_money.connect(step)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	queue_redraw()
 
 func step() -> void:
 	for import in imports:
@@ -54,55 +45,23 @@ func step() -> void:
 			))
 		game_main.add_child(person)
 	
-	stored_food += get_supply()
 
-	var sold_food = min(get_demand(), stored_food)
-	stored_food -= sold_food
+	var sold_food = min(get_demand(), get_supply())
 
-	var earnings = sold_food * get_price()
-	game_main.money += earnings
+	game_main.money += sold_food * get_price() - wages * houses.size()
 
-	match crisis.current_phase:
-		CrisisManager.Phase.PRE_COVID:
-			game_main.earned_pre_covid += earnings
-			game_main.food_sold_pre_covid += sold_food
-		CrisisManager.Phase.DURING_COVID:
-			game_main.earned_during_covid += earnings
-			game_main.food_sold_during_covid += sold_food
-		CrisisManager.Phase.POST_COVID:
-			game_main.earned_post_covid += earnings
-			game_main.food_sold_post_covid += sold_food
+func get_profit() -> float:
+	var sold_food = min(get_demand(), get_supply())
+	return sold_food * get_price() - wages * houses.size() * crisis.wage_mult
 
 func get_demand() -> int:
 	return houses.size() * house_consumption
 
 func get_supply() -> int:
-	var supply_multi = crisis.import_supply_mult
-	if supply_multi < 1:
-		supply_multi = min(1, supply_multi + 0.1 * resilience_score)
-		
-	return int(food_intake * imports.size() * supply_multi)
+	return food_intake * (1 - (1 - crisis.import_supply_mult) * (1 - resilience_score))
 
 func get_price() -> float:
-	var inc_multi = crisis.grocery_income_mult
-	if inc_multi < 1:
-		inc_multi = min(1, inc_multi + 0.1 * resilience_score)
-	return 35 * income_bonus * inc_multi
-
-func _draw() -> void:
-	for house in houses:
-		draw_line(
-			Vector2.ZERO,
-			house.global_position - global_position,
-			Color.CRIMSON
-		)
-	
-	for import in imports:
-		draw_line(
-			Vector2.ZERO,
-			import.global_position - global_position,
-			Color.DARK_ORANGE
-		)
+	return price * income_bonus * (1 - (1 - crisis.grocery_income_mult) * (1 - resilience_score))
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

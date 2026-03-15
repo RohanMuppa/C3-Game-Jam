@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xlsf0rt6c88y" path="res://Scenes/DistributionPoint/distribution_point_preview.gd" id="1_vtk0x"]
 [ext_resource type="Texture2D" uid="uid://djgwo8gq7wmr6" path="res://Sprites/Distribution Point/dp.png" id="2_vtk0x"]
+[ext_resource type="Script" uid="uid://bvelbs1oi74ry" path="res://Scenes/DistributionPoint/dp_cost_label.gd" id="3_1yra0"]
 
 [node name="DistributionPointPreview" type="Node2D" unique_id=943721428]
 top_level = true
@@ -11,9 +12,9 @@ script = ExtResource("1_vtk0x")
 modulate = Color(1, 1, 1, 0.39215687)
 texture = ExtResource("2_vtk0x")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=71766798]
-offset_left = -19.0
-offset_top = -29.0
-offset_right = 18.0
-offset_bottom = -6.0
-text = "$500"
+[node name="Label" type="Label" parent="." unique_id=1769463502]
+offset_left = -20.0
+offset_top = -34.0
+offset_right = 20.0
+offset_bottom = -11.0
+script = ExtResource("3_1yra0")

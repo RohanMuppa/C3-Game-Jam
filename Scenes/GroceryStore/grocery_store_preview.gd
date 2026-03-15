@@ -2,7 +2,7 @@ extends Node2D
 
 @export var is_active: bool = false
 @export var connection_radius: float = 200.0
-@export var cost: float = 1000
+@export var cost: float = 25
 @export var houses: Array[House] = []
 @export var imports: Array[Import] = []
 @export var gs_parent: Node
@@ -24,6 +24,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("GS_Preview")
 	pass # Replace with function body.
 
 
@@ -31,7 +32,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("place_gs"):
 		is_active = !is_active
-	if (Input.is_action_just_pressed("place_dp")):
+	if (Input.is_action_just_pressed("place_dp") || Input.is_action_just_pressed("escape")):
 		is_active = false
 	
 	if !is_active:
@@ -86,9 +87,8 @@ func place_gs():
 	is_active = false
 	
 	game_main.money -= cost
-	game_main.total_spent += cost
-	game_main.gs_placed += 1
-
+	cost *= 1.5
+	
 	var gs: GroceryStore = GroceryStoreScene.instantiate()
 	gs.global_position = global_position
 	gs.imports.append_array(imports)

@@ -73,9 +73,10 @@ offset_left = 161.0
 offset_top = 223.0
 offset_right = 257.0
 offset_bottom = 319.0
-text = "Demand++"
-cost = 750
+text = "Demand Surge"
+cost = 100
 on_purchase = ExtResource("4_gt170")
+desc = "+1 Demand per house connected."
 
 [node name="premiumimp" parent="Upgrades" unique_id=1216853976 instance=ExtResource("1_5rsv6")]
 layout_mode = 0
@@ -84,8 +85,9 @@ offset_top = 142.0
 offset_right = 427.0
 offset_bottom = 238.0
 text = "Premium Imports"
-cost = 650
+cost = 100
 on_purchase = ExtResource("5_uak7q")
+desc = "+20% Income for this grocery store."
 
 [node name="deluximp" parent="Upgrades" unique_id=1140991719 node_paths=PackedStringArray("parent") instance=ExtResource("1_5rsv6")]
 layout_mode = 0
@@ -94,9 +96,10 @@ offset_top = 280.0
 offset_right = 427.0
 offset_bottom = 376.0
 text = "Deluxe Imports"
-cost = 1150
+cost = 150
 on_purchase = ExtResource("6_k7n62")
 parent = NodePath("../premiumimp")
+desc = "+25% Income for this grocery store, plus a dependency on imports."
 
 [node name="trade" parent="Upgrades" unique_id=1177884641 instance=ExtResource("1_5rsv6")]
 layout_mode = 0
@@ -105,8 +108,9 @@ offset_top = 223.0
 offset_right = 613.0
 offset_bottom = 319.0
 text = "Trade Deals"
-cost = 550
+cost = 80
 on_purchase = ExtResource("7_bdngv")
+desc = "+2 Supply per connected trade port, with a reliance on foreign trades."
 
 [node name="wages" parent="Upgrades" unique_id=380489811 instance=ExtResource("1_5rsv6")]
 layout_mode = 0
@@ -115,5 +119,6 @@ offset_top = 223.0
 offset_right = 776.0
 offset_bottom = 319.0
 text = "Higher Wages"
-cost = 450
+cost = 100
 on_purchase = ExtResource("8_s3f1t")
+desc = "+25% Income for this grocery store, at the cost of increased wages."

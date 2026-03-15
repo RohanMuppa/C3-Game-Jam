@@ -4,7 +4,7 @@ class_name GameMain extends Node2D
 @export var gameUI: GameUI
 
 @export_category("Starting Stats")
-@export var _money: float = 1000
+@export var _money: float = 25
 
 var ticker = 0
 var money_cooldown = 4

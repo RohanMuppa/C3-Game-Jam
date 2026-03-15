@@ -1,35 +1,8 @@
 [gd_scene format=3 uid="uid://q2oij04heut"]
 
 [ext_resource type="Script" uid="uid://bgc60pwjtbv3m" path="res://Scenes/Menu/menu_button.gd" id="1_35riq"]
-[ext_resource type="Script" uid="uid://c5e4f48rog5m0" path="res://main.gd" id="2_jmrtg"]
 [ext_resource type="PackedScene" uid="uid://dc0666cmfv6lg" path="res://Main.tscn" id="2_p4pvn"]
 [ext_resource type="PackedScene" uid="uid://cvidociua6mry" path="res://Scenes/Menu/Credits.tscn" id="3_s3ie0"]
-[ext_resource type="Texture2D" uid="uid://c1o1jplii2svx" path="res://Sprites/bkgd.png" id="3_urltk"]
-[ext_resource type="PackedScene" uid="uid://c2xqb4dsp0ena" path="res://Scenes/Farm/GrainFarm.tscn" id="4_lwki5"]
-[ext_resource type="PackedScene" uid="uid://cpyo8vdyskmpe" path="res://Scenes/House/House.tscn" id="5_d1232"]
-[ext_resource type="PackedScene" uid="uid://sgy7uhwnkgnq" path="res://Scenes/DistributionPoint/DistributionPointPreview.tscn" id="6_sfjps"]
-[ext_resource type="PackedScene" uid="uid://c001xtlyv63e8" path="res://Scenes/GroceryStore/GroceryStorePreview.tscn" id="7_i240n"]
-[ext_resource type="Script" uid="uid://cvqwnjkoodo4x" path="res://Scenes/GroceryStore/grocery_store_preview.gd" id="8_355gb"]
-[ext_resource type="PackedScene" uid="uid://1ic67nr8rff6" path="res://Scenes/Import/Import.tscn" id="9_oromi"]
-[ext_resource type="Script" uid="uid://eewvwo5127c8" path="res://Scenes/Import/import.gd" id="10_mxmme"]
-[ext_resource type="PackedScene" uid="uid://yv8i6jgtymvr" path="res://Scenes/UI/UI.tscn" id="11_82pqm"]
-[ext_resource type="PackedScene" path="res://Scenes/CrisisManager/crisis.tscn" id="12_vcekd"]
-[ext_resource type="Script" uid="uid://qu6ttp8ilqtj" path="res://Scenes/CrisisManager/crisis_manager.gd" id="13_abg55"]
-
-[sub_resource type="PackedScene" id="PackedScene_yw62c"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Main", "Node2D", "script", "gameUI", "Bkgd", "Sprite2D", "position", "scale", "texture", "Farms", "Node", "Farm", "position", "Farm2", "position", "Farm3", "position", "Farm4", "position", "Houses", "Node", "House", "position", "House2", "position", "House3", "position", "House4", "position", "House5", "position", "House6", "position", "House7", "position", "House8", "position", "House9", "position", "House10", "position", "House11", "position", "House12", "position", "House13", "position", "DPs", "Node", "DistributionPointPreview", "visible", "position", "houses", "farms", "dp_parent", "GSs", "Node", "GroceryStorePreview", "visible", "position", "script", "houses", "imports", "gs_parent", "Imports", "Node", "Import", "position", "script", "Import2", "position", "script", "Ui", "top_level", "CrisisManager", "visible", "position", "script"),
-"node_count": 30,
-"node_ids": PackedInt32Array(125363785, 758147456, 928189290, 943721428, 1864280917, 229168466, 692211515, 1903224962, 1011429723, 29358117, 1444412839, 1390313807, 1341857926, 988079505, 759568615, 485154574, 807279216, 460053994, 1677520023, 1743786452, 1927803103, 867580717, 693104665, 1748055003, 1987339727, 1416053146, 1309879654, 1280505601, 1297064599, 1612307419),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./Farms"), NodePath("./Farms"), NodePath("./Farms"), NodePath("./Farms"), NodePath("."), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("./Houses"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("./Imports"), NodePath("./Imports"), NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 1073741827, 1, 0, 1073741824, 0, 5, 4, -1, 3, 6, 2, 7, 3, 8, 4, 0, 1073741825, 0, 10, 9, -1, 0, 0, 1073741826, 0, 2147483647, 11, 5, 1, 12, 6, 0, 1073741827, 0, 2147483647, 13, 7, 1, 14, 8, 0, 1073741828, 0, 2147483647, 15, 9, 1, 16, 10, 0, 1073741829, 0, 2147483647, 17, 11, 1, 18, 12, 0, 1073741830, 0, 20, 19, -1, 0, 0, 1073741831, 0, 2147483647, 21, 13, 1, 22, 14, 0, 1073741832, 0, 2147483647, 23, 15, 1, 24, 16, 0, 1073741833, 0, 2147483647, 25, 17, 1, 26, 18, 0, 1073741834, 0, 2147483647, 27, 19, 1, 28, 20, 0, 1073741835, 0, 2147483647, 29, 21, 1, 30, 22, 0, 1073741836, 0, 2147483647, 31, 23, 1, 32, 24, 0, 1073741837, 0, 2147483647, 33, 25, 1, 34, 26, 0, 1073741838, 0, 2147483647, 35, 27, 1, 36, 28, 0, 1073741839, 0, 2147483647, 37, 29, 1, 38, 30, 0, 1073741840, 0, 2147483647, 39, 31, 1, 40, 32, 0, 1073741841, 0, 2147483647, 41, 33, 1, 42, 34, 0, 1073741842, 0, 2147483647, 43, 35, 1, 44, 36, 0, 1073741843, 0, 2147483647, 45, 37, 1, 46, 38, 0, 1073741844, 0, 48, 47, -1, 0, 0, 1073741845, 0, 2147483647, 49, 39, 5, 50, 40, 51, 41, 1073741876, 42, 1073741877, 43, 1073741878, 44, 0, 1073741846, 0, 56, 55, -1, 0, 0, 1073741847, 0, 2147483647, 57, 45, 6, 58, 46, 59, 47, 60, 48, 1073741885, 49, 1073741886, 50, 1073741887, 51, 0, 1073741848, 0, 65, 64, -1, 0, 0, 1073741849, 0, 2147483647, 66, 52, 2, 67, 53, 68, 54, 0, 1073741850, 0, 2147483647, 69, 55, 2, 70, 56, 71, 57, 0, 1073741851, 0, 2147483647, 72, 58, 1, 73, 59, 0, 1073741852, 0, 2147483647, 74, 60, 3, 75, 61, 76, 62, 77, 63, 0),
-"variants": [ExtResource("2_jmrtg"), NodePath("Ui"), Vector2(639.99994, 360), Vector2(0.49999994, 0.5), ExtResource("3_urltk"), ExtResource("4_lwki5"), Vector2(204, 84), ExtResource("4_lwki5"), Vector2(1044, 84), ExtResource("4_lwki5"), Vector2(175, 602), ExtResource("4_lwki5"), Vector2(1015, 602), ExtResource("5_d1232"), Vector2(370, 397), ExtResource("5_d1232"), Vector2(197, 461), ExtResource("5_d1232"), Vector2(313, 234), ExtResource("5_d1232"), Vector2(885, 137), ExtResource("5_d1232"), Vector2(770, 258), ExtResource("5_d1232"), Vector2(998, 444), ExtResource("5_d1232"), Vector2(436, 543), ExtResource("5_d1232"), Vector2(422, 149), ExtResource("5_d1232"), Vector2(603, 116), ExtResource("5_d1232"), Vector2(795, 550), ExtResource("5_d1232"), Vector2(1110, 242), ExtResource("5_d1232"), Vector2(716, 414), ExtResource("5_d1232"), Vector2(553, 288), ExtResource("6_sfjps"), false, Vector2(-122, 196), [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")], [NodePath("../Farms/Farm"), NodePath("../Farms/Farm2"), NodePath("../Farms/Farm3"), NodePath("../Farms/Farm4")], NodePath("../DPs"), ExtResource("7_i240n"), false, Vector2(-158, 74), ExtResource("8_355gb"), [NodePath("../Houses/House"), NodePath("../Houses/House2"), NodePath("../Houses/House3"), NodePath("../Houses/House4"), NodePath("../Houses/House5"), NodePath("../Houses/House6"), NodePath("../Houses/House7"), NodePath("../Houses/House8"), NodePath("../Houses/House9"), NodePath("../Houses/House10"), NodePath("../Houses/House11"), NodePath("../Houses/House12"), NodePath("../Houses/House13")], [NodePath("../Imports/Import"), NodePath("../Imports/Import2")], NodePath("../GSs"), ExtResource("9_oromi"), Vector2(50, 360), ExtResource("10_mxmme"), ExtResource("9_oromi"), Vector2(1170, 360), ExtResource("10_mxmme"), ExtResource("11_82pqm"), true, ExtResource("12_vcekd"), false, Vector2(71, -59), ExtResource("13_abg55")],
-"version": 3
-}
 
 [sub_resource type="PackedScene" id="PackedScene_rc2un"]
 _bundled = {
@@ -101,7 +74,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Play"
 script = ExtResource("1_35riq")
-scene = SubResource("PackedScene_yw62c")
+scene = ExtResource("2_p4pvn")
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1319577361]
 layout_mode = 2

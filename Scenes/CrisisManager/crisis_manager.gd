@@ -3,7 +3,7 @@ class_name CrisisManager extends Node
 
 signal phase_changed(phase_name: String)
 
-enum Phase { PRE_COVID, DURING_COVID, POST_COVID }
+enum Phase { PRE_COVID, DURING_COVID }
 
 var current_phase: Phase = Phase.PRE_COVID
 var phase_timer: float = 0.0
@@ -12,6 +12,9 @@ var phase_duration: float = 120.0
 var dp_income_mult: float = 1.0
 var grocery_income_mult: float = 1.0
 var import_supply_mult: float = 1.0
+var wage_mult: float = 1.0
+
+var time_since_COVID = 0
 
 @onready var game_main: GameMain = get_tree().root.get_node("Main")
 var main_theme = load("res://Audio/main-theme-generic.mp3")
@@ -33,10 +36,12 @@ func _process(delta: float) -> void:
 			Phase.PRE_COVID:
 				enter_phase(Phase.DURING_COVID)
 			Phase.DURING_COVID:
-				enter_phase(Phase.POST_COVID)
-			Phase.POST_COVID:
-				game_main.gameUI.show_end_screen(game_main)
+				game_main.gameUI.show_end_screen(game_main.money)
 				set_process(false)
+	if (current_phase == Phase.DURING_COVID):
+		time_since_COVID += delta
+		dp_income_mult = 1.5 - time_since_COVID / 100 * 0.3
+		
 
 func enter_phase(phase: Phase):
 	current_phase = phase
@@ -50,14 +55,11 @@ func enter_phase(phase: Phase):
 			player.stream = main_theme
 			phase_changed.emit("Pre-COVID")
 		Phase.DURING_COVID:
-			grocery_income_mult = 0.4
-			import_supply_mult = 0.3
-			dp_income_mult = 0.6
+			grocery_income_mult = 0.7
+			import_supply_mult = 0.7
+			wage_mult = 1.2
 			player.stream = covid_theme
 			phase_changed.emit("COVID-19")
-		Phase.POST_COVID:
-			player.stream = main_theme
-			phase_changed.emit("Post-COVID")
 
 	player.play()
 
@@ -65,3 +67,4 @@ func reset_modifiers():
 	dp_income_mult = 1.0
 	grocery_income_mult = 1.0
 	import_supply_mult = 1.0
+	wage_mult = 1.0
