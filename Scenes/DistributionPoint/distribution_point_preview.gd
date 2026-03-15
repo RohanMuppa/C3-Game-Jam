@@ -105,9 +105,9 @@ func place_dp():
 	
 	if first_dp:
 		var arr: Array[CustomText] = [
-			CustomText.create("NameA: A new distribution point, how wonderful! And so close to home too", 4),
-			CustomText.create("I can’t thank you enough; in fact, I’ll be your first volunteer to help organize orders!", 4),
-			CustomText.create("Farmer: Excellent! A new place to bring my fresh tomatoes!", 4)
+			CustomText.create("Emilija: A new distribution point, how wonderful! And so close to home too", 10),
+			CustomText.create("I can’t thank you enough; in fact, I’ll be your first volunteer to help organize orders!", 10),
+			CustomText.create("Farmer Zemnieks: Excellent! A new place to bring my fresh tomatoes!", 10)
 		]
 		dialogBox.set_text(arr)
 		first_dp = false
