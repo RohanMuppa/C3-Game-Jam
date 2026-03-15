@@ -36,8 +36,16 @@ func _process(delta: float) -> void:
 			Phase.PRE_COVID:
 				enter_phase(Phase.DURING_COVID)
 			Phase.DURING_COVID:
-				game_main.gameUI.show_end_screen(game_main)
-				set_process(false)
+				var gs = get_node("/root/GlobalStats")
+				gs.money = game_main.money
+				gs.dps_placed = game_main.dps_placed
+				gs.gs_placed = game_main.gs_placed
+				gs.total_spent = game_main.total_spent
+				gs.earned_pre_covid = game_main.earned_pre_covid
+				gs.earned_during_covid = game_main.earned_during_covid
+				gs.food_sold_pre_covid = game_main.food_sold_pre_covid
+				gs.food_sold_during_covid = game_main.food_sold_during_covid
+				get_tree().change_scene_to_file("res://Scenes/EndScreen/EndScreen.tscn")
 	if (current_phase == Phase.DURING_COVID):
 		time_since_COVID += delta
 		dp_income_mult = 1.5 - time_since_COVID / 100 * 0.3
