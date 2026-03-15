@@ -6,3 +6,10 @@
 
 [node name="Imports" type="Sprite2D" parent="." unique_id=1565604143]
 texture = ExtResource("1_ag67m")
+
+[node name="Imports2" type="Sprite2D" parent="Imports" unique_id=536646214]
+modulate = Color(0, 0, 0, 0.5137255)
+show_behind_parent = true
+position = Vector2(9.999999, 0)
+skew = 0.44156832
+texture = ExtResource("1_ag67m")

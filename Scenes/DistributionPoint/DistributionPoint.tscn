@@ -19,6 +19,13 @@ shape = SubResource("RectangleShape2D_dq1lj")
 [node name="Dp" type="Sprite2D" parent="." unique_id=505723698]
 texture = ExtResource("2_dq1lj")
 
+[node name="Dp2" type="Sprite2D" parent="Dp" unique_id=1623996324]
+modulate = Color(0, 0, 0, 0.49803922)
+show_behind_parent = true
+position = Vector2(11, 0)
+skew = 0.48694685
+texture = ExtResource("2_dq1lj")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=224167269]
 offset_left = -13.0
 offset_top = -44.0

@@ -10,3 +10,11 @@ script = ExtResource("1_0o000")
 scale = Vector2(1.43, 1.43)
 texture = ExtResource("2_0o000")
 script = ExtResource("1_0o000")
+
+[node name="FarmGrain2" type="Sprite2D" parent="FarmGrain" unique_id=1170585072]
+modulate = Color(0, 0, 0, 0.4117647)
+show_behind_parent = true
+position = Vector2(9.790211, 3.4965036)
+skew = 0.5742133
+texture = ExtResource("2_0o000")
+script = ExtResource("1_0o000")

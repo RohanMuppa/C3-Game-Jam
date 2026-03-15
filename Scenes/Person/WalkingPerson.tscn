@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://gxpbwxw0ookq" path="res://Sprites/Volunteer/volunteer3.png" id="10_fasv6"]
 [ext_resource type="Texture2D" uid="uid://fg27kjo7kfal" path="res://Sprites/Trucks/truckTomato.png" id="11_3tiom"]
 [ext_resource type="Texture2D" uid="uid://b26jc2q4von2w" path="res://Sprites/Trucks/truckTomatoB.png" id="12_fasv6"]
+[ext_resource type="Script" uid="uid://dg1wu1o5m0ol5" path="res://Scenes/Person/animated_sprite_2d_2.gd" id="23_mxpb2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_671r1"]
 animations = [{
@@ -160,11 +161,30 @@ animations = [{
 }]
 
 [node name="WalkingPerson" type="Node2D" unique_id=99965420]
-visible = false
 script = ExtResource("1_fu5ec")
+shadowHeight = Dictionary[int, float]({
+0: 9.0,
+1: 11.0,
+2: 11.0,
+3: 8.0,
+4: 11.0
+})
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=381548727]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_671r1")
-animation = &"CustomerA"
-frame_progress = 0.78860784
+animation = &"GrainTruckB"
+frame_progress = 0.7656144
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1602033494]
+modulate = Color(0, 0, 0, 0.43137255)
+show_behind_parent = true
+position = Vector2(2.000001, 1)
+scale = Vector2(1, 0.3)
+skew = 0.9738937
+sprite_frames = SubResource("SpriteFrames_671r1")
+animation = &"GrainTruckB"
+frame_progress = 0.70494336
+flip_h = true
+script = ExtResource("23_mxpb2")

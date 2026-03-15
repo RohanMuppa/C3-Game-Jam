@@ -18,6 +18,13 @@ shape = SubResource("RectangleShape2D_pw1c3")
 [node name="Grocery" type="Sprite2D" parent="." unique_id=238251727]
 texture = ExtResource("2_pw1c3")
 
+[node name="Grocery2" type="Sprite2D" parent="Grocery" unique_id=1372231288]
+modulate = Color(0, 0, 0, 0.52156866)
+show_behind_parent = true
+position = Vector2(7, 1)
+skew = 0.6632251
+texture = ExtResource("2_pw1c3")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1822739254]
 offset_left = -13.0
 offset_top = -65.0

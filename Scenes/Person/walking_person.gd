@@ -3,6 +3,9 @@ class_name WalkingPerson extends Node2D
 var speed: float = 0
 var t: float = 0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shadow: AnimatedSprite2D = $AnimatedSprite2D/AnimatedSprite2D2
+
+@export var shadowHeight: Dictionary[PersonType, float]
 
 enum PersonType {
 	KID,
@@ -19,24 +22,36 @@ var _loop: bool = false
 var animation_name: String
 var animation_type: PersonType
 
+func play(anim: String):
+	sprite.play(anim)
+	shadow.play(anim)
+
 func start(person: PersonType, time: float, start: Vector2, end: Vector2, loop=true):
 	animation_type = person
+	
+	shadow.visible = true
+	shadow.circle_mode = false
 	match (person):
 		PersonType.KID:
-			sprite.play("Kid")
+			play("Kid")
 		PersonType.FARMER:
-			sprite.play("Farmer")
+			play("Farmer")
 		PersonType.VOLUNTEER:
-			sprite.play("Volunteer")
+			play("Volunteer")
 		PersonType.CUSTOMER:
 			animation_name = ["CustomerA", "CustomerB"].pick_random()
-			sprite.play(animation_name)
+			play(animation_name)
 		PersonType.TRUCK:
 			animation_name = [
 				"GrainTruck", "MeatTruck", "TomatoTruck"
 			].pick_random()
-			sprite.play(animation_name)
+			play(animation_name)
 			sprite.scale = Vector2(2, 2)
+			shadow.circle_mode = true
+			shadow.queue_redraw()
+			shadow.skew = 0
+	
+	shadow.position.y = shadowHeight[person]
 	
 	speed = time
 	if loop:
@@ -65,9 +80,10 @@ func _physics_process(delta: float) -> void:
 		global_position = _start.lerp(_end, t)
 	
 	sprite.flip_h = global_position.x > target.x
+	shadow.flip_h = global_position.x > target.x
 	if animation_type == PersonType.TRUCK:
 		if global_position.y >= target.y:
-			sprite.play(animation_name + "B")
+			play(animation_name + "B")
 		else:
-			sprite.play(animation_name)
+			play(animation_name)
 	
