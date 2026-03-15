@@ -20,11 +20,6 @@ var ui: GameUI
 func _ready() -> void:
 	game_main.process_money.connect(step)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	queue_redraw()
-
 func step() -> void:
 	for farm in farms:
 		var person: WalkingPerson = walking_person.instantiate()
