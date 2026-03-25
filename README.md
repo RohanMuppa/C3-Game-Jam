@@ -12,9 +12,13 @@ At the end, you receive a personality based on your strategy:
 - **The Survivor** — thrived during the crisis
 - **The Balanced Builder** — mixed approach
 
+Everything was built from scratch during the jam — original pixel art, sprite animations, background illustrations, music, sound design, dialog writing, and all game logic.
+
 ## Features
 
 - **Two-phase gameplay** — Pre-COVID normalcy transitions into COVID-19 disruption with shifting economics
+- **Original art & animation** — all sprites, characters, buildings, trucks, and backgrounds hand-made
+- **Original music & audio** — custom main theme and COVID-era track composed for the game
 - **Upgrade tree** — invest earnings into resilience or income upgrades
 - **Dialog system** — character-driven narrative with Emilija, Hugo, and Farmer Zemnieks
 - **Cutscenes** — animated transitions between phases
