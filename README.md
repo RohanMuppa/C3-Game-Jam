@@ -39,4 +39,4 @@ At the end, you receive a personality based on your strategy:
 
 ## Team
 
-Built by Rohan Muppa, Iris Gong, Jack, Lemon-Chad, and Vimal Buckley.
+Built by Rohan Muppa, Iris Gong, Jack, Jack Smith, Jennifer Mezo, and Vimal Buckley.
