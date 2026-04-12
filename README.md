@@ -2,6 +2,8 @@
 
 A game exploring how Latvia's short food supply chains weathered COVID-19, based on *Usca et al., Resilience of Short Food Supply Chains During COVID-19*. Built in **Godot 4.6** (GDScript) for the C3 Spring Break Game Jam (HONR 299).
 
+![Gameplay](docs/gameplay.gif)
+
 ## About
 
 Set in rural Latvia, you help Emilija organize food access for her community by placing **Distribution Points** (local farmer connections) and **Grocery Stores** (import based supply). The game progresses through Pre COVID and COVID-19 phases. As global imports stall and prices spike, local farmer networks prove more resilient, mirroring the paper's findings on Latvian short food supply chains during the pandemic.
