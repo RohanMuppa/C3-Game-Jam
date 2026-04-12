@@ -2,7 +2,9 @@
 
 A game exploring how Latvia's short food supply chains weathered COVID-19, based on *Usca et al., Resilience of Short Food Supply Chains During COVID-19*. Built in **Godot 4.6** (GDScript) for the C3 Spring Break Game Jam (HONR 299).
 
-![Gameplay](docs/gameplay.gif)
+<p align="center">
+  <img src="docs/gameplay.gif" width="100%" />
+</p>
 
 ## About
 
